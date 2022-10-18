@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluation</title>
+<style>
+body {
+            background-color:#34568b;
+            font-family: Verdana;
+            text-align: center;
+        }
+form {
+    background-color: #fff;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(9, 1, 17, 0.907);
+        }
+.form-control {
+            text-align: left;
+            margin-bottom: 25px;
+
+        }
+button {
+    width: 240px;
+    height: 40px;
+    background: #34568b;
+    border: none;
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+}
+button:hover{
+    background: #fff;
+    color:#34568b;
+}
+button a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+header h1 {
+  font-size: 50px;
+  font-weight: 600;
+  background-image: linear-gradient(to left,#34568b, #e0d5d5);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+</style>
+<body>
+    <header>
+    <h1>Evaluation of our company service.</h1>
+    </header>
+    <!-- Create Form -->
+    <form id="form">
+        <!-- Details -->
+        <div class="form-control">
+            <label for="Username">
+                Username
+            </label>
+ 
+            <!-- Input Type Text -->
+            <input type="text"
+                   id="Username"
+                   placeholder="Enter your Username" />
+        </div>
+        <div class="form-control">
+            <label for="email" id="label-email">
+                Email
+            </label>
+ 
+            <!-- Input Type Email-->
+            <input type="email"
+                   id="email"
+                   placeholder="Enter your email" />
+        </div>
+        <div class="form-control">
+            <label for="age" id="label-age">
+                Age
+            </label>
+ 
+            <!-- Input Type Text -->
+            <input type="text"
+                   id="age"
+                   placeholder="Enter your age" />
+        </div>
+        <div class="form-control">
+            <label for="role" id="label-role">
+                <p>Your answers will be on a scale fron 1 to 5 with 1 being most dissatisfied and 5 most satisfied.</p>
+            </label>
+        <div class="form-control">
+            <label for="role" id="label-role">
+                <b>Reports</b>
+                <small>(Check only one option)</small>
+            </label>
+             
+        <div class="form-control">
+            <label>1.How informative did you find our reports?
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="checkbox"
+                       name="inp">1</input></label>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp">2</input></label>
+            <label for="inp-3">
+                <input type="checkbox"
+                       name="inp">3</input></label>
+            <label for="inp-4">
+                <input type="checkbox"
+                       name="inp">4</input></label>
+            <label for="inp-5">
+                <input type="checkbox"
+                       name="inp">5</input></label>
+        </div>
+        <div class="form-control">
+            <label>2.How much morphological legible did you find our reports?
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">1</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">2</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">3</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">4</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">5</input>
+            </label>
+        </div>
+        <div class="form-control">
+            <label>3.How much satisfied are you from the chronological consistency of our reports?
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">1</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">2</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">3</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">4</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">5</input>
+            </label>
+        </div>
+        <div class="form-control">
+            <label>4.How was your overall interaction with our reports?
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">1</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">2</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">3</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">4</input>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                    name="inp">5</input>
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="role" id="label-role">
+                <b>Staff</b>
+                <small>(Check only one option)</small>
+            </label>
+            <div class="form-control">
+                <label>1.How was your cooperation with our staff?
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">1</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">2</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">3</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">4</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">5</input>
+                </label>
+            </div>
+            <div class="form-control">
+                <label>2.How much professional did you find our staff?
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">1</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">2</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">3</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">4</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">5</input>
+                </label>
+            </div>
+            <div class="form-control">
+                <label>3.How frequent did you find the contact with our staff?
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">1</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">2</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">3</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">4</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">5</input>
+                </label>
+            </div>
+            <div class="form-control">
+                <label>4.How was your overall interaction with our staff?
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">1</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">2</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">3</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">4</input>
+                </label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                        name="inp">5</input>
+                </label>
+            </div>
+            <div class="form-control">
+                <label for="role" id="label-role">
+                    <b>Goal</b>
+                    <small>(Check only one option)</small>
+                </label>
+                <div class="form-control">
+                    <label>1.How satisfied are you from the results of the goal you had for your company?
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">1</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">2</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">3</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">4</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">5</input>
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label>2.How much do you think your campaign was successful?
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">1</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">2</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">3</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">4</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">5</input>
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label>3.How likely are you to increase the budget next time?
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">1</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">2</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">3</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">4</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">5</input>
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label>4.How much confidence did our company gave you from this campaign?
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">1</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">2</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">3</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">4</input>
+                    </label>
+                    <label for="inp-1">
+                        <input type="checkbox"
+                            name="inp">5</input>
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label for="role" id="label-role">
+                        <b>Farewell</b>
+                        <small>(Check only one option)</small>
+                    </label>
+                    <div class="form-control">
+                        <label>1.How likely are you to contact us in the future for a new campaign?
+                        </label>
+                        <label for="inp-1">
+                            <input type="checkbox"
+                                name="inp">1</input>
+                        </label>
+                        <label for="inp-1">
+                            <input type="checkbox"
+                                name="inp">2</input>
+                        </label>
+                        <label for="inp-1">
+                            <input type="checkbox"
+                                name="inp">3</input>
+                        </label>
+                        <label for="inp-1">
+                            <input type="checkbox"
+                                name="inp">4</input>
+                        </label>
+                        <label for="inp-1">
+                            <input type="checkbox"
+                                name="inp">5</input>
+                        </label>
+                    </div>
+                    <div class="form-control">
+                        <label>2.How likely are you to suggest our company to others?
+                        </label>
+                        <label for="inp-1">
+                            <input type="checkbox"
+                                name="inp">1</input>
+                        </label>
+                        <label for="inp-1">
+                            <input type="checkbox"
+                                name="inp">2</input>
+                        </label>
+                        <label for="inp-1">
+                            <input type="checkbox"
+                                name="inp">3</input>
+                        </label>
+                        <label for="inp-1">
+                            <input type="checkbox"
+                                name="inp">4</input>
+                        </label>
+                        <label for="inp-1">
+                            <input type="checkbox"
+                                name="inp">5</input>
+                        </label>
+                    </div>
+        <label for="freeform"><b>Maybe some more feedback??</b></label><br>
+        <textarea id="freeform" name="freeform" rows="4" cols="50">
+        Enter text here...
+        </textarea>
+        <button class="cn"><a href="http://127.0.0.1:5500/farewell.html">SUBMIT</a></button>
+    </form>
+</body>
+</head>
