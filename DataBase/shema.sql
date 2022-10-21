@@ -10,12 +10,15 @@ DROP TABLE User_;
 CREATE TABLE User_
 				(email VARCHAR(20),
 				 passwrd VARCHAR(20),
-                 PRIMARY KEY (email)
-                );
+                 PRIMARY KEY (email),
+                 sex VARCHAR(10),
+				 elname VARCHAR(20),
+				 efname VARCHAR(20)
+                 );
                 
 CREATE TABLE Employee
 				(employee_id INTEGER,
-                email VARCHAR(10) ,
+                email VARCHAR(20) ,
 				FOREIGN KEY (email) REFERENCES User_(email),
                 PRIMARY KEY(employee_id)
                 );
@@ -23,7 +26,7 @@ CREATE TABLE Employee
 CREATE TABLE Client_
 				(campaign VARCHAR(20),
                 Company_name VARCHAR(20),
-                email VARCHAR(10),
+                email VARCHAR(20),
 				FOREIGN KEY (email) REFERENCES User_(email),
                 PRIMARY KEY(email)
 				);
