@@ -1,5 +1,6 @@
 use ismgroup60;
 
+DROP TABLE Preferences;
 DROP TABLE Media_Manager;
 DROP TABLE Media_Planner;
 DROP TABLE Employee;
@@ -43,5 +44,15 @@ CREATE TABLE Media_Manager
                 employee_id INTEGER,
 				email VARCHAR(10) ,
 				FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
+                );
+CREATE TABLE Preferences
+				(
+                budget INTEGER,
+				indicators VARCHAR(10) ,
+                Company_name VARCHAR(20),
+                Format_ VARCHAR(20),
+                email VARCHAR(20),
+				FOREIGN KEY (email) REFERENCES client_(email),
+                PRIMARY KEY(Company_name)
                 );
                 
