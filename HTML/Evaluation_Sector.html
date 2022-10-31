@@ -5,9 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../CSS/main.css">
 </head>
-<body>
+<style>
+  .button {
+		color:#5244d9;
+    margin: auto;
+	  }
+  input[type=checkbox] {display:none;}
+  
+  .names {
+  background-color:#373740;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  font-weight:700;
+  color:#FFF;
+  font-size:.85em;
+  letter-spacing:2px;
+  text-decoration:center;
+  font-family:'PT Sans', sans-serif;
+  text-align:center;
+  width:280px;
+  height:40px;
+  line-height:40px;
+  cursor:pointer;
+  display:block;
+  margin:auto ;
+  -webkit-transition:background-color 150ms ease-in;
+  -moz-transition:background-color 150ms ease-in;
+  -ms-transition:background-color 150ms ease-in;
+  -o-transition:background-color 150ms ease-in;
+  transition:background-color 150ms ease-in;
+  }
+  
+  .names:hover {
+  background-color:#5244d9;
+  }
+  
+  input[type=checkbox]:checked + span {
+  background-color:#5244d9;
+  text-decoration:none;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  background:#5244d9 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAaCAYAAACgoey0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAX9JREFUeNpi+P//PwMNsS4QbwBiLnQ5WlqqAsRP/0PARiBmoYfFkkB8+z8qWALEjLS0mB+IL/3HDibSymJQXB7/jx/UgNSCvU4lwAbEG4DYkwi1WUxUspQZiOcRaSkIWOAKMk0Sg3jaf+IBOIVjMyQWiH8DsR+RljaTYOkBWJ5GNwRk2R+ooh9A7ETA0jwSLL0ATfEYqRpkyVc0xR+A2AyHpdFA/I9IS0F5WhRbAWIEtQQbeAXE6lhC5jeRlj4GYgVsRaYK1HBCmmWgmuyxhAwu8BpaXjNgs/gYkYbcAGIXPCGDDkCOM8eVPkCEFhE+JhX8BGJnfAkTxgC57BOVLAXlihBC2RA9Vf+k0FJQKk8nJv+jCwQi5WNyQAWxpR02wRQS8icy6CKlmMUlUUGipfOQK3lKLAbhdhIKfWZS6258kiAfzCZg6V4gZiOn0UBIAcgn63BYehK50Ke2xQxQH+3FUoqJUtJMIlYhLxAfxVJu09xiWENuMxCrUaNhCBBgAOAVfjALa5TLAAAAAElFTkSuQmCC) no-repeat 7% center;
+  background-size:15px 13px;
+  }
+  
+  input[type=checkbox]:checked:hover + .names {
+  background-color:#5244d9;
+  color:rgba(255,255,255,0.5);
+
+  text-decoration:none;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  background:#5244d9 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAS5JREFUeNq8110OgjAMAGBGvIY3VESjt9jPg95PT+LccBIZ7dYOWJPGB+g+Ymg3hLW2QeLkcu/y2pSFdvl0eQevehjI3uXbfkMh96TShFq/xhG6J4faAtxEtSBOQTm4QWpnOBWl4CZT69fuYpiCpnBDrB1xLhrjgoFO8F1oGcFslUv4bV32zFoxmOHJta0XMn65dC0UaiddA8UGiN4axeC1cUkdmWviEls/NwL1FqjPNtNvoimPdC3yRCUTiTXbt0R/oSnw2iiK10BBvBY6w2uiE3xJr8oFtcrvxy/fVcyeVdGx98yotcOxN/znHeMUIhdMOG8c4reagssF43VEoT5O4ZJwvNUUFJtcEE5BMXyGpnanf5yDxjiI+hSJj7YunEBvhbuTCh9tD+jiR4ABAJ0SrJgNr1UAAAAAAElFTkSuQmCC) no-repeat 7% center;
+  background-size:15px 15px;
+  }
+
+</style>
+<body style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
+background: linear-gradient(to right, #25b7c4, #845ddf);">
     <div>
         <link href="./home.css" rel="stylesheet" />
         <div class="home-container">
@@ -17,30 +77,14 @@
               <div class="header-container">
                 <h1 class="header-heading textSM"><span>Home Page</span></h1>
               </div>
+            
               <div class="header-container1">
                 <svg viewBox="0 0 1024 1024" class="header-icon">
                   <path
                     d="M576 706.612v-52.78c70.498-39.728 128-138.772 128-237.832 0-159.058 0-288-192-288s-192 128.942-192 288c0 99.060 57.502 198.104 128 237.832v52.78c-217.102 17.748-384 124.42-384 253.388h896c0-128.968-166.898-235.64-384-253.388z"
                   ></path>
                 </svg>
-                <span class="header-text textSM">PROFILE</span>
-              </div>
-              <div class="header-container2">
-                <svg viewBox="0 0 1024 1024" class="header-icon02">
-                  <path
-                    d="M917.806 229.076c-22.212-30.292-53.174-65.7-87.178-99.704s-69.412-64.964-99.704-87.178c-51.574-37.82-76.592-42.194-90.924-42.194h-496c-44.112 0-80 35.888-80 80v864c0 44.112 35.888 80 80 80h736c44.112 0 80-35.888 80-80v-624c0-14.332-4.372-39.35-42.194-90.924zM785.374 174.626c30.7 30.7 54.8 58.398 72.58 81.374h-153.954v-153.946c22.984 17.78 50.678 41.878 81.374 72.572zM896 944c0 8.672-7.328 16-16 16h-736c-8.672 0-16-7.328-16-16v-864c0-8.672 7.328-16 16-16 0 0 495.956-0.002 496 0v224c0 17.672 14.326 32 32 32h224v624z"
-                  ></path>
-                  <path
-                    d="M736 832h-448c-17.672 0-32-14.326-32-32s14.328-32 32-32h448c17.674 0 32 14.326 32 32s-14.326 32-32 32z"
-                  ></path>
-                  <path
-                    d="M736 704h-448c-17.672 0-32-14.326-32-32s14.328-32 32-32h448c17.674 0 32 14.326 32 32s-14.326 32-32 32z"
-                  ></path>
-                  <path
-                    d="M736 576h-448c-17.672 0-32-14.326-32-32s14.328-32 32-32h448c17.674 0 32 14.326 32 32s-14.326 32-32 32z"
-                  ></path>
-                </svg>
-                <span class="header-text1 textSM">BLOG</span>
+                <span class="header-text textSM" style="font-size: 22px;">PROFILE</span>
               </div>
               <div data-type="BurgerMenu" class="header-burger-menu">
                 <svg viewBox="0 0 1024 1024" class="header-icon07">
@@ -113,15 +157,10 @@
             <div class="home-container1">
               <div class="home-container2">
                 <h1 class="home-text">
-                  <span>Carat Evaluation Sector.</span>
-                  <br />
+                  <span style="position:relative; bottom: 100px; font-size: 44px;">Evaluation Sector</span>
+                  <br/>
                 </h1>
               </div>
-              <img
-                alt="image"
-                src="/playground_assets/gray-vector.svg"
-                class="home-image"
-              />
               <img
                 alt="image"
                 src="/playground_assets/white-vector.svg"
@@ -130,67 +169,39 @@
             </div>
           </div>
           <div class="home-section1">
-            <h1 class="home-text03">Carat Client List!</h1>
-            <div class="home-feature-card">
-              <a
-                href="https://play.teleporthq.io/projects/portfolio-page-0x810k/preview/9fa467fc-86c5-4001-96ba-81fb58f06cb4"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="home-link"
-              >
-                <svg viewBox="0 0 1024 1024" class="home-icon">
-                  <path
-                    d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
-                  ></path>
-                </svg>
-              </a>
-              <div class="home-container3">
-                <h2 class="home-text04">
-                  <span>Giorgos Malandrakis.</span>
-                  <br />
+            <h1 class="home-text03" style="border-style: groove solid groove solid; 
+            border-width: 35px; border-color: rgb(38, 76, 180); border-radius: 30px; 
+            width:30%; text-align: center; font-size: 35px;">Client List</h1>
+              <div>
+                <h2 class="names">
+                  <span style="font-family:Georgia, 'Times New Roman', Times, serif">Giorgos Malandrakis</span>
                 </h2>
-                <span>.</span>
+                <br>
               </div>
-            </div>
-            <div class="home-feature-card1">
-              <svg viewBox="0 0 1024 1024" class="home-icon2">
-                <path
-                  d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
-                ></path>
-              </svg>
               <div class="home-container4">
-                <h2 class="home-text08">
-                  <span>Elon Musk.</span>
-                  <br />
+                <h2 class="home-text08; names">
+                  <span style="font-family:Georgia, 'Times New Roman', Times, serif">Elon Musk</span>
+                  
                 </h2>
+                <br>
               </div>
-            </div>
-            <div class="home-feature-card2">
-              <svg viewBox="0 0 1024 1024" class="home-icon4">
-                <path
-                  d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
-                ></path>
-              </svg>
+           
               <div class="home-container5">
-                <h2 class="home-text11">
-                  <span>Sergi Poula.</span>
-                  <br />
+                <h2 class="home-text11 names">
+                  <span style="font-family:Georgia, 'Times New Roman', Times, serif">Sergi Poula</span>
                 </h2>
+                <br>
               </div>
-            </div>
-            <div class="home-feature-card3">
-              <svg viewBox="0 0 1024 1024" class="home-icon6">
-                <path
-                  d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
-                ></path>
-              </svg>
+          
+            
+              
               <div class="home-container6">
-                <h2 class="home-text14">
-                  <span>Marsild Mali</span>
-                  <br />
+                <h2 class="home-text14 names">
+                  <span style="font-family:Georgia, 'Times New Roman', Times, serif">Marsild Mali</span>
                 </h2>
+                <br>
               </div>
-            </div>
+            
           </div>
         </div>
       </div>

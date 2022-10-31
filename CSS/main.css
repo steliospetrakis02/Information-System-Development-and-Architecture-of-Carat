@@ -309,7 +309,7 @@
     background-color: var(--dl-color-pimary-900);
   }
   .home-text03 {
-    color: #6a82aa;
+    color: black;
     height: 55px;
   }
   .home-feature-card {
@@ -340,7 +340,7 @@
     justify-content: flex-start;
   }
   .home-text04 {
-    color: #2e5dcc;
+    color: #000000;
     font-weight: 600;
     margin-bottom: var(--dl-space-space-unit);
   }
@@ -367,7 +367,7 @@
     justify-content: flex-start;
   }
   .home-text08 {
-    color: #2e5dcc;
+    color: black;
     font-weight: 600;
     margin-bottom: var(--dl-space-space-unit);
   }
@@ -394,7 +394,7 @@
     justify-content: flex-start;
   }
   .home-text11 {
-    color: #2e5dcc;
+    color: black;
     font-weight: 600;
     margin-bottom: var(--dl-space-space-unit);
   }
@@ -421,7 +421,7 @@
     justify-content: flex-start;
   }
   .home-text14 {
-    color: #2e5dcc;
+    color: black;
     font-weight: 600;
     margin-bottom: var(--dl-space-space-unit);
   }

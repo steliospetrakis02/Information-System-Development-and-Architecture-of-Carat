@@ -1,5 +1,5 @@
 .historytable {
-  max-width: 600px;
+  max-width: 800px;
   width: 100%;
   border-radius: 12px;
 }
@@ -61,7 +61,7 @@
   color: #35d8ac;
   font-weight: 700;
   font-size: 34px;
-  margin-left: 330px;
+  margin-left: 110%;
 }
 .historytable_date > span {
   opacity: 0.8;
