@@ -1,10 +1,12 @@
 use ismgroup60;
 
-DROP TABLE Preferences;
-DROP TABLE Media_Manager;
-DROP TABLE Media_Planner;
-DROP TABLE Employee;
+DROP TABLE evaluation;
 DROP TABLE Client_;
+DROP TABLE Goals;
+DROP TABLE Employee;
+DROP TABLE Preferences;
+DROP TABLE user_reports;
+DROP TABLE Reports;
 DROP TABLE User_;
 
 
@@ -24,27 +26,10 @@ CREATE TABLE Employee
                 PRIMARY KEY(employee_id)
                 );
 
-CREATE TABLE Client_
-				(campaign VARCHAR(20),
-                Company_name VARCHAR(20),
-                email VARCHAR(20),
-				FOREIGN KEY (email) REFERENCES User_(email),
-                PRIMARY KEY(email)
-				);
+
                 
-CREATE TABLE Media_Planner
-				(
-                employee_id INTEGER ,
-				FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
-                PRIMARY KEY(employee_id)
-                );
-                
-CREATE TABLE Media_Manager
-				(
-                employee_id INTEGER,
-				email VARCHAR(10) ,
-				FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
-                );
+
+
 CREATE TABLE Preferences
 				(
                 budget INTEGER,
@@ -52,7 +37,59 @@ CREATE TABLE Preferences
                 Company_name VARCHAR(20),
                 Format_ VARCHAR(20),
                 email VARCHAR(20),
-				FOREIGN KEY (email) REFERENCES client_(email),
                 PRIMARY KEY(Company_name)
                 );
+
+
+
+Create TABLE Reports
+				(
+                company VARCHAR(20),
+                campaign_name VARCHAR(20),
+                start_date DATETIME,
+                end_date DATETIME,
+                Data_  integer,
+                report_id INTEGER,
+                PRIMARY KEY(company)
+                );
+                
+CREATE TABLE User_Reports
+				(
+				company VARCHAR(20),
+                email VARCHAR(20),
+				FOREIGN KEY (company) REFERENCES Reports(company),
+				FOREIGN KEY (email) REFERENCES user_(email)
+                );
+                
+CREATE TABLE Goals
+				(
+                target_goals INTEGER,
+                report_id INTEGER,
+                goals_id INTEGER,
+                email VARCHAR(20),
+                Primary Key(goals_id)
+                );
+                
+CREATE TABLE Client_
+				(campaign VARCHAR(20),
+                Company_name VARCHAR(20),
+                email VARCHAR(20),
+                goals_id INTEGER,
+				FOREIGN KEY (email) REFERENCES User_(email),
+                FOREIGN KEY (goals_id) REFERENCES Goals(goals_id),
+				FOREIGN KEY (Company_name) REFERENCES preferences(Company_name),
+                PRIMARY KEY(email)
+				);
+CREATE TABLE Evaluation
+				(
+                reports INTEGER,
+				email VARCHAR(20),
+                staff INTEGER,
+                goals INTEGER,
+                FareWell INTEGER,
+                Extra_FeedBack VARCHAR(100),
+				FOREIGN KEY (email) REFERENCES client_(email)
+				);
+
+
                 
