@@ -1,14 +1,14 @@
 use ismgroup60;
 
-DROP TABLE goals;
-DROP TABLE preferences;
-DROP TABLE evaluation;
+DROP TABLE User_;
 DROP TABLE client_;
+DROP TABLE goals;
+DROP TABLE evaluation;
+DROP TABLE preferences;
+DROP TABLE Employee;
 DROP TABLE media_manager;
 DROP TABLE media_planner;
 DROP TABLE reports;
-DROP TABLE Employee;
-DROP TABLE User_;
 
 
 
@@ -52,10 +52,15 @@ CREATE TABLE media_manager
                 );
 CREATE TABLE preferences
 				(
-                budget INTEGER,
-				indicators VARCHAR(10) ,
+                indicator1 VARCHAR(10),
+                indicator2 VARCHAR(10),
+                indicator3 VARCHAR(10),
+                indicator4 VARCHAR(10),
+                indicator5 VARCHAR(10),
+                start_indicator1 VARCHAR(10),
+                start_indicator2 VARCHAR(10),
+                start_indicator3 VARCHAR(10),
                 Company_name VARCHAR(20),
-                Format_ VARCHAR(20),
                 email VARCHAR(20),
 				FOREIGN KEY (email) REFERENCES client_(email),
                 PRIMARY KEY(Company_name)
@@ -85,7 +90,11 @@ CREATE TABLE evaluation
 CREATE TABLE goals
 				(
                 email VARCHAR(20),
-                target_goals INTEGER(11),
+                target_goals1 INTEGER(11),
+                target_goals2 INTEGER(11),
+                target_goals3 INTEGER(11),
+                target_goals4 INTEGER(11),
+                target_goals5 INTEGER(11),
                 report_id INTEGER(11),
                 goald_id INTEGER(11), 
                 FOREIGN KEY(email) REFERENCES client_(email)
