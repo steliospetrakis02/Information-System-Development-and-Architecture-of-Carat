@@ -8,13 +8,14 @@ DROP TABLE preferences;
 DROP TABLE Employee;
 DROP TABLE media_manager;
 DROP TABLE media_planner;
+DROP TABLE report_data;
 DROP TABLE reports;
 
 
 
 
 CREATE TABLE User_
-				(email VARCHAR(20),
+				(email VARCHAR(40),
 				 passwrd VARCHAR(20),
                  PRIMARY KEY (email),
                  sex VARCHAR(10),
@@ -65,6 +66,16 @@ CREATE TABLE preferences
 				FOREIGN KEY (email) REFERENCES client_(email),
                 PRIMARY KEY(Company_name)
                 );
+CREATE TABLE report_data
+				(
+                Cl1 VARCHAR(20),
+                Cl2 VARCHAR(20),
+                Quatra VARCHAR(20),
+                Years VARCHAR(20),
+                specific_data VARCHAR(20),
+                PRIMARY KEY(specific_data)
+                );
+                
 CREATE TABLE reports
 				(
                 reports_id VARCHAR(20),
@@ -73,8 +84,10 @@ CREATE TABLE reports
                 date_ DATE,
                 type_ VARCHAR(20),
                 employee_id INTEGER(11),
+                specific_data VARCHAR(20),
                 PRIMARY KEY(reports_id),
-                FOREIGN KEY(employee_id) REFERENCES employee(employee_id)
+                FOREIGN KEY(employee_id) REFERENCES employee(employee_id),
+                FOREIGN KEY(specific_data) REFERENCES report_data(specific_data)
                 );
                 
 CREATE TABLE evaluation
