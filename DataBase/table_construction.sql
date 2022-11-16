@@ -37,20 +37,8 @@ CREATE TABLE client_
 				FOREIGN KEY (email) REFERENCES User_(email),
                 PRIMARY KEY(email)
 				);
-                
-CREATE TABLE media_planner
-				(
-                employee_id INTEGER ,
-				FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
-                PRIMARY KEY(employee_id)
-                );
-                
-CREATE TABLE media_manager
-				(
-                employee_id INTEGER,
-				email VARCHAR(10) ,
-				FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
-                );
+				
+				
 CREATE TABLE preferences
 				(
                 indicator1 VARCHAR(10),
@@ -58,9 +46,9 @@ CREATE TABLE preferences
                 indicator3 VARCHAR(10),
                 indicator4 VARCHAR(10),
                 indicator5 VARCHAR(10),
-                start_indicator1 VARCHAR(10),
-                start_indicator2 VARCHAR(10),
-                start_indicator3 VARCHAR(10),
+                stat_indicator1 VARCHAR(10),
+                stat_indicator2 VARCHAR(10),
+                stat_indicator3 VARCHAR(10),
                 Company_name VARCHAR(20),
                 email VARCHAR(20),
 				FOREIGN KEY (email) REFERENCES client_(email),
@@ -94,8 +82,23 @@ CREATE TABLE evaluation
 				(
                 email VARCHAR(20),
                 reports INTEGER(11),
+		r_report1 INTEGER(11)
+		r_report2 INTEGER(11)
+		r_report3 INTEGER(11)
+		r_report4 INTEGER(11)
+		r_report5 INTEGER(11)
                 staff INTEGER(11),
+		s_report1 INTEGER(11)
+		s_report2 INTEGER(11)
+		s_report3 INTEGER(11)
+		s_report4 INTEGER(11)
+		s_report5 INTEGER(11)		
                 goals INTEGER(11),
+		g_report1 INTEGER(11)
+		g_report2 INTEGER(11)
+		g_report3 INTEGER(11)
+		g_report4 INTEGER(11)
+		g_report5 INTEGER(11)
                 Farewell INTEGER(11),
                 Extra_Feedback VARCHAR(100),
                 FOREIGN KEY(email) REFERENCES client_(email)
