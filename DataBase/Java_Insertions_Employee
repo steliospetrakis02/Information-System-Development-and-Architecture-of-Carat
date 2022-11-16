@@ -9,7 +9,7 @@ public class main{
 				  emailAddress += alphabet.substring(character, character + 1);
 				  emailAddress += Integer.valueOf((int) (Math.random() * 99)).toString();
 				  emailAddress += "@gmail.com"
-						  return emailAddress;
+				  return emailAddress;
 			  }
 		  	}
 		  public integer getrandomNumber() {
