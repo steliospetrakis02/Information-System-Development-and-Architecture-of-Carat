@@ -6,8 +6,6 @@ DROP TABLE goals;
 DROP TABLE evaluation;
 DROP TABLE preferences;
 DROP TABLE Employee;
-DROP TABLE media_manager;
-DROP TABLE media_planner;
 DROP TABLE report_data;
 DROP TABLE reports;
 
@@ -82,23 +80,23 @@ CREATE TABLE evaluation
 				(
                 email VARCHAR(20),
                 reports INTEGER(11),
-		r_report1 INTEGER(11)
-		r_report2 INTEGER(11)
-		r_report3 INTEGER(11)
-		r_report4 INTEGER(11)
-		r_report5 INTEGER(11)
+				r_report1 INTEGER(11),
+                r_report2 INTEGER(11),
+				r_report3 INTEGER(11),
+				r_report4 INTEGER(11),
+				r_report5 INTEGER(11),
                 staff INTEGER(11),
-		s_report1 INTEGER(11)
-		s_report2 INTEGER(11)
-		s_report3 INTEGER(11)
-		s_report4 INTEGER(11)
-		s_report5 INTEGER(11)		
+				s_report1 INTEGER(11),
+				s_report2 INTEGER(11),
+				s_report3 INTEGER(11),
+				s_report4 INTEGER(11),
+				s_report5 INTEGER(11),		
                 goals INTEGER(11),
-		g_report1 INTEGER(11)
-		g_report2 INTEGER(11)
-		g_report3 INTEGER(11)
-		g_report4 INTEGER(11)
-		g_report5 INTEGER(11)
+				g_report1 INTEGER(11),
+				g_report2 INTEGER(11),
+				g_report3 INTEGER(11),
+				g_report4 INTEGER(11),
+				g_report5 INTEGER(11),
                 Farewell INTEGER(11),
                 Extra_Feedback VARCHAR(100),
                 FOREIGN KEY(email) REFERENCES client_(email)
