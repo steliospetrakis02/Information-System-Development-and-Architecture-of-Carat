@@ -1,0 +1,39 @@
+import java.util.Random;
+public class main{
+	  public static void main(String[] args) {
+		  public String getemailString() {
+			  String emailAddress = "";
+			  String alphabet = "abcdefghijklmnopqrstuvwxyz";
+			  while (emailAddress.length() < 5) {
+				  int character = (int) (Math.random() * 26);
+				  emailAddress += alphabet.substring(character, character + 1);
+				  emailAddress += Integer.valueOf((int) (Math.random() * 99)).toString();
+				  emailAddress += "@gmail.com"
+						  return emailAddress;
+			  }
+		  	}
+		  public integer getrandomNumber() {
+			  Random rand = new Random(); 
+			  int upperbound = 25;
+			  int int_random = rand.nextInt(upperbound);
+			  return int_random;
+		  }
+		  // first we make the connection to the database.
+		  // WE NEED HERE THE URL OF OUR DATABASE MYSQL WORKSPACE!
+		  Connection conn = DriverManager.getConnection(myUrl, "root", "");
+		  
+		  //now we start the insertions to table Employee.
+		  String query = " insert into Employee (Emplouyee_id, email)"
+			        + " values (?, ?)";
+
+			      // create the mysql insert preparedstatement
+		  		  for (int i = 0; i<=25; i++) {
+			      PreparedStatement preparedStmt = conn.prepareStatement(query);
+			      preparedStmt.setInt (1, getrandomNumber());
+			      preparedStmt.setString (2, getemailString());
+			      // execute.
+			      preparedStmt.execute();
+		  		  }
+			      conn.close();
+}
+}
