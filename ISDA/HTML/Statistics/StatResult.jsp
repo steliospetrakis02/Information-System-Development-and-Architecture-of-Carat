@@ -157,22 +157,66 @@
                 <img src="../../IMAGES/Statistics/logo2.jpg" alt="Responsive image" style="width:230px;height:200px; 
                 margin-left: 38%;">
             </div>
-            
+            <% double dev_1 = request.getParameter("real_dev_1")
+            double dev_2 = request.getParameter("real_dev_2")
+            double dev_3 = request.getParameter("real_dev_3") %>
             <div class="col-sm-1"></div>
             <div class="col-sm-2" style="border-style:inset; border-color:#25b7c4;
             border-width: 18px;">
-                <h2>Increase: <%= request.getParameter("real_dev_1")%>%   <span style="color:rgb(31, 219, 31); font-size: 38px;">&#8599;</span></h2>
+                <h2>
+                <% if (dev_1 > 0) { %>
+                    Increase:
+
+                <% } else { %>
+                    Decrease:
+
+                <% } %> 
+                <%= dev_1%>%   
+                <% if (dev_1 > 0) { %>
+                    <span style="color:rgb(31, 219, 31); font-size: 38px;">&#8599;</span>
+
+                <% } else { %>
+                    <span style="color:rgb(241, 55, 55); font-size: 38px;">&#8600;</span>
+
+                <% } %></h2>
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-2" style="border-style:inset; border-color:#25b7c4;
             border-width: 18px;">
-                <h2>Decrease: <%= request.getParameter("real_dev_2")%>%   <span style="color:rgb(241, 55, 55); font-size: 38px;">&#8600;</span></h2>
-            </div>
-            <div class="col-sm-1"></div>
+                <h2>
+                <% if (dev_2 > 0) { %>
+                    Increase:
+
+                <% } else { %>
+                    Decrease:
+
+                <% } %> 
+                <%= dev_2%>%   
+                <% if (dev_ > 0) { %>
+                    <span style="color:rgb(31, 219, 31); font-size: 38px;">&#8599;</span>
+
+                <% } else { %>
+                    <span style="color:rgb(241, 55, 55); font-size: 38px;">&#8600;</span>
+
+                <% } %></h2><div class="col-sm-1"></div>
             <div class="col-sm-2" style="border-style:inset; border-color:#25b7c4;
             border-width: 18px;">
-                 <h2>Increase: <%= request.getParameter("real_dev_3")%>%   <span style="color:rgb(31, 219, 31); font-size: 38px;">&#8599;</span></h2>
-            </div></div>
+                <h2>
+                <% if (dev_3 > 0) { %>
+                    Increase:
+
+                <% } else { %>
+                    Decrease:
+
+                <% } %> 
+                <%= dev_3%>%   
+                <% if (dev_3 > 0) { %>
+                    <span style="color:rgb(31, 219, 31); font-size: 38px;">&#8599;</span>
+
+                <% } else { %>
+                    <span style="color:rgb(241, 55, 55); font-size: 38px;">&#8600;</span>
+
+                <% } %></h2>
 
   </body>
 </html> 
