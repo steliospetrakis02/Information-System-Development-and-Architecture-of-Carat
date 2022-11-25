@@ -1,5 +1,4 @@
 package Servlets;
-
 import java.io.*;
 import java.text.*;
 import java.util.*;
@@ -11,7 +10,7 @@ public class Data_connection {
 
     
 
-    public void open() throws SQLException {
+    public Connection get_connection() throws SQLException {
         try {
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -24,6 +23,7 @@ public class Data_connection {
           con = DriverManager.getConnection(
               "jdbc:mysql://195.251.249.131:3306/ismgroup60",
               "ismgroup60", "82gyrs");
+              return con;
                            
         } catch (Exception e2) {
           errorMessages = "Could not establish connection with the Database Server: <br>"
@@ -33,9 +33,21 @@ public class Data_connection {
         }
     
       }
+      public void close() throws SQLException {
 
-      public Connection get_con(){
-        return con;
-
+        try {
+    
+          // if connection is (still) open
+          if (con != null)
+            con.close(); // close the connection to the database to end database session
+    
+        } catch (SQLException e) {
+    
+          throw new SQLException("Could not close connection with the Database Server: " 
+            + e.getMessage());
+        }
+        
       }
+
+      
 }
