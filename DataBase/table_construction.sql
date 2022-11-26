@@ -56,9 +56,9 @@ CREATE TABLE report_data
 				(
                 Cl1 VARCHAR(20),
                 Cl2 VARCHAR(20),
-                Quatra VARCHAR(20),
-                Years VARCHAR(20),
-                specific_data VARCHAR(20),
+                Quatra INTEGER(10),
+                Years INTEGER(10),
+                specific_data VARCHAR(50),
                 PRIMARY KEY(specific_data)
                 );
                 
@@ -66,11 +66,14 @@ CREATE TABLE reports
 				(
                 reports_id VARCHAR(20),
                 size DOUBLE,
-                indicators VARCHAR(10),
+                GRPs DOUBLE,
+                Impressions Int(10),
+                Clicks Integer(10),
+                Click_Rate DOUBLE,
                 date_ DATE,
                 type_ VARCHAR(20),
                 employee_id INTEGER(11),
-                specific_data VARCHAR(20),
+                specific_data VARCHAR(50),
                 PRIMARY KEY(reports_id),
                 FOREIGN KEY(employee_id) REFERENCES employee(employee_id),
                 FOREIGN KEY(specific_data) REFERENCES report_data(specific_data)
