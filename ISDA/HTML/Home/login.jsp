@@ -1,4 +1,7 @@
-<!DOCTYPE html>text
+<%@ page import="Servlets.LoginHandlerServlet"%>
+<%@ page import="Servlets.User"%>
+
+<!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -7,8 +10,8 @@
     <title>login</title>
     <link rel="stylesheet" href="../../CSS/Home/nicepage.css" media="screen">
 <link rel="stylesheet" href="../../CSS/Home/login.css" media="screen">
-    <script class="u-script" type="text/javascript" src="../JS/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="../JS/nicepage.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="../../JS/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="../../JS/nicepage.js" defer=""></script>
     
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
@@ -71,14 +74,14 @@ borders: top right bottom left !important
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,700">
           <link rel="stylesheet" href="./style.css"><!-- partial:index.partial.jsp -->
           <div class="login-form">
-            <form action="">
+            <form method="POST" action="/servlet/Servlets.LoginHandlerServlet">
               <h1>Login</h1>
               <div class="content">
                 <div class="input-field">
-                  <input type="email" placeholder="Email" autocomplete="nope">
+                  <input type="email" name="email" placeholder="Email" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                  <input type="password" placeholder="Password" autocomplete="new-password">
+                  <input type="password" name="password" placeholder="Password" autocomplete="new-password">
                 </div>
                 <a href="#" class="link">Forgot Your Password?</a>
               </div>
@@ -86,7 +89,7 @@ borders: top right bottom left !important
                 <form>
                   <button formaction="register.jsp">REGISTER</button>
                 </form>
-                <button formaction="finalmain.jsp">Sign in</button>
+                <button>Sign in</button>
               </div>
             </form>
           </div><!-- partial -->
