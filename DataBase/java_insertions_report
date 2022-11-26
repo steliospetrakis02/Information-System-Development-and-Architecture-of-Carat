@@ -1,0 +1,78 @@
+import java.util.GregorianCalendar;
+import java.util.Random;
+public class Database {
+public static void main(String[] args) {
+	Database a = new Database();
+	public final static pl = 0;
+}
+public integer reports_id() {
+	pl = pl + 1;
+	return pl;
+}
+
+public double size() {
+	int min = 200;
+	int max = 400;
+	double rand = Math.random()*(max-min+1)+min;
+	return rand;
+}
+public double GRP() {
+	int min = 0;
+	int max = 150;
+	double rand = Math.random()*(max-min+1)+min;
+	return rand;
+}
+public int Impressions() {
+	int min= 1;
+	int max= 30;
+	int imp = (int)(Math.random()*(max-min+1)+min);
+	return imp;
+}
+public int Clicks() {
+	int min= 1;
+	int max= 50;
+	int click = (int)(Math.random()*(max-min+1)+min);
+	return click;
+}
+public double Click_Rate() {
+	int min = 0;
+	int max = 100;
+	double rate = Math.random()*(max-min+1)+min;
+	return rate;
+}
+public void Date() {
+	  GregorianCalendar gc = new GregorianCalendar();
+
+      int year = randBetween(1900, 2010);
+
+      gc.set(gc.YEAR, year);
+
+      int dayOfYear = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
+
+      gc.set(gc.DAY_OF_YEAR, dayOfYear);
+
+      System.out.println(gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH));
+
+  }
+
+public int employee_id() {
+	int min= 1;
+	int max= 4;
+	int employee = (int)(Math.random()*(max-min+1)+min);
+	return employee;
+}
+// ΕΔΩ ΒΡΙΚΣΟΝΤΑΙ ΤΑ ΓΝΩΡΙΣΜΑΤΑ ΤΟΥ TABLE report_Data
+public int Quatra() {
+	int min= 1;
+	int max= 3;
+	int Q = (int)(Math.random()*(max-min+1)+min);
+	return Q;
+}
+public int Years() {
+	int min= 2020;
+	int max= 2023;
+	int Y = (int)(Math.random()*(max-min+1)+min);
+	return Y;
+}
+
+}
