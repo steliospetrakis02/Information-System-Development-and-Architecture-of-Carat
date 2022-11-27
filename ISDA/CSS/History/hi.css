@@ -75,10 +75,11 @@ body {
   margin: 0;
   display: grid;
   height: 100vh;
-  place-items: center;
   font-family: "Source Sans Pro", sans-serif;
 }
 
 .historytable {
   box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.4);
+  margin-left: auto;
+  margin-right: auto;
 }

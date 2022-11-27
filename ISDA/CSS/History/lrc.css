@@ -37,7 +37,7 @@ td{
   border-bottom: solid 1px rgba(255,255,255,0.1);
 }
 
-.row{
+.table-row{
   background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
   background: linear-gradient(to right, #25b7c4, #845ddf);
 }
@@ -47,7 +47,7 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 section{
-  margin: 50px;
+  margin: 0px;
 }
 
 
