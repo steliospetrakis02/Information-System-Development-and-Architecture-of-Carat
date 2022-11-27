@@ -124,8 +124,8 @@
           <div class="u-repeater u-repeater-1">
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
-                <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/evaluation.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Evaluation/startingpage.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Evaluation</a>
+                <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
+                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-2">
@@ -152,22 +152,16 @@
                 <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-5">Set goals</a>
               </div>
             </div>
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-6">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-8">
-                <img class="u-image u-image-circle u-image-6" src="../../IMAGES/Home/myaccount.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Account/manageAccount.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-6">Manage Account</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div class="u-align-center u-container-style u-shape-rectangle u-tab-pane" id="tab-14b7" role="tabpanel" aria-labelledby="link-tab-14b7">
         <div class="u-container-layout u-valign-middle u-container-layout-9">
           <div class="u-repeater u-repeater-2">
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-7">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-10">
-                <img class="u-image u-image-circle u-image-7" src="../../IMAGES/Home/evaluation.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Evaluation/startingpage.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-7">Evaluation</a>
+            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
+                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-8">
@@ -194,22 +188,16 @@
                 <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-11">Set goals</a>
               </div>
             </div>
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-12">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-15">
-                <img class="u-image u-image-circle u-image-12" src="../../IMAGES/Home/myaccount.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Account/manageAccount.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-12">Manage Account</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div class="u-align-center u-container-style u-shape-rectangle u-tab-pane" id="tab-2917" role="tabpanel" aria-labelledby="link-tab-2917">
         <div class="u-container-layout u-valign-middle u-container-layout-16">
           <div class="u-repeater u-repeater-3">
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-13">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-17">
-                <img class="u-image u-image-circle u-image-13" src="../../IMAGES/Home/evaluation.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Evaluation/startingpage.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-13">Evaluation</a>
+            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
+                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-14">
@@ -234,12 +222,6 @@
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-21">
                 <img class="u-image u-image-circle u-image-17" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
                 <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-17">Set goals</a>
-              </div>
-            </div>
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-18">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-22">
-                <img class="u-image u-image-circle u-image-18" src="../../IMAGES/Home/myaccount.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Account/manageAccount.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-18">Manage Account</a>
               </div>
             </div>
           </div>
@@ -267,10 +249,10 @@
       <div class="u-align-center u-container-style u-shape-rectangle u-tab-active u-tab-pane" id="tab-0da5" role="tabpanel" aria-labelledby="link-tab-0da5">
         <div class="u-container-layout u-valign-middle u-container-layout-24">
           <div class="u-repeater u-repeater-4">
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-19">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-25">
-                <img class="u-image u-image-circle u-image-19" src="../../IMAGES/Home/evaluation.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Evaluation/startingpage.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-19">Evaluation</a>
+            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
+                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-20">
@@ -297,22 +279,16 @@
                 <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-23">Set goals</a>
               </div>
             </div>
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-24">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-30">
-                <img class="u-image u-image-circle u-image-24" src="../../IMAGES/Home/myaccount.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Account/manageAccount.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-24">Manage Account</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div class="u-align-center u-container-style u-shape-rectangle u-tab-pane" id="tab-14b7" role="tabpanel" aria-labelledby="link-tab-14b7">
         <div class="u-container-layout u-valign-middle u-container-layout-31">
           <div class="u-repeater u-repeater-5">
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-25">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-32">
-                <img class="u-image u-image-circle u-image-25" src="../../IMAGES/Home/evaluation.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Evaluation/startingpage.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-25">Evaluation</a>
+            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
+                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-26">
@@ -339,22 +315,16 @@
                 <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-29">Set goals</a>
               </div>
             </div>
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-30">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-37">
-                <img class="u-image u-image-circle u-image-30" src="../../IMAGES/Home/myaccount.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Account/manageAccount.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-30">Manage Account</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div class="u-align-center u-container-style u-shape-rectangle u-tab-pane" id="link-tab-93fc" role="tabpanel" aria-labelledby="tab-93fc">
         <div class="u-container-layout u-valign-middle u-container-layout-38">
           <div class="u-repeater u-repeater-6">
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-31">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-39">
-                <img class="u-image u-image-circle u-image-31" src="../../IMAGES/Home/evaluation.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Evaluation/startingpage.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-31">Evaluation</a>
+            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
+                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-32">
@@ -379,12 +349,6 @@
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-43">
                 <img class="u-image u-image-circle u-image-35" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
                 <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-35">Set goals</a>
-              </div>
-            </div>
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-36">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-44">
-                <img class="u-image u-image-circle u-image-36" src="../../IMAGES/Home/myaccount.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Account/manageAccount.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-36">Manage Account</a>
               </div>
             </div>
           </div>
@@ -412,10 +376,10 @@
       <div class="u-align-center u-container-style u-shape-rectangle u-tab-active u-tab-pane" id="tab-0da5" role="tabpanel" aria-labelledby="link-tab-0da5">
         <div class="u-container-layout u-valign-middle u-container-layout-46">
           <div class="u-repeater u-repeater-7">
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-37">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-47">
-                <img class="u-image u-image-circle u-image-37" src="../../IMAGES/Home/evaluation.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Evaluation/startingpage.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-37">Evaluation</a>
+            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
+                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-38">
@@ -442,22 +406,16 @@
                 <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-41">Set goals</a>
               </div>
             </div>
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-42">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-52">
-                <img class="u-image u-image-circle u-image-42" src="../../IMAGES/Home/myaccount.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Account/manageAccount.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-42">Manage Account</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div class="u-align-center u-container-style u-shape-rectangle u-tab-pane" id="tab-14b7" role="tabpanel" aria-labelledby="link-tab-14b7">
         <div class="u-container-layout u-valign-middle u-container-layout-53">
           <div class="u-repeater u-repeater-8">
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-43">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-54">
-                <img class="u-image u-image-circle u-image-43" src="../../IMAGES/Home/evaluation.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Evaluation/startingpage.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-43">Evaluation</a>
+            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
+                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-44">
@@ -484,22 +442,16 @@
                 <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-47">Set goals</a>
               </div>
             </div>
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-48">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-59">
-                <img class="u-image u-image-circle u-image-48" src="../../IMAGES/Home/myaccount.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Account/manageAccount.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-48">Manage Account</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div class="u-align-center u-container-style u-shape-rectangle u-tab-pane" id="link-tab-93fc" role="tabpanel" aria-labelledby="tab-93fc">
         <div class="u-container-layout u-valign-middle u-container-layout-60">
           <div class="u-repeater u-repeater-9">
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-49">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-61">
-                <img class="u-image u-image-circle u-image-49" src="../../IMAGES/Home/evaluation.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Evaluation/startingpage.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-49">Evaluation</a>
+            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
+              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
+                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-50">
@@ -524,12 +476,6 @@
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-65">
                 <img class="u-image u-image-circle u-image-53" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
                 <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-53">Set goals</a>
-              </div>
-            </div>
-            <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-54">
-              <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-66">
-                <img class="u-image u-image-circle u-image-54" src="../../IMAGES/Home/myaccount.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Account/manageAccount.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-54">Manage Account</a>
               </div>
             </div>
           </div>
