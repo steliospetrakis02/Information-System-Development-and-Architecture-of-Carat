@@ -1,11 +1,22 @@
+import java.sql.*;
 import java.util.GregorianCalendar;
-import java.util.Random;
 public class Database {
 public static void main(String[] args) {
 	Database a = new Database();
-	public final static pl = 0;
+	public class Globals {
+	    public final static int pl = 0;
+	}
+	try {
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ismgroup60","ismgroup60","82gyrs");
+		Statement stmt=con.createStatement();
+		for (int i =0; i<15; i++) {
+			stmt.executeUpdate("INSERT INTO reports " + "VALUES (a.reports_id(), a.size(),a.GRP() ,a.Impressions(), a.Clicks(), a.Click_Rate(), a.Date(), 'informative report', a.employee_id(), a.specific_data())");
+		}
+	}catch(Exception e) {
+		System.out.print("Could not insert values to table 'reports'",e);
+	}
 }
-public integer reports_id() {
+public int reports_id() {
 	pl = pl + 1;
 	return pl;
 }
@@ -42,37 +53,39 @@ public double Click_Rate() {
 }
 public void Date() {
 	  GregorianCalendar gc = new GregorianCalendar();
-
-      int year = randBetween(1900, 2010);
+	  int min= 2020;
+	  int max= 2023;
+	  int year = (int)(Math.random()*(max-min+1)+min);
 
       gc.set(gc.YEAR, year);
-
-      int dayOfYear = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
+      int min1= 1;
+      int max1= gc.getActualMaximum(gc.DAY_OF_YEAR);
+      int dayOfYear = (int)(Math.random()*(max-min+1)+min);
 
       gc.set(gc.DAY_OF_YEAR, dayOfYear);
 
       System.out.println(gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH));
 
-  }
-
+}
 public int employee_id() {
 	int min= 1;
 	int max= 4;
 	int employee = (int)(Math.random()*(max-min+1)+min);
 	return employee;
 }
-// ΕΔΩ ΒΡΙΚΣΟΝΤΑΙ ΤΑ ΓΝΩΡΙΣΜΑΤΑ ΤΟΥ TABLE report_Data
-public int Quatra() {
+public void specific_data() {
 	int min= 1;
-	int max= 3;
-	int Q = (int)(Math.random()*(max-min+1)+min);
-	return Q;
+	int max= 2;
+	int r = (int)(Math.random()*(max-min+1)+min);
+	if (r==1) {
+		String d;
+		d = "decreased";
+	}else {
+		String d;
+		d= "increased";
+	}
+	System.out.println("Hello!, This is your informative message about your campaign.");
+	System.out.println("Your sales have" + "" + d + "" + "from last time.");
+	System.out.println("");
 }
-public int Years() {
-	int min= 2020;
-	int max= 2023;
-	int Y = (int)(Math.random()*(max-min+1)+min);
-	return Y;
-}
-
 }
