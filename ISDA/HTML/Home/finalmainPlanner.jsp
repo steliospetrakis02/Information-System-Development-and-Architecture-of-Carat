@@ -24,65 +24,41 @@
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
   </head>
-  <body data-home-page="Home.jsp" data-home-page-title="Home" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header" id="sec-b440" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="80" data-image-height="40">
-          <img src="../../IMAGES/Home/logo3.png" class="u-logo-image u-logo-image-1">
-        </a>
-        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; text-transform: uppercase; font-weight: 500;">
-            <a class="u-button-style u-custom-active-color u-custom-border u-custom-border-color u-custom-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-            </a>
-          </div>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-sticky u-sticky-65f3 u-white u-header" id="sec-6ecb"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
+      <img src="../../IMAGES/Home/logo3.png" class="u-logo-image u-logo-image-1">
+    </a>
+        <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1">
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-palette-1-base u-button-style u-hover-palette-1-base u-nav-link u-text-active-white u-text-grey-90 u-text-hover-white u-white" href="Home.jsp" style="padding: 10px 20px;">Logout</a>
+            <ul class="u-nav u-spacing-15 u-unstyled u-nav-1">
+              <li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="Home.jsp" style="padding: 10px 20px;">LOGOUT</a>
+         </li><div class="dropdown">
+          <button class="dropbtn">Choose Client</button>
+          <div class="dropdown-content">
+            <a href="#">AEGEAN</a>
+            <a href="#">VODAFONE</a>
+          </div>
+        </div>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
+               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Logout</a>
-                <ul class="u-align-center u-nav u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-hover-palette-1-base u-nav-link u-palette-1-light-2" href="">Choose client</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="">VODAFONE</a>
-
-                </li></ul>
+                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a>
+                      <div class="dropdown">
+                        <button class="dropbtn">Dropdown</button>
+                        <div class="dropdown-content">
+                          <a href="#">Link 1</a>
+                          <a href="#">Link 2</a>
+                          <a href="#">Link 3</a>
+                        </div>
+                      </div>
+                    </li></ul>
               </div>
-            </div>
           </div>
-          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-        </div>
       </nav>
-      <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-2">
-        <div class="menu-collapse">
-          <a class="u-button-style u-custom-color u-custom-hover-color u-nav-link" href="#">
-            <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e868"></use></svg>
-            <svg class="u-svg-content" version="1.1" id="svg-e868" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-          </a>
-        </div>
-        <div class="u-custom-menu u-nav-container">
-          <ul class="u-nav u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-hover-palette-1-base u-nav-link u-palette-1-light-2" href="">Choose client</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="">AEGEAN</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="">VODAFONE</a>
-</li></ul>
 </div>
-</li></ul>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-5"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="">AEGEAN</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="">AEGEAN</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="">vodafone</a>
-</li></ul>
-</div>
-</li></ul>
-</div>
-</div>
-<div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-</div>
-</nav>
-</div></header>
+</header>
 <section class="u-clearfix u-section-1" id="sec-6f0b">
 <div class="u-clearfix u-sheet u-sheet-1">
 <img class="u-expanded-width u-image u-image-default u-image-1" src="../../IMAGES/Home/consulting-firm-project-management.jpg" alt="" data-image-width="400" data-image-height="265">
