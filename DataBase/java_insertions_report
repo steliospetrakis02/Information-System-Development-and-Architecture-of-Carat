@@ -7,11 +7,17 @@ public static void main(String[] args) {
 	    public final static int pl = 0;
 	}
 	try {
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ismgroup60","ismgroup60","82gyrs");
+		Class.forName("com.mysql.jdbc.Driver").newInstance();
+	}catch(Exception e) {
+		System.out.print(e);
+	}
+	try {
+		Connection con = DriverManager.getConnection("jdbc:mysql://195.251.249.131:3306/ismgroup60","ismgroup60","82gyrs");
 		Statement stmt=con.createStatement();
 		for (int i =0; i<15; i++) {
 			stmt.executeUpdate("INSERT INTO reports " + "VALUES (a.reports_id(), a.size(),a.GRP() ,a.Impressions(), a.Clicks(), a.Click_Rate(), a.Date(), 'informative report', a.employee_id(), a.specific_data())");
 		}
+		stmt.close();
 	}catch(Exception e) {
 		System.out.print("Could not insert values to table 'reports'",e);
 	}
