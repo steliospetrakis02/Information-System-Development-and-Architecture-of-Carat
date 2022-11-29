@@ -31,20 +31,20 @@
         <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1">
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-spacing-15 u-unstyled u-nav-1">
-              <li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="Home.jsp" style="padding: 10px 20px;">LOGOUT</a>
-         </li><div class="dropdown">
+              <div class="dropdown">
           <button class="dropbtn">Choose Client</button>
           <div class="dropdown-content">
             <a href="#">AEGEAN</a>
             <a href="#">VODAFONE</a>
           </div>
         </div>
+        <li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="Home.jsp" style="padding: 10px 20px;">LOGOUT</a>
+        </li>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
                <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a>
                       <div class="dropdown">
                         <button class="dropbtn">Dropdown</button>
                         <div class="dropdown-content">
@@ -53,18 +53,16 @@
                           <a href="#">Link 3</a>
                         </div>
                       </div>
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Logout</a>
                     </li></ul>
               </div>
           </div>
       </nav>
 </div>
 </header>
-<section class="u-clearfix u-section-1" id="sec-6f0b">
 <div class="u-clearfix u-sheet u-sheet-1">
-<img class="u-expanded-width u-image u-image-default u-image-1" src="../../IMAGES/Home/consulting-firm-project-management.jpg" alt="" data-image-width="400" data-image-height="265">
 <h3 class="u-custom-font u-font-roboto-condensed u-text u-text-body-alt-color u-text-default u-text-1">Welcome, please choose year and time period</h3>
 </div>
-</section>
 <section class="u-align-center u-clearfix u-section-2" id="sec-97b2">
 <div class="u-clearfix u-sheet u-valign-bottom u-sheet-1">
 <div class="u-expanded-width u-tab-links-align-justify u-tabs u-tabs-1">
