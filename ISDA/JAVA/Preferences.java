@@ -1,4 +1,4 @@
-package Servlets;
+
 import java.util.*;
 import java.sql.*;
 import java.util.List;
@@ -8,8 +8,10 @@ import java.util.List;
 public class Preferences {
     
     //private final String userQuery = "select username from users where username =?  and password =?";
-    private PreparedStatement stmt = null;
+    
     private Statement stmt1 = null;
+    private Connection con = null;
+
     private ResultSet rs = null, rs1 = null;
     private final static String staffQuery = "select * from Preferences";
 
@@ -19,8 +21,10 @@ public class Preferences {
 
  
 
-    public List<String> get_Client_Preferences(Connection conn) throws SQLException{
-        stmt1 = conn.createStatement();
+    public List<String> get_Client_Preferences() throws SQLException{
+        Data_connection dc = new Data_connection();
+        con = dc.get_connection();
+        stmt1 = con.createStatement();
         rs1 = stmt1.executeQuery(staffQuery);
         while (rs1.next()){
 
@@ -50,15 +54,17 @@ public class Preferences {
         return client_pref_res;
     }
 
-    public void set_Client_Preferences(Connection conn , String email , String ind1, String ind2 , String ind3, 
+    public void set_Client_Preferences(String email , String ind1, String ind2 , String ind3, 
                                         String ind4, String ind5,String stat_ind_1 , String stat_ind_2,
                                         String stat_ind_3,String company_name ) throws SQLException {
-
+        
+        Data_connection dc = new Data_connection();
+        con = dc.get_connection();
        // stmt1 = conn.createStatement();
         String insert = "insert into Preferences(indicator1,indicator2,indicator3,indicator4,indicator5,stat_indicator1,stat_indicator2,stat_indicator3,Company_name,email)" 
         +"values(?, ?, ?, ?, ?,?, ?, ?, ?, ?)";
 
-        PreparedStatement preparedStmt = conn.prepareStatement(insert);
+        PreparedStatement preparedStmt = con.prepareStatement(insert);
         preparedStmt.setString (1, ind1);
         preparedStmt.setString (2, ind2);
         preparedStmt.setString (3, ind3);
@@ -77,13 +83,12 @@ public class Preferences {
    
     //debuging purpose
     public static void main(String[] args) throws SQLException {
-        Data_connection dc = new Data_connection();
-        dc.open();
+        
+        
 
         Preferences pref = new Preferences();
-        pref.set_Client_Preferences(dc.get_con(),"vodafone@gmail","12","1","1","1","1","1222","Vodafone","Vodafone@gmail.com", staffQuery);
-
-        System.out.println(pref.get_Client_Preferences(dc.get_con()));
+        pref.set_Client_Preferences("vodafone@gmail","12","1","1","1","1","1222","Vodafone","Vodafone@gmail.com", null);
+        System.out.println(pref.get_Client_Preferences());
     }
 
     }

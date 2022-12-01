@@ -1,6 +1,9 @@
+package Servlets;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+
+import Preferences;
 
 public class Calc_Stat_Servlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)

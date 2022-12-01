@@ -1,4 +1,5 @@
-package Servlets;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,10 +9,13 @@ public class Reports {
     private double report_data[][];
     private static List<Integer> list_of_indicators= new ArrayList<>();
 
-    //db
-    public double[][] get_data(){
+    //db //not ready
+    public double[][] get_data() throws SQLException{
         
-        
+        Data_connection db = new Data_connection();
+        db.get_connection();
+        //String sql="select * from ureports where user_reports.email=?"
+
         return report_data;
     }
 
@@ -61,6 +65,7 @@ public class Reports {
         test.add("2");
         System.out.println(test);
         Reports rep = new Reports();
+        System.out.println(rep.caclulate_Average("2",test));
         rep.caclulate_Average("2",test);
     }
 

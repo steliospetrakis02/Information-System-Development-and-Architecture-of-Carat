@@ -1,18 +1,11 @@
-package Servlets;
+
 import java.util.*;
 import java.sql.*;
 
-public class User {
-    private Statement stmt1 = null;
-    private PreparedStatement stmt = null;
-    Connection con = null;
+public class User_service {
+    private Connection con = null;
     List <User> user = new ArrayList<User>();
 
-    public User(String string, String string2) {
-    }
-    public User(){
-
-    }
     public boolean authenticate(String email , String password){
         
         try {
@@ -24,17 +17,8 @@ public class User {
             stmt.setString(2, email);
             ResultSet rs = stmt.executeQuery();
             
-            
-            while (rs.next()) {
-                user.add(new User(rs.getString("email"),rs.getString("passwrd")));
-            }
-
-            stmt.close();
-            dc.close();
-            
-            if(user.size() < 1){
+            if(!rs.next()){
                 //user does not exist
-                
                 return false;
             }
             else{
@@ -52,12 +36,12 @@ public class User {
 
         
     }
+    //needs find user
     public void addUser(String email , String password, String sex , String elname , String efname) throws Exception{
         
         if(authenticate(email, password)==(true)){
             //user already exist
             System.out.println("User already exist");
-            
 
         }
         else{
@@ -91,7 +75,6 @@ public class User {
     
             }
             
-            
 
         }
         
@@ -103,14 +86,14 @@ public class User {
     //debuging purpose
 public static void main(String[] args) throws Exception {
     
-    User usr = new User();
+    User_service usr_serv = new User_service();
     String client_email="Cosmotee@gmail.com";
-    String password = "12345678";
-    System.out.println(usr.authenticate(client_email, password));
+    String password = "123456789";
+    System.out.println(usr_serv.authenticate(client_email, password));
     String sex="male";
     String elname="Cosmote";
     String efname = "AE";
-    usr.addUser(client_email, password,sex,elname,efname);
+    usr_serv.addUser(client_email, password,sex,elname,efname);
 }
 
 }
