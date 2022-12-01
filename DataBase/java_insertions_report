@@ -81,14 +81,24 @@ public void specific_data() {
 	int min= 1;
 	int max= 2;
 	int r = (int)(Math.random()*(max-min+1)+min);
-	String d;
+	String d,i,s;
+	int pos = 0;
 	if (r==1) {
 		d = "decreased";
+		min = 0;
+		max = 30;
+		pos = (int) (Math.random()*(max-min+1)+min);
+		s = "We are trying our best to get you back on track to your goal campaign.";
 	}else {
 		d= "increased";
+		min = 0;
+		max = 30;
+		pos = (int) (Math.random()*(max-min+1)+min);
+		s= "we are pleased to tell you that the path of your campaign is going on plan!";
 	}
 	System.out.println("Hello!, This is your informative message about your campaign.");
 	System.out.println("Your sales have" + " " + d + " " + "from last time.");
-	System.out.println("");
+	System.out.println("The change rate is about:" + " " + pos +"%");
+	System.out.println(s);
 }
 }
