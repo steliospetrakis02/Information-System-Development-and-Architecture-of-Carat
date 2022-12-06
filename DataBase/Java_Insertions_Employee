@@ -1,5 +1,0 @@
-INSERT INTO `Employee` (`employee_id`,`email`) VALUES ('Sergi','t8200141@aueb.gr');
-INSERT INTO `Employee` (`employee_id`,`email`) VALUES ('Giorgos','t8200141@aueb.gr');
-INSERT INTO `Employee` (`employee_id`,`email`) VALUES ('Stelios','t8200141@aueb.gr');
-INSERT INTO `Employee` (`employee_id`,`email`) VALUES ('Marsid','t8200141@aueb.gr');
-INSERT INTO `Employee` (`employee_id`,`email`) VALUES ('Dimitris','t8200141@aueb.gr');

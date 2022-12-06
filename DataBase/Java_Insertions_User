@@ -1,0 +1,33 @@
+import java.sql.*;
+public class Database_User {
+	public static void main(String[] args) {
+
+	try {
+		Class.forName("com.mysql.jdbc.Driver").newInstance();
+	}catch(Exception e) {
+		System.out.print(e);
+	}
+	try {
+		Connection con = DriverManager.getConnection("jdbc:mysql://195.251.249.131:3306/ismgroup60","ismgroup60","82gyrs");
+		Statement stmt=con.createStatement();
+		String query1 = "INSERT INTO `Employee` (`email`,'password','sex','elname','efname') VALUES ('t8200141@aueb.gr','123','male','Sergi','Poula')";
+		String query2 =	"INSERT INTO `Employee` (`email`,'password','sex','elname','efname') VALUES ('t8200141@aueb.gr','321','male','Giorgos','Mala')";
+		String query3 = "INSERT INTO `Employee` (`email`,'password','sex','elname','efname') VALUES ('t8200141@aueb.gr','111','male','Dimitris','Grammatikakhs')";
+		String query4 = ("INSERT INTO `Employee` (`email`,'password','sex','elname','efname') VALUES ('t8200141@aueb.gr','222','male','Marsid','Mali')");
+		String query5 = ("INSERT INTO `Employee` (`email`,'password','sex','elname','efname') VALUES ('t8200141@aueb.gr','321','male','Stelios','Petrakhs')");
+		String query6 = ("INSERT INTO `Employee` (`email`,'password','sex','elname','efname') VALUES ('AEGEAN@hotmail.com','999','male','Theodoros','Vasilakhs')");
+		String query7 = ("INSERT INTO `Employee` (`email`,'password','sex','elname','efname') VALUES ('COCA-COLA@aueb.gr','321','male','Asa Griks','Kandler')");
+		stmt.executeQuery(query1);
+		stmt.executeQuery(query2);
+		stmt.executeQuery(query3);
+		stmt.executeQuery(query4);
+		stmt.executeQuery(query5);
+		stmt.executeQuery(query6);
+		stmt.executeQuery(query7);
+
+		stmt.close();
+	}catch(Exception e) {
+		System.out.print("Could not insert values to table User");
+	}
+}
+}
