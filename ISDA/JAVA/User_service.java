@@ -36,15 +36,53 @@ public class User_service {
 
         
     }
+    public User findUser(String username) throws Exception {
+		
+		Data_connection db = new Data_connection();
+		
+		String sql = "select * from user_ where user_.email =?";
+		try {
+           
+			con = db.get_connection();
+            PreparedStatement stmt = con.prepareStatement(sql);
+           
+			stmt.setString(1, username);
+			ResultSet rs = stmt.executeQuery();
+
+			
+			if (!rs.next()) {
+                //user does not exist
+				rs.close();
+                stmt.close();
+                db.close();
+				throw new Exception("User not found");
+                
+            }
+
+			else{
+                
+                User usr = new User(rs.getString("firstname"),rs.getString("lastname"),rs.getString("email") ,rs.getString("username"), rs.getString("password"));
+				return usr;
+			}
+
+		} catch (Exception e) {
+            throw new Exception(e.getMessage());
+            
+		}
+		finally{
+			db.close();
+			//stmt.close();
+		}
+    }
+
     //needs find user
     public void addUser(String email , String password, String sex , String elname , String efname) throws Exception{
         
-        if(authenticate(email, password)==(true)){
-            //user already exist
-            System.out.println("User already exist");
-
+        try {
+            findUser(email);
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
         }
-        else{
             String sql = "INSERT INTO User_ " 
             + " (email, passwrd, sex, elname, efname) VALUES (?, ? ,?, ?, ?);";
             Data_connection dc = new Data_connection();
@@ -70,7 +108,7 @@ public class User_service {
                 try {
                     dc.close();
                 } catch (Exception e) {
-                    
+                    throw new Exception(e.getMessage());
                 }
     
             }
@@ -78,7 +116,7 @@ public class User_service {
 
         }
         
-    }
+    
 
 
 
