@@ -3,22 +3,19 @@ use ismgroup60;
 DROP TABLE User_;
 DROP TABLE client_;
 DROP TABLE goals;
-DROP TABLE evaluation;
 DROP TABLE preferences;
 DROP TABLE Employee;
-DROP TABLE report_data;
 DROP TABLE reports;
+DROP TABLE indicators;
 
 
 
 
 CREATE TABLE User_
-				(email VARCHAR(40),
+				(email VARCHAR(20),
 				 passwrd VARCHAR(20),
                  PRIMARY KEY (email),
-                 sex VARCHAR(10),
-				 elname VARCHAR(20),
-				 efname VARCHAR(20)
+                 personal_name VARCHAR(20)
                  );
                 
 CREATE TABLE Employee
@@ -43,76 +40,54 @@ CREATE TABLE preferences
                 indicator2 VARCHAR(10),
                 indicator3 VARCHAR(10),
                 indicator4 VARCHAR(10),
-                indicator5 VARCHAR(10),
                 stat_indicator1 VARCHAR(10),
                 stat_indicator2 VARCHAR(10),
                 stat_indicator3 VARCHAR(10),
-                Company_name VARCHAR(20),
                 email VARCHAR(20),
-				FOREIGN KEY (email) REFERENCES client_(email),
-                PRIMARY KEY(Company_name)
+                preferences_id VARCHAR(20),
+                PRIMARY KEY(preferences_id),
+				FOREIGN KEY (email) REFERENCES client_(email)
                 );
-CREATE TABLE report_data
-				(
-                Cl1 VARCHAR(20),
-                Cl2 VARCHAR(20),
-                Quatra INTEGER(10),
-                Years INTEGER(10),
-                specific_data VARCHAR(50),
-                PRIMARY KEY(specific_data)
-                );
-                
-CREATE TABLE reports
-				(
-                reports_id VARCHAR(20),
-                size DOUBLE,
-                GRPs DOUBLE,
-                Impressions Int(10),
-                Clicks Integer(10),
-                Click_Rate DOUBLE,
-                date_ DATE,
-                type_ VARCHAR(20),
-                employee_id INTEGER(11),
-                specific_data VARCHAR(50),
-                PRIMARY KEY(reports_id),
-                FOREIGN KEY(employee_id) REFERENCES employee(employee_id),
-                FOREIGN KEY(specific_data) REFERENCES report_data(specific_data)
-                );
-                
-CREATE TABLE evaluation
-				(
-                email VARCHAR(20),
-                reports INTEGER(11),
-				r_report1 INTEGER(11),
-                r_report2 INTEGER(11),
-				r_report3 INTEGER(11),
-				r_report4 INTEGER(11),
-				r_report5 INTEGER(11),
-                staff INTEGER(11),
-				s_report1 INTEGER(11),
-				s_report2 INTEGER(11),
-				s_report3 INTEGER(11),
-				s_report4 INTEGER(11),
-				s_report5 INTEGER(11),		
-                goals INTEGER(11),
-				g_report1 INTEGER(11),
-				g_report2 INTEGER(11),
-				g_report3 INTEGER(11),
-				g_report4 INTEGER(11),
-				g_report5 INTEGER(11),
-                Farewell INTEGER(11),
-                Extra_Feedback VARCHAR(100),
-                FOREIGN KEY(email) REFERENCES client_(email)
-                );
-CREATE TABLE goals
+
+ CREATE TABLE goals
 				(
                 email VARCHAR(20),
                 target_goals1 INTEGER(11),
                 target_goals2 INTEGER(11),
                 target_goals3 INTEGER(11),
                 target_goals4 INTEGER(11),
-                target_goals5 INTEGER(11),
                 report_id INTEGER(11),
-                goald_id INTEGER(11), 
+                goals_id VARCHAR(20),
+                PRIMARY KEY(goals_id),
                 FOREIGN KEY(email) REFERENCES client_(email)
+                );
+                
+CREATE TABLE reports
+				(
+                reports_id VARCHAR(20),
+                size DOUBLE,
+                date_ DATE,
+                type_ VARCHAR(20),
+                employee_id INTEGER(11),
+                specific_data VARCHAR(50),
+				Cl1 VARCHAR(20),
+                Cl2 VARCHAR(20),
+                Quatra INTEGER(10),
+                Years INTEGER(10),
+                goals_id VARCHAR(20),
+				preferences_id VARCHAR(20),
+                PRIMARY KEY(reports_id),
+                FOREIGN KEY(employee_id) REFERENCES employee(employee_id),
+                FOREIGN KEY(goals_id) REFERENCES goals(goals_id),
+                FOREIGN KEY(preferences_id) REFERENCES preferences(preferences_id)
+                );
+                
+CREATE TABLE Indicators
+				(
+				ind1 DOUBLE,
+                ind2 Int(10),
+                ind3 Integer(10),
+                ind4 DOUBLE,
+				reports_id VARCHAR(20),
+                FOREIGN KEY(reports_id) REFERENCES reports(reports_id)
                 );
