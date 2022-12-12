@@ -50,28 +50,31 @@
 </style>
 </head>
 <body style="font-family:Verdana;">
-
-<div style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
-background: linear-gradient(to right, #25b7c4, #845ddf);
-padding:1px;text-align:center;">
-  <h1 style="color:#ffffff; margin-top: 5%; font-size: 60px; 
-  font-family: Georgia, 'Times New Roman', Times, serif;">Campaign Statistics</h1>
+<% String year = (String) request.getParameter("year");
+     String period = (String) request.getParameter("period");
+     session.setAttribute("year", year);
+     session.setAttribute("period", period);
+     session.setAttribute("stats", "yes");
+     %>
+<div style="background: #065675;
+padding:1px;text-align:left;"> <img src="../../IMAGES/Preferences/inteli_last.png" class="u-logo-image u-logo-image-1">
+  <h1 style="color:#ffffff; font-size: 60px; 
+  font-family: Georgia, 'Times New Roman', Times, serif; text-align:center;">Campaign Statistics</h1>
 </div>
 
 <div style="overflow:auto">
   <div class="menu">
-    <h3 style="margin-top: 5%;">Client: Aegean</h3>
+    <h3 style="margin-top: 5%;">Client: <%= (String) session.getAttribute("client")%></h3>
     <hr>
     <form>
         <div class="row" >
-          <h3>Time Period: 2022-B</h3>
+          <h3>Time Period:<%= (String) session.getAttribute("year")%>-<%= (String) session.getAttribute("period")%></h3>
         </div>
         
   </div>
   
   <div class="main">
-    <div style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
-    background: linear-gradient(to right, #25b7c4, #845ddf);text-align:center;padding:6%;margin-top:0px;"></div>
+    <div style="background: #065675;text-align:center;padding:6%;margin-top:0px;"></div>
     <h2 style="margin-top: 3%; text-align:center;">Check Client's Progress</h2>
     <br>
     <p style="text-align:center;">Find out if the indicators are above, below or equal to the expected ones
@@ -80,15 +83,13 @@ padding:1px;text-align:center;">
 
   <div class="right">
     <h3 style="margin-bottom: 5%;">Get Started!</h3>
-      <a class="btn btn-info active btn-lg" style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
-      background: linear-gradient(to right, #25b7c4, #845ddf);" href="../Preferences/PlannerpreferencesStats.jsp">
+      <a class="btn btn-info active btn-lg" style="background: #065675;" href="../Preferences/PlannerpreferencesStats.jsp">
         <p style="color:#ffffff; margin-bottom: 0px;">Analyze</p>
       </a>
   </div>
 </div>
 
-<div style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
-background: linear-gradient(to right, #25b7c4, #845ddf);;text-align:center;padding: 3%;margin-top:0px;"></div>
+<div style="background: #065675;;text-align:center;padding: 3%;margin-top:0px;"></div>
 <img src="../../IMAGES/Statistics/stat.png" alt="Responsive image" style="width:100%;height:40%;">
 
 </body>

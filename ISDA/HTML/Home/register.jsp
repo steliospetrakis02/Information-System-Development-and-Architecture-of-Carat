@@ -29,7 +29,7 @@
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-sticky u-sticky-65f3 u-white u-header" id="sec-6ecb"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
-          <img src="../../IMAGES/Home/logo3.png" class="u-logo-image u-logo-image-1">
+          <img src="../../IMAGES/Home/inteli_last.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
@@ -71,26 +71,32 @@ borders: top right bottom left !important
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,700">
           <link rel="stylesheet" href="./style.css"><!-- partial:index.partial.jsp -->
           <div class="login-form">
-            <form action="">
+            <form action="registerController.jsp">
               <h1>Register</h1>
               <div class="content">
+                <% if(request.getParameter("message")!= null) {%>
+                  <h5 style="color: green;"><%= request.getParameter("message") %></h5>
+                <% } %>
                 <div class="input-field">
-                  <input type="email" placeholder="Email" autocomplete="nope">
+                  <input type="email" placeholder="Email" name="Email" autocomplete="nope" 
+                  style="color: <%= request.getParameter("colorEmail")%>">
                 </div>
                 <div class="input-field">
-                  <input type="text" placeholder="Name" autocomplete="nope">
+                  <input type="text" placeholder="Name" name="Name" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                  <input type="password" placeholder="Password" autocomplete="new-password">
+                  <input type="password" placeholder="Password" name="Password" autocomplete="new-password"
+                  style="color: <%= request.getParameter("colorPass")%>">
                 </div>
                 <div class="input-field">
-                  <input type="password" placeholder="Retype Password" autocomplete="new-password">
+                  <input type="password" placeholder="Retype Password" name="RetypePassword" autocomplete="new-password"
+                  style="color: <%= request.getParameter("colorPass")%>">
                 </div>
                 <div class="input_field radio_option">
-                  <input type="radio" name="radiogroup1" id="rd1">
+                  <input type="radio" name="radiogroup1" id="rd1" value="Client" checked="checked">
                   <label for="rd1">Client</label>
-                  <input type="radio" name="radiogroup1" id="rd2">
-                  <label for="rd2">Planner</label>
+                  <input type="radio" name="radiogroup1" id="rd2" value="Employee">
+                  <label for="rd2">Employee</label>
                 </div>
                 <a href="login.jsp" class="link">Already a member? Login here!</a>
               </div>
@@ -113,10 +119,10 @@ borders: top right bottom left !important
           <img src="../../IMAGES/Home/logo3.png" class="u-logo-image u-logo-image-1">
         </a>
         <div class="u-align-left u-social-icons u-spacing-21 u-social-icons-1">
-          <a class="u-social-url" title="facebook" target="_blank" href=""><span class="u-icon u-social-facebook u-social-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-c130"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-c130"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
+          <a class="u-social-url" title="facebook" target="_blank" href="https://www.facebook.com/CaratGlobal/"><span class="u-icon u-social-facebook u-social-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-c130"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-c130"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
             c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path></svg></span>
           </a>
-          <a class="u-social-url" target="_blank" data-type="YouTube" title="YouTube" href=""><span class="u-icon u-social-icon u-social-youtube u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9b15"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-9b15"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M74.9,33.3H37.3c-7.4,0-13.4,6-13.4,13.4v18.8c0,7.4,6,13.4,13.4,13.4h37.6c7.4,0,13.4-6,13.4-13.4V46.7 C88.3,39.3,82.3,33.3,74.9,33.3L74.9,33.3z M65.9,57l-17.6,8.4c-0.5,0.2-1-0.1-1-0.6V47.5c0-0.5,0.6-0.9,1-0.6l17.6,8.9 C66.4,56,66.4,56.8,65.9,57L65.9,57z"></path></svg></span>
+          <a class="u-social-url" target="_blank" data-type="YouTube" title="YouTube" href="https://www.youtube.com/channel/UC5x5vbE7JO-ig6DmK2YDdLw/featured"><span class="u-icon u-social-icon u-social-youtube u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9b15"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-9b15"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M74.9,33.3H37.3c-7.4,0-13.4,6-13.4,13.4v18.8c0,7.4,6,13.4,13.4,13.4h37.6c7.4,0,13.4-6,13.4-13.4V46.7 C88.3,39.3,82.3,33.3,74.9,33.3L74.9,33.3z M65.9,57l-17.6,8.4c-0.5,0.2-1-0.1-1-0.6V47.5c0-0.5,0.6-0.9,1-0.6l17.6,8.9 C66.4,56,66.4,56.8,65.9,57L65.9,57z"></path></svg></span>
           </a>
         </div>
       </div></footer>

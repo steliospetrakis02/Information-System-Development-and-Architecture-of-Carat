@@ -28,14 +28,15 @@
     <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
       <img src="../../IMAGES/Home/logo3.png" class="u-logo-image u-logo-image-1">
     </a>
+    <% session.setAttribute("stats", "no");%>
         <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1">
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-spacing-15 u-unstyled u-nav-1">
               <div class="dropdown">
           <button class="dropbtn">Choose Client</button>
           <div class="dropdown-content">
-            <a href="#">AEGEAN</a>
-            <a href="#">VODAFONE</a>
+            <a href="choose_client.jsp?client=Aegean">AEGEAN</a>
+            <a href="choose_client.jsp?client=Vodafone">VODAFONE</a>
           </div>
         </div>
         <li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="Home.jsp" style="padding: 10px 20px;">LOGOUT</a>
@@ -61,7 +62,8 @@
 </div>
 </header>
 <div class="u-clearfix u-sheet u-sheet-1">
-<h3 class="u-custom-font u-font-roboto-condensed u-text u-text-body-alt-color u-text-default u-text-1">Welcome, please choose year and time period</h3>
+<br><br>
+<h3 class="u-custom-font u-font-roboto-condensed u-text u-text-body-alt-color u-text-default u-text-1" style="margin-left: auto; margin-right:auto;">Welcome, please choose client, year and time period to work on a particular report</h3>
 </div>
 <section class="u-align-center u-clearfix u-section-2" id="sec-97b2">
 <div class="u-clearfix u-sheet u-valign-bottom u-sheet-1">
@@ -99,31 +101,31 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
                 <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
+                <a href="../History/insert.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-2">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
                 <img class="u-image u-image-circle u-image-2" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">See reports via history</a>
+                <a href="../History/his.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">See reports via history</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-3">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-5">
                 <img class="u-image u-image-circle u-image-3" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/preferences.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">Set preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-4">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-6">
                 <img class="u-image u-image-circle u-image-4" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/Statistics.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-4">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-4">See statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-5">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-7">
                 <img class="u-image u-image-circle u-image-5" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-5">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-5">Set goals</a>
               </div>
             </div>
           </div>
@@ -135,31 +137,31 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
                 <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
+                <a href="../History/insert.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-8">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-11">
                 <img class="u-image u-image-circle u-image-8" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-8">See reports via history</a>
+                <a href="../History/his.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-8">See reports via history</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-9">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-12">
                 <img class="u-image u-image-circle u-image-9" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/preferences.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-9">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-9">Set preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-10">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-13">
                 <img class="u-image u-image-circle u-image-10" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/Statistics.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-10">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-10">See statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-11">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-14">
                 <img class="u-image u-image-circle u-image-11" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-11">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-11">Set goals</a>
               </div>
             </div>
           </div>
@@ -171,31 +173,31 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
                 <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
+                <a href="../History/insert.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-14">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-18">
                 <img class="u-image u-image-circle u-image-14" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-14">See reports via history</a>
+                <a href="../History/his.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-14">See reports via history</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-15">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-19">
                 <img class="u-image u-image-circle u-image-15" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/preferences.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-15">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-15">Set preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-16">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-20">
                 <img class="u-image u-image-circle u-image-16" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/Statistics.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-16">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-16">See statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-17">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-21">
                 <img class="u-image u-image-circle u-image-17" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-17">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-17">Set goals</a>
               </div>
             </div>
           </div>
@@ -226,31 +228,31 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
                 <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
+                <a href="../History/insert.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-20">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-26">
                 <img class="u-image u-image-circle u-image-20" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-20">See reports via history</a>
+                <a href="../History/his.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-20">See reports via history</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-21">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-27">
                 <img class="u-image u-image-circle u-image-21" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/preferences.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-21">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-21">Set preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-22">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-28">
                 <img class="u-image u-image-circle u-image-22" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/Statistics.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-22">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-22">See statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-23">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-29">
                 <img class="u-image u-image-circle u-image-23" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-23">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-23">Set goals</a>
               </div>
             </div>
           </div>
@@ -262,31 +264,31 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
                 <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
+                <a href="../History/insert.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-26">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-33">
                 <img class="u-image u-image-circle u-image-26" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-26">See reports via history</a>
+                <a href="../History/his.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-26">See reports via history</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-27">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-34">
                 <img class="u-image u-image-circle u-image-27" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/preferences.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-27">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-27">Set preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-28">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-35">
                 <img class="u-image u-image-circle u-image-28" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/Statistics.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-28">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-28">See statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-29">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-36">
                 <img class="u-image u-image-circle u-image-29" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-29">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-29">Set goals</a>
               </div>
             </div>
           </div>
@@ -298,31 +300,31 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
                 <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
+                <a href="../History/insert.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-32">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-40">
                 <img class="u-image u-image-circle u-image-32" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-32">See reports via history</a>
+                <a href="../History/his.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-32">See reports via history</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-33">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-41">
                 <img class="u-image u-image-circle u-image-33" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/preferences.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-33">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-33">Set preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-34">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-42">
                 <img class="u-image u-image-circle u-image-34" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/Statistics.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-34">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-34">See statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-35">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-43">
                 <img class="u-image u-image-circle u-image-35" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-35">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-35">Set goals</a>
               </div>
             </div>
           </div>
@@ -353,31 +355,31 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
                 <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
+                <a href="../History/insert.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-38">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-48">
                 <img class="u-image u-image-circle u-image-38" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-38">See reports via history</a>
+                <a href="../History/his.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-38">See reports via history</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-39">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-49">
                 <img class="u-image u-image-circle u-image-39" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/preferences.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-39">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-39">Set preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-40">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-50">
                 <img class="u-image u-image-circle u-image-40" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/Statistics.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-40">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-40">See statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-41">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-51">
                 <img class="u-image u-image-circle u-image-41" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-41">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-41">Set goals</a>
               </div>
             </div>
           </div>
@@ -389,31 +391,31 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
                 <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
+                <a href="../History/insert.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-44">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-55">
                 <img class="u-image u-image-circle u-image-44" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-44">See reports via history</a>
+                <a href="../History/his.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-44">See reports via history</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-45">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-56">
                 <img class="u-image u-image-circle u-image-45" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/preferences.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-45">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-45">Set preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-46">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-57">
                 <img class="u-image u-image-circle u-image-46" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/Statistics.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-46">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-46">See statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-47">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-58">
                 <img class="u-image u-image-circle u-image-47" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-47">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-47">Set goals</a>
               </div>
             </div>
           </div>
@@ -425,31 +427,31 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
                 <img class="u-image u-image-circle u-image-1" src="../../IMAGES/Home/insertdata.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
+                <a href="../History/insert.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Insert Report Data</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-50">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-62">
                 <img class="u-image u-image-circle u-image-50" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-50">See reports via history</a>
+                <a href="../History/his.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-50">See reports via history</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-51">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-63">
                 <img class="u-image u-image-circle u-image-51" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/preferences.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-51">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-51">Set preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-52">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-64">
                 <img class="u-image u-image-circle u-image-52" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/Statistics.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-52">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-52">See statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-53">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-65">
                 <img class="u-image u-image-circle u-image-53" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/client_goals.jsp" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-53">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-53">Set goals</a>
               </div>
             </div>
           </div>

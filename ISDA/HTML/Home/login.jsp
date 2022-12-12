@@ -1,6 +1,3 @@
-<%@ page import="Servlets.LoginHandlerServlet"%>
-<%@ page import="Servlets.User"%>
-
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,14 +71,16 @@ borders: top right bottom left !important
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,700">
           <link rel="stylesheet" href="./style.css"><!-- partial:index.partial.jsp -->
           <div class="login-form">
-            <form method="POST" action="/servlet/Servlets.LoginHandlerServlet">
+            <form method="POST" action="loginController.jsp">
               <h1>Login</h1>
               <div class="content">
                 <div class="input-field">
-                  <input type="email" name="email" placeholder="Email" autocomplete="nope">
+                  <input type="email" name="email" placeholder="Email" autocomplete="nope"
+                    style="color:<%= request.getParameter("color") %>">
                 </div>
                 <div class="input-field">
-                  <input type="password" name="password" placeholder="Password" autocomplete="new-password">
+                  <input type="password" name="password" placeholder="Password" autocomplete="new-password"
+                  style="color:<%= request.getParameter("color") %>">
                 </div>
                 <a href="#" class="link">Forgot Your Password?</a>
               </div>

@@ -3,7 +3,7 @@
 	<div class="navbar">
 		<div class="row" style="padding:2%; background-color:#065675;">
 			<div class="col-sm-3">
-				<img src="../../IMAGES/Goals/inteli_last.png" class="u-logo-image u-logo-image-1">
+				<img src="../../IMAGES/Preferences/inteli_last.png" class="u-logo-image u-logo-image-1">
 			   
 		  </div> 
 		  </div>
@@ -43,7 +43,7 @@
 	</style>
 			</div>
 		<div class="text">
-		<p>You have successfully set your goals for the next campaign. <br>Here are your details<br>Date: 12.12.12<br>
+		<p>You have successfully set your preferences for the next campaign. <br>Here are your details<br>Date: 12.12.12<br>
 			Time: 11am<br>
 			ID: 12324
 		</p>

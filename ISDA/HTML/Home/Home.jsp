@@ -17,8 +17,8 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-sticky u-sticky-65f3 u-white u-header" id="sec-6ecb"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="Home.html" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
-          <img src="../../IMAGES/Home/logo3.png" class="u-logo-image u-logo-image-1">
+        <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
+          <img src="../../IMAGES/Home/inteli_last.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
@@ -29,20 +29,20 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-15 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="Home.html" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="Our-Team.html" style="padding: 10px 20px;">Our Team</a>
-</li><li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="login.html" style="padding: 10px 20px;">login</a>
-</li><li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="register.html" style="padding: 10px 20px;">register</a>
+            <ul class="u-nav u-spacing-15 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="Home.jsp" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="Our-Team.jsp" style="padding: 10px 20px;">Our Team</a>
+</li><li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="login.jsp" style="padding: 10px 20px;">login</a>
+</li><li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="register.jsp" style="padding: 10px 20px;">register</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
-                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Our-Team.html">Our Team</a>
-                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="login.html">login</a>
-                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="register.html">register</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Home</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Our-Team.jsp">Our Team</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="login.jsp">login</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="register.jsp">register</a>
                 </li></ul>
               </div>
             </div>
@@ -55,14 +55,14 @@ borders: top right bottom left !important
     <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="842" data-image-height="440" id="sec-b1eb">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-title u-text-1">Designing for people</h1>
-        <a href="login.html" class="u-btn u-button-style u-palette-2-base u-btn-1" style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
+        <a href="login.jsp" class="u-btn u-button-style u-palette-2-base u-btn-1" style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
         background: linear-gradient(to right, #25b7c4, #845ddf);">login</a>
       </div>
     </section>
     
     
     <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-5152"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="Home.html" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
+        <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
           <img src="../../IMAGES/Home/logo3.png" class="u-logo-image u-logo-image-1">
         </a>
         <div class="u-align-left u-social-icons u-spacing-21 u-social-icons-1">
