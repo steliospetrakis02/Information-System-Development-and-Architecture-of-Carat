@@ -102,7 +102,7 @@ public class User_service {
 
 			else{
                 
-                User usr = new User(rs.getString("email"),rs.getString("password"),rs.getString("personal_name"));
+                User usr = new User(rs.getString("email"),rs.getString("passwrd"),rs.getString("personal_name"));
                 return usr;
 			}
 
@@ -170,17 +170,18 @@ public class User_service {
         
 
     //debuging purpose
-public static void main(String[] args) throws Exception {
+/*public static void main(String[] args) throws Exception {
     
     User_service usr_serv = new User_service();
-   String client_email="Cosmoteee@gmail.com";
-   String password = "12345678";
-   //System.out.println(usr_serv.authenticate(client_email, password));
+   String client_email="stelios@gmail.com";
+   String password = "1234";
+   System.out.println(usr_serv.findUser("stelios@gmail.com"));
+   System.out.println(usr_serv.authenticate(client_email, password));
    
-   String elname="Cosmote";
+   String elname="stelios";
    
-   usr_serv.addUser(client_email, "123",elname);
+   //usr_serv.addUser(client_email, "1234",elname);
    System.out.println(usr_serv.getUsers()); 
-}
+}*/
 
 }

@@ -1,18 +1,18 @@
+
 use ismgroup60;
 
-DROP TABLE User_;
-DROP TABLE client_;
-DROP TABLE goals;
-DROP TABLE preferences;
-DROP TABLE Employee;
-DROP TABLE reports;
 DROP TABLE indicators;
-
+DROP TABLE reports;
+DROP TABLE Employee;
+DROP TABLE preferences;
+DROP TABLE goals;
+DROP TABLE client_;
+DROP TABLE User_;
 
 
 
 CREATE TABLE User_
-				(email VARCHAR(20),
+				(email VARCHAR(40),
 				 passwrd VARCHAR(20),
                  PRIMARY KEY (email),
                  personal_name VARCHAR(20)
@@ -20,7 +20,7 @@ CREATE TABLE User_
                 
 CREATE TABLE Employee
 				(employee_id INTEGER(11),
-                email VARCHAR(20) ,
+                email VARCHAR(40),
 				FOREIGN KEY (email) REFERENCES User_(email),
                 PRIMARY KEY(employee_id)
                 );
@@ -28,7 +28,7 @@ CREATE TABLE Employee
 CREATE TABLE client_
 				(campaign VARCHAR(20),
                 Company_name VARCHAR(20),
-                email VARCHAR(20),
+                email VARCHAR(40),
 				FOREIGN KEY (email) REFERENCES User_(email),
                 PRIMARY KEY(email)
 				);
@@ -43,7 +43,7 @@ CREATE TABLE preferences
                 stat_indicator1 VARCHAR(10),
                 stat_indicator2 VARCHAR(10),
                 stat_indicator3 VARCHAR(10),
-                email VARCHAR(20),
+                email VARCHAR(40),
                 preferences_id VARCHAR(20),
                 PRIMARY KEY(preferences_id),
 				FOREIGN KEY (email) REFERENCES client_(email)
@@ -51,7 +51,7 @@ CREATE TABLE preferences
 
  CREATE TABLE goals
 				(
-                email VARCHAR(20),
+                email VARCHAR(40),
                 target_goals1 INTEGER(11),
                 target_goals2 INTEGER(11),
                 target_goals3 INTEGER(11),
@@ -70,6 +70,7 @@ CREATE TABLE reports
                 type_ VARCHAR(20),
                 employee_id INTEGER(11),
                 specific_data VARCHAR(50),
+                email VARCHAR(40),
 				Cl1 VARCHAR(20),
                 Cl2 VARCHAR(20),
                 Quatra INTEGER(10),
@@ -77,7 +78,7 @@ CREATE TABLE reports
                 goals_id VARCHAR(20),
 				preferences_id VARCHAR(20),
                 PRIMARY KEY(reports_id),
-                FOREIGN KEY(employee_id) REFERENCES employee(employee_id),
+                FOREIGN KEY(email) REFERENCES user_(email),
                 FOREIGN KEY(goals_id) REFERENCES goals(goals_id),
                 FOREIGN KEY(preferences_id) REFERENCES preferences(preferences_id)
                 );
