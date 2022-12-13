@@ -24,3 +24,12 @@ insert into indicators(ind1,ind2,ind3,ind4,reports_id)
 
 Insert into reports (reports_id,email)
 	Values("1","sts@gmail.com");
+	
+	
+INSERT INTO User_ (email,password,personal_name) VALUES ('t8200141@intel.com','123','Sergi Poula');
+INSERT INTO User_ (email,password,personal_name) VALUES ('t8200141@intel.com','321','Giorgos Mala');
+INSERT INTO User_ (email,password,personal_name) VALUES ('t8200141@intel.com','111', 'Dimitris Grammatikakhs');
+INSERT INTO User_ (email,password,personal_name) VALUES ('t8200141@intel.com','222', 'Marsid Mali');
+INSERT INTO User_ (email,password,personal_name) VALUES ('t8200141@intel.com','321','Stelios Petrakhs');
+INSERT INTO User_ (email,password,personal_name) VALUES ('AEGEAN@hotmail.com','999','Theodoros Vasilakhs');
+INSERT INTO User_ (email,password,personal_name) VALUES ('COCA-COLA@hotmail.com','321','Asa Griks Kandler');
