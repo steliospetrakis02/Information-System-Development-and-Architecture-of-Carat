@@ -3,25 +3,25 @@ import java.time.LocalDate;
 public class Database {
 public static void main(String[] args) {
 	Database a = new Database();
-	int pl = 1;
+	int reports_id = 1;
 	try {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
 	}catch(Exception e) {
-		System.out.print(e);
+		System.out.print("MySQL Driver error: " + e.getMessage());
 	}
 	try {
 		Connection con = DriverManager.getConnection("jdbc:mysql://195.251.249.131:3306/ismgroup60","ismgroup60","82gyrs");
 		Statement stmt=con.createStatement();
 		for (int i =0; i<15; i++) {
-			stmt.executeUpdate("INSERT INTO reports " + "VALUES (pl, a.size(),a.GRP() ,a.Impressions(), a.Clicks(), a.Click_Rate(), a.Date(), 'informative report', a.employee_id(), a.specific_data())");
-			pl++;
+			stmt.executeUpdate("INSERT INTO reports " + "VALUES (reports_id, a.size(),a.GRP() ,a.Impressions(), a.Clicks(), a.Click_Rate(), a.Date(), 'informative report', a.employee_id(), a.specific_data())");
+			reports_id++;
 		}
 		stmt.close();
 	}catch(Exception e) {
 		System.out.print("Could not insert values to table reports");
 	}
 }
-
+/*ΜΑΣ ΛΕΙΠΕΙ Ο ΤΡΟΠΟΣ ΝΑ ΚΑΝΟΥΜΕ INSERT ΤΑ 1.email 2.goals_id 3.referencers_id  */
 public double size() {
 	int min = 200;
 	int max = 400;
@@ -29,32 +29,7 @@ public double size() {
 	rand =  Math.floor(rand * 100) / 100;
 	return rand;
 }
-public double GRP() {
-	int min = 0;
-	int max = 150;
-	double rand = Math.random()*(max-min+1)+min;
-	rand =  Math.floor(rand * 100) / 100;
-	return rand;
-}
-public int Impressions() {
-	int min= 1;
-	int max= 30;
-	int imp = (int)(Math.random()*(max-min+1)+min);
-	return imp;
-}
-public int Clicks() {
-	int min= 1;
-	int max= 50;
-	int click = (int)(Math.random()*(max-min+1)+min);
-	return click;
-}
-public double Click_Rate() {
-	int min = 0;
-	int max = 100;
-	double rate = Math.random()*(max-min+1)+min;
-	rate =  Math.floor(rate * 100) / 100;
-	return rate;
-}
+
 public void Date() {
 LocalDate randomDate = createRandomDate(2020, 2023);
 System.out.println(randomDate);
@@ -73,7 +48,7 @@ public static LocalDate createRandomDate(int startYear, int endYear) {
 
 public int employee_id() {
 	int min= 1;
-	int max= 4;
+	int max= 5;
 	int employee = (int)(Math.random()*(max-min+1)+min);
 	return employee;
 }
@@ -81,7 +56,7 @@ public void specific_data() {
 	int min= 1;
 	int max= 2;
 	int r = (int)(Math.random()*(max-min+1)+min);
-	String d,i,s;
+	String d,s;
 	int pos = 0;
 	if (r==1) {
 		d = "decreased";
@@ -100,5 +75,17 @@ public void specific_data() {
 	System.out.println("Your sales have" + " " + d + " " + "from last time.");
 	System.out.println("The change rate is about:" + " " + pos +"%");
 	System.out.println(s);
+}
+public int quatra() {
+	int min = 1;
+	int max = 3;
+	int q = (int)(Math.random()*(max-min+1)+min);
+	return q;
+}
+public int years() {	
+int min = 1;
+int max = 3;
+int y = (int)(Math.random()*(max-min+1)+min);
+return y;
 }
 }
