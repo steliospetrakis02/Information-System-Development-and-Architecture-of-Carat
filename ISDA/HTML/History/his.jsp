@@ -9,7 +9,7 @@
 <body style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
 background: linear-gradient(to right, #25b7c4, #845ddf);">
 <div class="navbar">
-  <div class="row" style="padding:2%; background-color:#065675;">
+  <div class="row"  style="padding:2%; background-color:#065675;">
       <div class="col-sm-3">
           <img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1">
          

@@ -6,7 +6,14 @@ public class User {
    private String personal_name;
 
 
-
+/**
+     * Full constuctor
+     *   
+     * @param email
+     * @param password
+     * @param personal_name
+     */
+        
 public User(String email, String password , String personal_name) {
         this.email = email;
         this.password = password;

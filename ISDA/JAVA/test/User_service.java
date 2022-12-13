@@ -53,7 +53,7 @@ public class User_service {
 
             while (rs.next()) {
                                 
-                users.add(rs.getString("personal_name"));
+                users.add(rs.getString("email"));
   
             }
 
@@ -183,5 +183,13 @@ public class User_service {
    //usr_serv.addUser(client_email, "1234",elname);
    System.out.println(usr_serv.getUsers()); 
 }*/
+public static void main(String[] args) throws Exception {
+    User_service myUser_Service = new User_service();
+    List<String> users = myUser_Service.getUsers(); 
+    for(String user: users) { 
+    User thisUser = myUser_Service.findUser(user);
+    System.out.println(user);
+        }
+}
 
 }

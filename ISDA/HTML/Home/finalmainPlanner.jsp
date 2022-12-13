@@ -1,3 +1,9 @@
+<%@ page import="test.User_service" %>
+<%@ page import="test.User" %>
+<%@ page import="java.util.List" %>
+<%@ page isErrorPage="true" %>
+
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,8 +41,13 @@
               <div class="dropdown">
           <button class="dropbtn">Choose Client</button>
           <div class="dropdown-content">
-            <a href="choose_client.jsp?client=Aegean">AEGEAN</a>
-            <a href="choose_client.jsp?client=Vodafone">VODAFONE</a>
+            <% User_service myUser_Service = new User_service();
+               List<String> users = myUser_Service.getUsers(); 
+               for(String user: users) { 
+                 User thisUser = myUser_Service.findUser(user);%>
+                  <a href="choose_client.jsp?client=<%= thisUser.get_personal_name()%>"><%= thisUser.get_personal_name()%></a>
+             <%  }
+            %>
           </div>
         </div>
         <li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="Home.jsp" style="padding: 10px 20px;">LOGOUT</a>

@@ -77,12 +77,22 @@ borders: top right bottom left !important
                 <% if(request.getParameter("message")!= null) {%>
                   <h5 style="color: green;"><%= request.getParameter("message") %></h5>
                 <% } %>
+                <% if(request.getParameter("errorMessage")!= null) {%>
+                  <h5 style="color: red;"><%= request.getParameter("errorMessage") %></h5>
+                <% } %>
+                <% if(request.getParameter("namelength")!= null) {%>
+                  <h5 style="color: red;"><%= request.getParameter("namelength") %></h5>
+                <% } %>
+                <% if(request.getParameter("passlength")!= null) {%>
+                  <h5 style="color: red;"><%= request.getParameter("passlength") %></h5>
+                <% } %>
                 <div class="input-field">
                   <input type="email" placeholder="Email" name="Email" autocomplete="nope" 
                   style="color: <%= request.getParameter("colorEmail")%>">
                 </div>
                 <div class="input-field">
-                  <input type="text" placeholder="Name" name="Name" autocomplete="nope">
+                  <input type="text" placeholder="Name" name="Name" autocomplete="nope"
+                  style="color: <%= request.getParameter("colorName")%>">
                 </div>
                 <div class="input-field">
                   <input type="password" placeholder="Password" name="Password" autocomplete="new-password"
