@@ -71,8 +71,6 @@ CREATE TABLE reports
                 employee_id INTEGER(11),
                 specific_data VARCHAR(50),
                 email VARCHAR(40),
-				Cl1 VARCHAR(20),
-                Cl2 VARCHAR(20),
                 Quatra INTEGER(10),
                 Years INTEGER(10),
                 goals_id VARCHAR(20),
