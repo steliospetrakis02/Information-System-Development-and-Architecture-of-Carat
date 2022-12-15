@@ -1,34 +1,9 @@
-import java.sql.*;
-import java.util.*;
-public class Database_User {
-	public static void main(String[] args) {
-
-	try {
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
-	}catch(Exception e) {
-		System.out.print("MySQL Driver error: " + e.getMessage());
-	}
-	try {
-		Connection con = DriverManager.getConnection("jdbc:mysql://195.251.249.131:3306/ismgroup60","ismgroup60","82gyrs");
-		Statement stmt=con.createStatement();
-		String query1 = "INSERT INTO `User_` (`email`,'password','personal_name') VALUES ('t8200141@intel.com','123','Sergi Poula')";
-		String query2 =	"INSERT INTO `User_` (`email`,'password','personal_name') VALUES ('t8200141@intel.com','321','Giorgos Mala')";
-		String query3 = "INSERT INTO `User_` (`email`,'password','personal_name') VALUES ('t8200141@intel.com','111', 'Dimitris Grammatikakhs')";
-		String query4 = "INSERT INTO `User_` (`email`,'password','personal_name') VALUES ('t8200141@intel.com','222', 'Marsid Mali')";
-		String query5 = "INSERT INTO `User_` (`email`,'password','personal_name') VALUES ('t8200141@intel.com','321','Stelios Petrakhs')";
-		String query6 = "INSERT INTO `User_` (`email`,'password','personal_name') VALUES ('AEGEAN@hotmail.com','999','Theodoros Vasilakhs')";
-		String query7 = "INSERT INTO `User_` (`email`,'password','personal_name') VALUES ('COCA-COLA@hotmail.com','321','Asa Griks Kandler')";
-		stmt.executeQuery(query1);
-		stmt.executeQuery(query2);
-		stmt.executeQuery(query3);
-		stmt.executeQuery(query4);
-		stmt.executeQuery(query5);
-		stmt.executeQuery(query6);
-		stmt.executeQuery(query7);
-
-		stmt.close();
-	}catch(Exception e) {
-		System.out.print("Could not insert values to table User");
-	}
-}
-}
+INSERT INTO User_ (email,password,personal_name) VALUES ('t8200141@intel.com','123','Sergi Poula');
+INSERT INTO User_ (email,password,personal_name) VALUES ('t8200141@intel.com','321','Giorgos Mala');
+INSERT INTO User_ (email,password,personal_name) VALUES ('t8200141@intel.com','111', 'Dimitris Grammatikakhs');
+INSERT INTO User_ (email,password,personal_name) VALUES ('t8200141@intel.com','222', 'Marsid Mali');
+INSERT INTO User_ (email,password,personal_name) VALUES ('t8200141@intel.com','321','Stelios Petrakhs');
+INSERT INTO User_ (email,password,personal_name) VALUES ('AEGEAN@hotmail.com','999','Theodoros Vasilakhs');
+INSERT INTO User_ (email,password,personal_name) VALUES ('COCA-COLA@hotmail.com','321','Asa Griks Kandler');
+INSERT INTO User_(email,password,personal_name) VALUES ('VODAFONE@hotmail.com', '2601', 'Ernest Harrison');
+INSERT INTO User_(email,password,personal_name) VALUES ('Eurobank@hotmail.com', '4565', 'Prem Watsa');
