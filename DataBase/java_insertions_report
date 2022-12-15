@@ -27,7 +27,7 @@ public static void main(String[] args) {
 		System.out.print("Could not insert values to table reports");
 	}
 }
-/*ΜΑΣ ΛΕΙΠΕΙ Ο ΤΡΟΠΟΣ ΝΑ ΚΑΝΟΥΜΕ INSERT ΤΑ 1.email 2.goals_id 3.referencers_id  */
+/*ΜΑΣ ΛΕΙΠΕΙ Ο ΤΡΟΠΟΣ ΝΑ ΚΑΝΟΥΜΕ INSERT ΤΑ 1.goals_id 2.preferencers_id  */
 public double size() {
 	int min = 200;
 	int max = 400;
