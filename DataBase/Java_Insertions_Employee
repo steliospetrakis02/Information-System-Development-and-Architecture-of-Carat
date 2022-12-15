@@ -15,7 +15,7 @@ public static void main(String[] args) {
 					+ "FROM User_";
 		ResultSet rs = stmt.executeQuery(query);
 		while (i<5) {
-			stmt.executeUpdate("INSERT INTO client" + "VALUES (pl,rs.next())");
+			stmt.executeUpdate("INSERT INTO client" + "VALUES (pl,rs.getString(i))");
 			pl++;
 		}
 		stmt.close();
