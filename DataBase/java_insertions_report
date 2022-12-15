@@ -12,8 +12,14 @@ public static void main(String[] args) {
 	try {
 		Connection con = DriverManager.getConnection("jdbc:mysql://195.251.249.131:3306/ismgroup60","ismgroup60","82gyrs");
 		Statement stmt=con.createStatement();
-		for (int i =0; i<15; i++) {
-			stmt.executeUpdate("INSERT INTO reports " + "VALUES (reports_id, a.size(),a.GRP() ,a.Impressions(), a.Clicks(), a.Click_Rate(), a.Date(), 'informative report', a.employee_id(), a.specific_data(),a.quatra(),a.years())");
+		String querry = "SELECT email"
+					+ "FROM client_";
+		ResultSet rs = stmt.executeQuery(querry);
+		int i = 1;
+		while (rs.next()) {
+			String email = rs.getString(i);
+			i++;
+			stmt.executeUpdate("INSERT INTO reports " + "VALUES (reports_id, a.size(),a.Date(), 'informative report', a.employee_id(), email)");
 			reports_id++;
 		}
 		stmt.close();
@@ -51,41 +57,5 @@ public int employee_id() {
 	int max= 5;
 	int employee = (int)(Math.random()*(max-min+1)+min);
 	return employee;
-}
-public void specific_data() {
-	int min= 1;
-	int max= 2;
-	int r = (int)(Math.random()*(max-min+1)+min);
-	String d,s;
-	int pos = 0;
-	if (r==1) {
-		d = "decreased";
-		min = 0;
-		max = 30;
-		pos = (int) (Math.random()*(max-min+1)+min);
-		s = "We are trying our best to get you back on track to your goal campaign.";
-	}else {
-		d= "increased";
-		min = 0;
-		max = 30;
-		pos = (int) (Math.random()*(max-min+1)+min);
-		s= "we are pleased to tell you that the path of your campaign is going on plan!";
-	}
-	System.out.println("Hello!, This is your informative message about your campaign.");
-	System.out.println("Your sales have" + " " + d + " " + "from last time.");
-	System.out.println("The change rate is about:" + " " + pos +"%");
-	System.out.println(s);
-}
-public int quatra() {
-	int min = 1;
-	int max = 3;
-	int q = (int)(Math.random()*(max-min+1)+min);
-	return q;
-}
-public int years() {	
-int min = 1;
-int max = 3;
-int y = (int)(Math.random()*(max-min+1)+min);
-return y;
 }
 }
