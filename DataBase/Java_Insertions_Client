@@ -1,31 +1,4 @@
-import java.sql.*;
-public class Database_Client {
-public static void main(String[] args) {
-	try {
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
-	}catch(Exception e) {
-		System.out.print(e);
-	}
-	try {
-		Connection con = DriverManager.getConnection("jdbc:mysql://195.251.249.131:3306/ismgroup60","ismgroup60","82gyrs");
-		Statement stmt=con.createStatement();
-		Database_Client a =new Database_Client();
-		String query = "SELECT email"
-				+("FROM User_");
-		ResultSet rs = stmt.executeQuery(query);
-		stmt.executeUpdate("INSERT INTO client_" + "VALUES (a.campaign(), AEGEAN, rs.absolute(6) ");
-		stmt.executeUpdate("INSERT INTO client_" + "VALUES (a.campaign(), COCA-COLA, rs.absolute(7)");
-		stmt.close();
-	}catch(Exception e) {
-		System.out.print("Could not insert values to table reports");
-	}
-}
-	public void campaign() {
-		String k = ("My main goal in my campaign is to increase my sales up to:");
-		int min = 0;
-		int max = 100;
-		int pos = (int) (Math.random()*(max-min+1)+min);
-		System.out.print(k +  " "  + pos + "%");
-	}
-
-}
+INSERT INTO User_ (email,password,personal_name) VALUES ('AEGEAN@hotmail.com','999','Theodoros Vasilakhs');
+INSERT INTO User_ (email,password,personal_name) VALUES ('COCA-COLA@hotmail.com','321','Asa Griks Kandler');
+INSERT INTO User_(email,password,personal_name) VALUES ('VODAFONE@hotmail.com', '2601', 'Ernest Harrison');
+INSERT INTO User_(email,password,personal_name) VALUES ('Eurobank@hotmail.com', '4565', 'Prem Watsa');
