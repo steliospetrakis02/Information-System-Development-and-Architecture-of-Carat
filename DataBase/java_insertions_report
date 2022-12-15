@@ -17,12 +17,14 @@ public static void main(String[] args) {
 		int reports_id = 1;
 		int i = 1;
 		while (rs.next()) {
-			double size = a.size();
-			int employee_id = a.employee_id();
-			String email = rs.getString(i);
-			i++;		
-			stmt.executeUpdate("INSERT INTO reports " + "VALUES (reports_id, size, a.Date(), 'informative report', employee_id, email)");
-			reports_id++;
+			for(int j=0; j<5; j++) {
+				double size = a.size();
+				int employee_id = a.employee_id();
+				String email = rs.getString(i);		
+				stmt.executeUpdate("INSERT INTO reports " + "VALUES (reports_id, size, a.Date(), 'informative report', employee_id, email)");
+				reports_id++;
+			}
+			i++;
 		}
 		stmt.close();
 	}catch(Exception e) {
