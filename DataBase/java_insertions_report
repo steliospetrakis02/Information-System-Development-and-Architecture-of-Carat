@@ -16,11 +16,14 @@ public static void main(String[] args) {
 		ResultSet rs = stmt.executeQuery(querry);
 		int reports_id = 1;
 		int i = 1;
+		double size;
+		int employee_id;
+		String email;
 		while (rs.next()) {
 			for(int j=0; j<5; j++) {
-				double size = a.size();
-				int employee_id = a.employee_id();
-				String email = rs.getString("email");		
+				size = a.size();
+				employee_id = a.employee_id();
+				email = rs.getString("email");		
 				stmt.executeUpdate("INSERT INTO reports " + "VALUES (reports_id, size, a.Date(), 'informative report', employee_id, email)");
 				reports_id++;
 			}
