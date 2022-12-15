@@ -15,8 +15,10 @@ public static void main(String[] args) {
 		String query = "SELECT email"
 					+ "FROM User_";
 		ResultSet rs = stmt.executeQuery(query);
+		String email;
 		while (i<5) {
-			stmt.executeUpdate("INSERT INTO client" + "VALUES (pl,rs.getString(j))");
+			email = rs.getString("email");
+			stmt.executeUpdate("INSERT INTO client" + "VALUES (pl,email)");
 			pl++;
 			j++;
 		}
