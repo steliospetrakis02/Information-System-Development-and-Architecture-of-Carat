@@ -20,7 +20,7 @@ public static void main(String[] args) {
 			for(int j=0; j<5; j++) {
 				double size = a.size();
 				int employee_id = a.employee_id();
-				String email = rs.getString(i);		
+				String email = rs.getString("email");		
 				stmt.executeUpdate("INSERT INTO reports " + "VALUES (reports_id, size, a.Date(), 'informative report', employee_id, email)");
 				reports_id++;
 			}
