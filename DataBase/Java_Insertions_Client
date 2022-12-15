@@ -1,4 +1,4 @@
-INSERT INTO User_ (email,password,personal_name) VALUES ('AEGEAN@hotmail.com','999','Theodoros Vasilakhs');
-INSERT INTO User_ (email,password,personal_name) VALUES ('COCA-COLA@hotmail.com','321','Asa Griks Kandler');
-INSERT INTO User_(email,password,personal_name) VALUES ('VODAFONE@hotmail.com', '2601', 'Ernest Harrison');
-INSERT INTO User_(email,password,personal_name) VALUES ('Eurobank@hotmail.com', '4565', 'Prem Watsa');
+INSERT INTO client_ (email,password,personal_name) VALUES ('AEGEAN@hotmail.com','999','Theodoros Vasilakhs');
+INSERT INTO client_ (email,password,personal_name) VALUES ('COCA-COLA@hotmail.com','321','Asa Griks Kandler');
+INSERT INTO client_(email,password,personal_name) VALUES ('VODAFONE@hotmail.com', '2601', 'Ernest Harrison');
+INSERT INTO client_(email,password,personal_name) VALUES ('Eurobank@hotmail.com', '4565', 'Prem Watsa');
