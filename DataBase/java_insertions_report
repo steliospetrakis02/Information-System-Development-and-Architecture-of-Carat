@@ -3,7 +3,6 @@ import java.time.LocalDate;
 public class Database {
 public static void main(String[] args) {
 	Database a = new Database();
-	int reports_id = 1;
 	try {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
 	}catch(Exception e) {
@@ -15,11 +14,14 @@ public static void main(String[] args) {
 		String querry = "SELECT email"
 					+ "FROM client_";
 		ResultSet rs = stmt.executeQuery(querry);
+		int reports_id = 1;
 		int i = 1;
 		while (rs.next()) {
+			double size = a.size();
+			int employee_id = a.employee_id();
 			String email = rs.getString(i);
-			i++;
-			stmt.executeUpdate("INSERT INTO reports " + "VALUES (reports_id, a.size(),a.Date(), 'informative report', a.employee_id(), email)");
+			i++;		
+			stmt.executeUpdate("INSERT INTO reports " + "VALUES (reports_id, size, a.Date(), 'informative report', employee_id, email)");
 			reports_id++;
 		}
 		stmt.close();
