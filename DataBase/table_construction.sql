@@ -15,7 +15,7 @@ CREATE TABLE User_
 				(email VARCHAR(40),
 				 passwrd VARCHAR(20),
                  PRIMARY KEY (email),
-                 personal_name VARCHAR(20)
+                 personal_name VARCHAR(40)
                  );
                 
 CREATE TABLE Employee
