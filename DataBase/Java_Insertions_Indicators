@@ -37,7 +37,7 @@ public class indicators {
 public String Weeks_4x() {
 	int min = 1;
 	int max = 4;
-	int x = Math.random()*(max-min+1)+min;
+	int x =(int) Math.random()*(max-min+1)+min;
 	String weeks = Integer.toString(weeks);
 	weeks = weeks + "x";
 	return weeks;
