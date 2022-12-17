@@ -35,3 +35,8 @@ INSERT INTO User_ (email,passwrd,personal_name) VALUES ('AEGEAN@hotmail.com','99
 INSERT INTO User_ (email,passwrd,personal_name) VALUES ('COCA-COLA@hotmail.com','321','Asa Griks Kandler');
 INSERT INTO User_(email,passwrd,personal_name) VALUES ('VODAFONE@hotmail.com', '2601', 'Ernest Harrison');
 INSERT INTO User_(email,passwrd,personal_name) VALUES ('Eurobank@hotmail.com', '4565', 'Prem Watsa');
+
+INSERT INTO client_ (campaign,company_name,email) VALUES ('SPRING','AEGEAN','AEGEAN@hotmail.com');
+INSERT INTO client_ (campaign,company_name,email) VALUES ('SHARE A COKE','COCA-COLA','COCA-COLA@hotmail.com');
+INSERT INTO client_(campaign,company_name,email) VALUES ('FIBERS','VODAFONE','VODAFONE@hotmail.com');
+INSERT INTO client_(campaign,company_name,email) VALUES ('E BANKING','EUROBANK','Eurobank@hotmail.com');
