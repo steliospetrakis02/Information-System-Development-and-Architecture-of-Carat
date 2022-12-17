@@ -33,6 +33,7 @@ public static void main(String[] args) {
 	}catch(Exception e) {
 		System.out.print("Could not insert values to table reports");
 	}
+	stmt.close()
 }
 /*ΜΑΣ ΛΕΙΠΕΙ Ο ΤΡΟΠΟΣ ΝΑ ΚΑΝΟΥΜΕ INSERT ΤΑ 1.goals_id 2.preferencers_id  */
 public double size() {
