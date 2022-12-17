@@ -13,29 +13,33 @@ public class indicators {
 			String querry = "SELECT reports_id"
 						+ "FROM reports";
 			ResultSet rs = stmt.executeQuery(querry);
-			double weeks;
+			String weeks;
 			int ins;
 			double SOV;
 			double v;
 			String reports_id;
+			int i;
 			while(rs.next()) {
-				weeks = a.Weeks_4x();
-				ins = a.Insertions();
-				SOV = a.SOV();
-				v = a.Viewability();
-				reports_id = rs.getString("reports_id");
-				stmt.executeUpdate("INSERT INTO Indicators " + "VALUES (weeks,ins,SOV,v,reports_id)");
+				for(i=0; i<16; i++) {
+					weeks = a.Weeks_4x();
+					ins = a.Insertions();
+					SOV = a.SOV();
+					v = a.Viewability();
+					reports_id = rs.getString("reports_id");
+					stmt.executeUpdate("INSERT INTO Indicators " + "VALUES (weeks,ins,SOV,v,reports_id)");
+				}
 			}
 		}catch(Exception e) {
 			System.out.print("Could not insert values to table reports");
 		}
 	}
 
-public double Weeks_4x() {
-	int min = 0;
-	int max = 150;
-	double weeks = Math.random()*(max-min+1)+min;
-	weeks =  Math.floor(weeks * 100) / 100;
+public String Weeks_4x() {
+	int min = 1;
+	int max = 4;
+	int x = Math.random()*(max-min+1)+min;
+	String weeks = Integer.toString(weeks);
+	weeks = weeks + "x";
 	return weeks;
 }
 public int Insertions() {
@@ -54,7 +58,6 @@ public double Viewability() {
 	int min = 0;
 	int max = 100;
 	double v = Math.random()*(max-min+1)+min;
-	v =  Math.floor(v * 100) / 100;
 	return v;
 }
 }
