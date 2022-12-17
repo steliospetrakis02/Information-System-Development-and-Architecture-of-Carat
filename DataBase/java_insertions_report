@@ -1,8 +1,8 @@
 import java.sql.*;
 import java.time.LocalDate;
-public class Database {
+public class Reports {
 public static void main(String[] args) {
-	Database a = new Database();
+	Reports a = new Reports();
 	try {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
 	}catch(Exception e) {
