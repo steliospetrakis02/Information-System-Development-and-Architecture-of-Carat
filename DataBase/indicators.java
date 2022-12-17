@@ -32,7 +32,7 @@ public class indicators {
 				}
 			}
 		}catch(Exception e) {
-			System.out.print("Could not insert values to table reports");
+			System.out.print("Could not insert values to table reports" + e.getMessage());
 		}
 	}
 
