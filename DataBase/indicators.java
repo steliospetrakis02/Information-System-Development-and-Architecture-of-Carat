@@ -2,12 +2,9 @@ import java.sql.*;
 public class indicators {
 	public static void main(String[] args) {
 		try {
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
-		}catch(Exception e) {
-			System.out.print(e);
-		}
-		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://195.251.249.131:3306/ismgroup60","ismgroup60","82gyrs");
+            DB obj = new DB();
+            Connection con;
+            con = obj.getConnection();
 			Statement stmt=con.createStatement();
 			indicators a =new indicators();
 			String querry = "SELECT reports_id"
@@ -26,7 +23,12 @@ public class indicators {
 					SOV = a.SOV();
 					v = a.Viewability();
 					reports_id = rs.getString("reports_id");
-					stmt.executeUpdate("INSERT INTO Indicators " + "VALUES (weeks,ins,SOV,v,reports_id)");
+                    PreparedStatement pstmt = con.prepareStatement("INSERT INTO `indicators` (ind1,ind2,ind3,ind4) VALUES (?,?,?,?)");
+                    pstmt.setString(1,weeks);
+                    pstmt.setInt(2, ins);
+                    pstmt.setDouble(3,SOV);
+                    pstmt.setDouble(4, v);
+                    pstmt.executeUpdate();
 				}
 			}
 		}catch(Exception e) {
