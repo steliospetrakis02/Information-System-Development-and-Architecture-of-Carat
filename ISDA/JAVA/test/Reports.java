@@ -2,8 +2,6 @@ package test;
 import java.util.*;
 import java.sql.*;
 
-
-
 public class Reports {
     private double[][] report_data = new double[15][5];
     private  List<Double> report_dataa= new ArrayList<>();
