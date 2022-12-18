@@ -70,17 +70,29 @@ borders: top right bottom left !important
           <title></title>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,700">
           <link rel="stylesheet" href="./style.css"><!-- partial:index.partial.jsp -->
+          <% if((String) request.getAttribute("error_message")!= null) {%>
+                  <script>
+  			setTimeout(function() {
+      			document.location = "../Home/login.jsp";
+  			}, 2000); // <-- this is the delay in milliseconds
+		</script>
+		<div style="text-align:center">
+			<br>
+				<h2 style="color: red;"><strong><%= request.getAttribute("error_message") %></strong></h2>
+		</div>
+            <% } %>
           <div class="login-form">
             <form method="POST" action="loginController.jsp">
               <h1>Login</h1>
               <div class="content">
+              <% if(request.getParameter("errorMessage")!= null) {%>
+                  <h5 style="color: red;"><%= request.getParameter("errorMessage") %></h5>
+                <% } %>
                 <div class="input-field">
-                  <input type="email" name="email" placeholder="Email" autocomplete="nope"
-                    style="color:<%= request.getParameter("color") %>">
+                  <input type="email" name="email" placeholder="Email" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                  <input type="password" name="password" placeholder="Password" autocomplete="new-password"
-                  style="color:<%= request.getParameter("color") %>">
+                  <input type="password" name="password" placeholder="Password" autocomplete="new-password">
                 </div>
                 <a href="#" class="link">Forgot Your Password?</a>
               </div>

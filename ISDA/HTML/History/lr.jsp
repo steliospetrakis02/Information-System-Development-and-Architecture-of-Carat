@@ -1,3 +1,8 @@
+<%@ page import="test.Preferences" %>
+<%@ page import="test.Reports" %>
+<%@ page import="java.util.*" %>
+<%@ include file="authentication_guard.jsp" %>
+
 <section>
 <head>
    <meta charset="UTF-8" />
@@ -128,10 +133,16 @@ body{
       <thead>
         <tr>
           <th>Week</th>
-                <th>GRPs</th>
-                <th>SOV</th>
-                <th>Reach 1+</th>
-                <th>Reach 3+</th>
+          <% Preferences pref = new Preferences();
+              Reports rep = new Reports();
+              double[][] data =new double[16][5];
+              
+              data=rep.get_data((String)session.getAttribute("email"),"1");
+             List<String> prefs = pref.get_Client_Preferences((String) session.getAttribute("email")); 
+             for(String p: prefs){ %>
+                 <th><%= p%></th>
+           <%  }  %>
+   
         </tr>
       </thead>
     </table>
@@ -141,10 +152,10 @@ body{
       <tbody>
         <tr>
           <td>1</td>
-                <td>140</td>
-                <td>36%</td>
-                <td>87%</td>
-                <td>9%</td>
+                <td><%=data[0][1]%></td>
+                <td><%=data[0][2]%></td>
+                <td><%=data[0][3]%></td>
+                <td><%=data[0][4]%></td>
               </tr>
               <tr>
                 <td>2</td>
