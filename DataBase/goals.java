@@ -33,7 +33,7 @@ public class goals {
                     goals_id = goals_id + 1;
 			}
 		}catch(Exception e) {
-			System.out.print("Could not insert values to table reports" + e.getMessage());
+			System.out.print("Could not insert values to table reports." + e.getMessage());
 		}
 	}
 
