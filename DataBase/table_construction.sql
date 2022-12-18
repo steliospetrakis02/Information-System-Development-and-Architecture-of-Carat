@@ -43,6 +43,7 @@ CREATE TABLE preferences
                 stat_indicator1 VARCHAR(30),
                 stat_indicator2 VARCHAR(30),
                 stat_indicator3 VARCHAR(30),
+		stat_indicator4 VARCHAR(30),
                 email VARCHAR(40),
                 preferences_id VARCHAR(20),
                 PRIMARY KEY(preferences_id),
@@ -74,8 +75,6 @@ CREATE TABLE reports
 		preferences_id VARCHAR(20),
                 PRIMARY KEY(reports_id),
                 FOREIGN KEY(email) REFERENCES user_(email),
-                FOREIGN KEY(goals_id) REFERENCES goals(goals_id),
-                FOREIGN KEY(preferences_id) REFERENCES preferences(preferences_id)
                 );
                 
 CREATE TABLE Indicators
