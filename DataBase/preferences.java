@@ -28,7 +28,7 @@ public class preferences {
                     preferences_id = preferences_id + 1;
 			}
 		}catch(Exception e) {
-			System.out.print("Could not insert values to table reports" + " " + e.getMessage());
+			System.out.print("Could not insert values to table reports." + " " + e.getMessage());
 		}
 	}
 }
