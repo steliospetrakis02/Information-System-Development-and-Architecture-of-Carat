@@ -12,20 +12,20 @@ public static void main(String[] args) {
 		Connection con;
 		con = obj.getConnection();
 		Statement stmt = con.createStatement();
-        String querry = "SELECT email FROM client_";
-		ResultSet rs = stmt.executeQuery(querry);
+        String querry1 = "SELECT email FROM client_";
+		ResultSet rs1 = stmt.executeQuery(querry1);
 		int reports_id1 = 1;
 		double size1;
         String date1;
         String type = "Informative message";
 		int employee_id1;
 		String email1;
-		while (rs.next()) {
+		while (rs1.next()) {
 			for(int j=0; j<5; j++) {
 				size1 = a.size();
                 date1 = a.Date();
 				employee_id1 = a.employee_id();
-				email1 = rs.getString("email");		
+				email1 = rs1.getString("email");		
                 PreparedStatement pstmt = con.prepareStatement("INSERT INTO `reports` (reports_id,size,date_,type_,employee_id,email) VALUES (?,?,?,?,?,?)");
                 pstmt.setInt(1,reports_id1);
                 pstmt.setDouble(2, size1);
