@@ -1,3 +1,10 @@
+<%@ include file="../Home/authentication_guard.jsp" %>
+<%@ page import="test.Preferences" %>
+<%@ page import="test.Reports" %>
+<%@ page import="java.util.*" %>
+
+<link rel="icon" href="../../IMAGES/Home/iR.png">
+<title>Bar chart</title>
 <div class="navbar">
   <div class="row" style="padding:1.2%; background-color:#065675;  position: fixed; top: 0%; right: 0%; left: 0%;">
       <div class="col-sm-3">
@@ -13,8 +20,28 @@
 <br><br><br>
 <br>
 <br>
+<% Preferences pref = new Preferences();
+              Reports rep = new Reports();
+              double[][] data =new double[16][5];
+              String report_id="0";
+              int index = 0;
+              int indicator_index = 0;
+              
+              report_id = (String) session.getAttribute("report_id");
+//              data=rep.get_data((String)session.getAttribute("Aegean@hotmail.com"),"1");
+  //            data=rep.get_data((String)session.getAttribute("email"),report_id);
+                  data=(rep.get_data("AEGEAN@hotmail.com","1"));  
+
+
+             List<String> prefs = pref.get_Client_Preferences((String) session.getAttribute("email")); 
+             for(String prefe: prefs){
+                if(prefe.equals(request.getParameter("indicator"))){
+                  indicator_index = index;
+                }
+                index++;
+             } %>
 <h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-  GRPs Report 3D Vertical Bar Chart</h1>  <!-- %του 300-->
+  <%= request.getParameter("indicator")%> Report 3D Vertical Bar Chart</h1>  <!-- %του 300-->
   <div class="chart-container">
     <div class="base"></div>
         <!-- Left Side Meter-->

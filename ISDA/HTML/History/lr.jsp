@@ -2,17 +2,23 @@
 <%@ page import="test.Reports" %>
 <%@ page import="java.util.*" %>
 <%@ include file="authentication_guard.jsp" %>
-
+<link rel="icon" href="../../IMAGES/Home/iR.png">
 <section>
 <head>
    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../../CSS/History/lrc.css" />
+    
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
 <link rel="stylesheet" href="style.css"> 
-    <title>View Report</title>
+
+
+
+
+
+    <title>Report Data</title>
 </head>
 <style>
   h1{
@@ -148,13 +154,35 @@ body{
               else if(((String) request.getParameter("period")).equals("C") & ((String) request.getParameter("year")).equals("2022")){
                 report_id="3";
 
+              } else if(((String) request.getParameter("period")).equals("Α") & ((String) request.getParameter("year")).equals("2021")){
+                report_id="4";
+
+              }
+              else if(((String) request.getParameter("period")).equals("Β") & ((String) request.getParameter("year")).equals("2021")){
+                report_id="5";
+
+              } else if(((String) request.getParameter("period")).equals("C") & ((String) request.getParameter("year")).equals("2021")){
+                report_id="6";
+
+              }
+              else if(((String) request.getParameter("period")).equals("A") & ((String) request.getParameter("year")).equals("2020")){
+                report_id="7";
+
+              } else if(((String) request.getParameter("period")).equals("B") & ((String) request.getParameter("year")).equals("2020")){
+                report_id="8";
+
+              }
+              else if(((String) request.getParameter("period")).equals("C") & ((String) request.getParameter("year")).equals("2020")){
+                report_id="9";
+
               }
               else{
-                //report_id="2";
-               
+                report_id="10";
               }
-              data=rep.get_data((String)session.getAttribute("email"),report_id);
-             List<String> prefs = pref.get_Client_Preferences((String) session.getAttribute("email")); 
+              //session.setAttribute("report_id", report_id);
+              
+             data=rep.get_data((String)session.getAttribute("email"),report_id);
+             List<String> prefs = pref.get_Client_Preferences((String)session.getAttribute("email")); 
              for(String p: prefs){ %>
                  <th><%= p%></th>
            <%  }  %>
