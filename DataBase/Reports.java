@@ -1,37 +1,45 @@
 import java.sql.*;
 import java.time.LocalDate;
+
 public class Reports {
+/**
+ * @param args
+ */
 public static void main(String[] args) {
-	Reports a = new Reports();
 	try {
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
-	}catch(Exception e) {
-		System.out.print("MySQL Driver error: " + e.getMessage());
-	}
-	try {
-		Connection con = DriverManager.getConnection("jdbc:mysql://195.251.249.131:3306/ismgroup60","ismgroup60","82gyrs");
-		Statement stmt=con.createStatement();
-		String querry = "SELECT email"
-					+ "FROM client_";
-		ResultSet rs = stmt.executeQuery(querry);
-		int reports_id = 1;
-		int i = 1;
-		double size;
-		int employee_id;
-		String email;
-		while (rs.next()) {
+		Reports a = new Reports();
+		DB obj = new DB();
+		Connection con;
+		con = obj.getConnection();
+		Statement stmt = con.createStatement();
+        String querry1 = "SELECT email FROM client_";
+		ResultSet rs1 = stmt.executeQuery(querry1);
+		int reports_id1 = 1;
+		double size1;
+        String date1;
+        String type = "Informative message";
+		int employee_id1;
+		String email1;
+		while (rs1.next()) {
 			for(int j=0; j<5; j++) {
-				size = a.size();
-				employee_id = a.employee_id();
-				email = rs.getString("email");		
-				stmt.executeUpdate("INSERT INTO reports " + "VALUES (reports_id, size, a.Date(), 'informative report', employee_id, email)");
-				reports_id++;
+				size1 = a.size();
+                date1 = a.Date();
+				employee_id1 = a.employee_id();
+				email1 = rs1.getString("email");		
+                PreparedStatement pstmt = con.prepareStatement("INSERT INTO `reports` (reports_id,size,date_,type_,employee_id,email) VALUES (?,?,?,?,?,?)");
+                pstmt.setInt(1,reports_id1);
+                pstmt.setDouble(2, size1);
+                pstmt.setString(3,date1);
+                pstmt.setString(4, type);
+                pstmt.setInt(5,employee_id1);
+                pstmt.setString(6,email1 );
+                pstmt.executeUpdate();
+				reports_id1++;
 			}
-			i++;
 		}
-		stmt.close();
+		obj.close();
 	}catch(Exception e) {
-		System.out.print("Could not insert values to table reports");
+		System.out.print("Could not insert values to table reports" + " " + e.getMessage());
 	}
 }
 /*ΜΑΣ ΛΕΙΠΕΙ Ο ΤΡΟΠΟΣ ΝΑ ΚΑΝΟΥΜΕ INSERT ΤΑ 1.goals_id 2.preferencers_id  */
@@ -43,9 +51,10 @@ public double size() {
 	return rand;
 }
 
-public void Date() {
+public String Date() {
 LocalDate randomDate = createRandomDate(2020, 2023);
-System.out.println(randomDate);
+String date = randomDate.toString();
+return date;
 }
 
 public static int createRandomIntBetween(int start, int end) {
