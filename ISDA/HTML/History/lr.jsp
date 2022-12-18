@@ -118,6 +118,7 @@ body{
          
     </div> 
     </div>
+
     <br><br><br><br><br><br><br><br><br>
   <% String user;
   if((String) session.getAttribute("client") == null) {
@@ -136,8 +137,23 @@ body{
           <% Preferences pref = new Preferences();
               Reports rep = new Reports();
               double[][] data =new double[16][5];
-              
-              data=rep.get_data((String)session.getAttribute("email"),"1");
+              String report_id="0";
+              if( ((String) request.getParameter("period")).equals("A") &((String) request.getParameter("year")).equals("2022") ){
+                report_id="1";
+              }
+              else if(((String) request.getParameter("period")).equals("B") & ((String) request.getParameter("year")).equals("2022")){
+                report_id="2";
+
+              }
+              else if(((String) request.getParameter("period")).equals("C") & ((String) request.getParameter("year")).equals("2022")){
+                report_id="3";
+
+              }
+              else{
+                //report_id="2";
+               
+              }
+              data=rep.get_data((String)session.getAttribute("email"),report_id);
              List<String> prefs = pref.get_Client_Preferences((String) session.getAttribute("email")); 
              for(String p: prefs){ %>
                  <th><%= p%></th>
@@ -159,107 +175,107 @@ body{
               </tr>
               <tr>
                 <td>2</td>
-                <td>90</td>
-                <td>26%</td>
-                <td>81%</td>
-                <td>5%</td>
+                <td><%=data[1][1]%></td>
+                <td><%=data[1][2]%></td>
+                <td><%=data[1][3]%></td>
+                <td><%=data[1][4]%></td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>100</td>
-                <td>26%</td>
-                <td>57%</td>
-                <td>1%</td>
+                <td><%=data[2][1]%></td>
+                <td><%=data[2][2]%></td>
+                <td><%=data[2][3]%></td>
+                <td><%=data[2][4]%></td>
               </tr>
               <tr>
                 <td>4</td>
-                <td>160</td>
-                <td>38%</td>
-                <td>68%</td>
-                <td>3%</td>
+                <td><%=data[3][1]%></td>
+                <td><%=data[3][2]%></td>
+                <td><%=data[3][3]%></td>
+                <td><%=data[3][4]%></td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>180</td>
-                <td>43%</td>
-                <td>95%</td>
-                <td>12%</td>
+                <td><%=data[4][1]%></td>
+                <td><%=data[4][2]%></td>
+                <td><%=data[4][3]%></td>
+                <td><%=data[4][4]%></td>
               </tr>
               <tr>
                 <td>6</td>
-                <td>110</td>
-                <td>31%</td>
-                <td>89%</td>
-                <td>12%</td>
+                <td><%=data[5][1]%></td>
+                <td><%=data[5][2]%></td>
+                <td><%=data[5][3]%></td>
+                <td><%=data[5][4]%></td>
               </tr>
               <tr>
                 <td>7</td>
-                <td>120</td>
-                <td>34%</td>
-                <td>80%</td>
-                <td>8%</td>
+                <td><%=data[6][1]%></td>
+                <td><%=data[6][2]%></td>
+                <td><%=data[6][3]%></td>
+                <td><%=data[6][4]%></td>
               </tr>
               <tr>
                 <td>8</td>
-                <td>90</td>
-                <td>24%</td>
-                <td>64%</td>
-                <td>2%</td>
+                <td><%=data[7][1]%></td>
+                <td><%=data[7][2]%></td>
+                <td><%=data[7][3]%></td>
+                <td><%=data[7][4]%></td>
               <tr>
-                  <td>9</td>
-                  <td>90</td>
-                  <td>22%</td>
-                  <td>76%</td>
-                  <td>4%</td>
+                <td>9</td>
+                <td><%=data[8][1]%></td>
+                <td><%=data[8][2]%></td>
+                <td><%=data[8][3]%></td>
+                <td><%=data[8][4]%></td>
                 </tr>
-                <tr>
-                  <td>10</td>
-                  <td>100</td>
-                  <td>32%</td>
-                  <td>56%</td>
-                  <td>0%</td>
+              <tr>
+              <td>10</td>
+                <td><%=data[9][1]%></td>
+                <td><%=data[9][2]%></td>
+                <td><%=data[9][3]%></td>
+                <td><%=data[9][4]%></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td><%=data[10][1]%></td>
+                <td><%=data[10][2]%></td>
+                <td><%=data[10][3]%></td>
+                <td><%=data[10][4]%></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td><%=data[11][1]%></td>
+                <td><%=data[11][2]%></td>
+                <td><%=data[11][3]%></td>
+                <td><%=data[11][4]%></td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td><%=data[12][1]%></td>
+                <td><%=data[12][2]%></td>
+                <td><%=data[12][3]%></td>
+                <td><%=data[12][4]%></td>
                 </tr>
-                <tr>
-                  <td>11</td>
-                  <td>100</td>
-                  <td>32%</td>
-                  <td>61%</td>
-                  <td>1%</td>
-                </tr>
-                <tr>
-                  <td>12</td>
-                  <td>130</td>
-                  <td>35%</td>
-                  <td>69%</td>
-                  <td>9%</td> 
-                </tr>
-                <tr>
-                  <td>13</td>
-                  <td>130</td>
-                  <td>33%</td>
-                  <td>75%</td>
-                  <td>7%</td> 
-                </tr>
-                <tr>
+              <tr>
                   <td>14</td>
-                  <td>120</td>
-                  <td>30%</td>
-                  <td>73%</td>
-                  <td>9%</td> 
+                <td><%=data[13][1]%></td>
+                <td><%=data[13][2]%></td>
+                <td><%=data[13][3]%></td>
+                <td><%=data[13][4]%></td>
                 </tr>
                 <tr>
                   <td>15</td>
-                  <td>120</td>
-                  <td>31%</td>
-                  <td>82%</td>
-                  <td>3%</td> 
+                <td><%=data[14][1]%></td>
+                <td><%=data[14][2]%></td>
+                <td><%=data[14][3]%></td>
+                <td><%=data[14][4]%></td>
                 </tr>
                 <tr>
-                  <td>16</td>
-                  <td>120</td>
-                  <td>35%</td>
-                  <td>92%</td>
-                  <td>16%</td> 
+                 <td>16</td>
+                <td><%=data[15][1]%></td>
+                <td><%=data[15][2]%></td>
+                <td><%=data[15][3]%></td>
+                <td><%=data[15][4]%></td>
                 </tr>
       </tbody>
     </table>
