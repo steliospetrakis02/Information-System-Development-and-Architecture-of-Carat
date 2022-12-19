@@ -4,11 +4,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Login">
     <meta name="description" content="">
-    <title>Register</title>
+    <title>register</title>
     <link rel="stylesheet" href="../../CSS/Home/nicepage.css" media="screen">
 <link rel="stylesheet" href="../../CSS/Home/register.css" media="screen">
-<link rel="icon" href="../../IMAGES/Home/iR.png">
-
     <script class="u-script" type="text/javascript" src="../../JS/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../../JS/nicepage.js" defer=""></script>
    
@@ -88,20 +86,21 @@ borders: top right bottom left !important
                 <% if(request.getParameter("passlength")!= null) {%>
                   <h5 style="color: red;"><%= request.getParameter("passlength") %></h5>
                 <% } %>
-                <% if(request.getParameter("emaillength")!= null) {%>
-                  <h5 style="color: red;"><%= request.getParameter("emaillength") %></h5>
-                <% } %>
                 <div class="input-field">
-                  <input type="email" placeholder="Email" name="Email" autocomplete="nope">
+                  <input type="email" placeholder="Email" name="Email" autocomplete="nope" 
+                  style="color: <%= request.getParameter("colorEmail")%>">
                 </div>
                 <div class="input-field">
-                  <input type="text" placeholder="Name" name="Name" autocomplete="nope">
+                  <input type="text" placeholder="Name" name="Name" autocomplete="nope"
+                  style="color: <%= request.getParameter("colorName")%>">
                 </div>
                 <div class="input-field">
-                  <input type="password" placeholder="Password" name="Password" autocomplete="new-password">
+                  <input type="password" placeholder="Password" name="Password" autocomplete="new-password"
+                  style="color: <%= request.getParameter("colorPass")%>">
                 </div>
                 <div class="input-field">
-                  <input type="password" placeholder="Retype Password" name="RetypePassword" autocomplete="new-password">
+                  <input type="password" placeholder="Retype Password" name="RetypePassword" autocomplete="new-password"
+                  style="color: <%= request.getParameter("colorPass")%>">
                 </div>
                 <div class="input_field radio_option">
                   <input type="radio" name="radiogroup1" id="rd1" value="Client" checked="checked">

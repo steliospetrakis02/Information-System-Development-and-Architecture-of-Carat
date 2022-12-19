@@ -1,7 +1,3 @@
-<%@ include file="../Home/authentication_guard.jsp" %>
-<link rel="icon" href="../../IMAGES/Home/iR.png">
-<title>Select Indicators</title>
-
 <head>
     <body>
         <body style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);

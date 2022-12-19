@@ -4,11 +4,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Login">
     <meta name="description" content="">
-    <title>Login</title>
+    <title>login</title>
     <link rel="stylesheet" href="../../CSS/Home/nicepage.css" media="screen">
 <link rel="stylesheet" href="../../CSS/Home/login.css" media="screen">
-<link rel="icon" href="../../IMAGES/Home/iR.png">
-
     <script class="u-script" type="text/javascript" src="../../JS/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../../JS/nicepage.js" defer=""></script>
     

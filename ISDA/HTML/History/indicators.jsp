@@ -1,15 +1,9 @@
-<%@ page import="test.Preferences" %>
-<%@ page import="java.util.*" %>
-<%@ include file="../Home/authentication_guard.jsp" %>
 <html>
     <head>
         <meta charset="UTF-8" />
          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
          <link rel="stylesheet" type="text/css" href="../../CSS/History/lrc.css" />
-
-<link rel="icon" href="../../IMAGES/Home/iR.png">
-
          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
      <link rel="stylesheet" href="style.css"> 
@@ -150,8 +144,7 @@ font-size: 16px;
       </div> 
       </div>
     
-  <% Preferences pref = new Preferences();
-  List<String> prefs = pref.get_Client_Preferences((String) session.getAttribute("email"));%>
+  
   </div>
     <br><br><br><br><br><br><br><br><br><br><br>
     <section>
@@ -161,13 +154,8 @@ font-size: 16px;
               <div class="col-sm-3">
                 <div class="card text-center">
                   <div class="title">
-                  <%  
-                  if(prefs.get(0).equals("Impressions") || prefs.get(0).equals("Clicks") || prefs.get(0).equals("Click Rate") || prefs.get(0).equals("Viewability")){ %>
-                    <i class="fa fa-wifi" aria-hidden="true"></i>
-                  <% } else { %>
                     <i class="fa fa-television" aria-hidden="true"></i>
-                 <%  }  %>
-                    <h2><%= prefs.get(0)%></h2>
+                    <h2>GRPs</h2>
                   </div>
                   <div class="price">
                     <h5><a href="https://en.wikipedia.org/wiki/Gross_rating_point" 
@@ -176,20 +164,15 @@ font-size: 16px;
                   <div class="option">
                   
                   </div>
-                  <a href="graph.jsp?indicator=<%= prefs.get(0)%>">View Chart </a>
+                  <a href="graph.jsp">View Chart </a>
                 </div>
               </div>
               <!-- END Col one -->
               <div class="col-sm-3">
                 <div class="card text-center">
                   <div class="title">
-                  <%  
-                  if(prefs.get(1).equals("Impressions") || prefs.get(1).equals("Clicks") || prefs.get(1).equals("Click Rate") || prefs.get(1).equals("Viewability")){ %>
-                    <i class="fa fa-wifi" aria-hidden="true"></i>
-                  <% } else { %>
                     <i class="fa fa-television" aria-hidden="true"></i>
-                 <%  }  %>
-                    <h2><%= prefs.get(1)%></h2>
+                    <h2>SOV</h2>
                   </div>
                   <div class="price">
                     <h5><a href="https://sproutsocial.com/glossary/share-of-voice/" 
@@ -198,20 +181,15 @@ font-size: 16px;
                   <div class="option">
                     
                   </div>
-                  <a href="graph.jsp?indicator=<%= prefs.get(1)%>">View Chart </a>
+                  <a href="graph.jsp">View Chart </a>
                 </div>
               </div>
               <!-- END Col two -->
               <div class="col-sm-3">
                 <div class="card text-center">
                   <div class="title">
-                    <%  
-                  if(prefs.get(2).equals("Impressions") || prefs.get(2).equals("Clicks") || prefs.get(2).equals("Click Rate") || prefs.get(2).equals("Viewability")){ %>
-                    <i class="fa fa-wifi" aria-hidden="true"></i>
-                  <% } else { %>
                     <i class="fa fa-television" aria-hidden="true"></i>
-                 <%  }  %>
-                    <h2><%= prefs.get(2)%></h2>
+                    <h2>Reach 1+</h2>
                   </div>
                   <div class="price">
                     <h5><a href="https://en.wikipedia.org/wiki/Reach_(advertising)" 
@@ -220,20 +198,15 @@ font-size: 16px;
                   <div class="option">
                    
                   </div>
-                  <a href="graph.jsp?indicator=<%= prefs.get(2)%>">View Chart </a>
+                  <a href="graph.jsp">View Chart </a>
                 </div>
               </div>
               <!-- END Col three -->
               <div class="col-sm-3">
                 <div class="card text-center">
                   <div class="title">
-                    <%  
-                  if(prefs.get(3).equals("Impressions") || prefs.get(3).equals("Clicks") || prefs.get(3).equals("Click Rate") || prefs.get(3).equals("Viewability")){ %>
-                    <i class="fa fa-wifi" aria-hidden="true"></i>
-                  <% } else { %>
                     <i class="fa fa-television" aria-hidden="true"></i>
-                 <%  }  %>
-                    <h2><%= prefs.get(3)%></h2>
+                    <h2>Reach 3+</h2>
                   </div>
                   <div class="price">
                     <h5><a href="https://en.wikipedia.org/wiki/Reach_(advertising)" 
@@ -242,7 +215,7 @@ font-size: 16px;
                   <div class="option">
                     
                   </div>
-                  <a href="graph.jsp?indicator=<%= prefs.get(3)%>">View Chart </a>
+                  <a href="graph.jsp">View Chart </a>
                 </div>
               </div>
                     <!-- END Col four-->

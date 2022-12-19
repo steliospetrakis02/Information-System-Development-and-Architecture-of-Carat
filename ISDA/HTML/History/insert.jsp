@@ -1,5 +1,3 @@
-<%@ include file="../Home/authentication_guard.jsp" %>
-
 <div class="navbar">
   <div class="row" style="padding:1.2%; background-color:#065675; position: fixed; top: 0%; right: 0%; left: 0%;">
       <div class="col-sm-3">
@@ -19,9 +17,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../../CSS/History/insert.css" /> 
-    <link rel="icon" href="../../IMAGES/Home/iR.png">
-
-    <title>Insert Data</title>
+    
+    <title>Add Report Data</title>
 </head>
 <br><br><br><br><br><br><br>
   <h1> <%= (String) session.getAttribute("client")%>  <%= (String) session.getAttribute("year")%> Campaign- <%= (String) session.getAttribute("period")%></h1>

@@ -5,9 +5,6 @@
   <title>History</title>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700&amp;display=swap'>
   <link rel="stylesheet" href="../../CSS/History/hi.css">
-
-<link rel="icon" href="../../IMAGES/Home/iR.png">
-
 </head>
 <body style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
 background: linear-gradient(to right, #25b7c4, #845ddf);">
