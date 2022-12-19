@@ -6,7 +6,9 @@
     <meta name="description" content="">
     <title>Home</title>
     <link rel="stylesheet" href="../../CSS/Home/nicepage.css" media="screen">
-<link rel="stylesheet" href="../../CSS/Home/Home.css" media="screen">
+    <link rel="stylesheet" href="../../CSS/Home/Home.css" media="screen">
+    <link rel="icon" href="../../IMAGES/Home/iR.png">
+
     <script class="u-script" type="text/javascript" src="../../JS/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../../JS/nicepage.js" defer=""></script>
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -16,6 +18,16 @@
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
   </head>
+<%
+					if (request.getAttribute("error_message") != null) {
+%>
+						<h3 class="u-text u-text-default u-title u-text-1"><%=(String)request.getAttribute("error_message") %></h3>
+							
+						
+<%
+					}
+%>	
+
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-sticky u-sticky-65f3 u-white u-header" id="sec-6ecb"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
           <img src="../../IMAGES/Home/inteli_last.png" class="u-logo-image u-logo-image-1">
@@ -54,6 +66,7 @@ borders: top right bottom left !important
 }</style></header>
     <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="842" data-image-height="440" id="sec-b1eb">
       <div class="u-clearfix u-sheet u-sheet-1">
+	
         <h1 class="u-text u-text-default u-title u-text-1">Designing for people</h1>
         <a href="login.jsp" class="u-btn u-button-style u-palette-2-base u-btn-1" style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
         background: linear-gradient(to right, #25b7c4, #845ddf);">login</a>

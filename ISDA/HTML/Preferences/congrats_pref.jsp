@@ -1,3 +1,6 @@
+<%@ include file="../Home/authentication_guard.jsp" %>
+<link rel="icon" href="../../IMAGES/Home/iR.png">
+<title>Select Indicators</title>
 
 <div class="contain">
 	<div class="navbar">

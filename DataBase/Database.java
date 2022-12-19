@@ -1,13 +1,15 @@
-package test;
-
 import java.sql.*;
 import java.time.LocalDate;
-
-public class java_insertions_report {
+public class Database {
 public static void main(String[] args) {
-	Data_connection dc = new Data_connection();
+	Database a = new Database();
 	try {
-		Connection con=dc.get_connection();
+		Class.forName("com.mysql.jdbc.Driver").newInstance();
+	}catch(Exception e) {
+		System.out.print("MySQL Driver error: " + e.getMessage());
+	}
+	try {
+		Connection con = DriverManager.getConnection("jdbc:mysql://195.251.249.131:3306/ismgroup60","ismgroup60","82gyrs");
 		Statement stmt=con.createStatement();
 		String querry = "SELECT email"
 					+ "FROM client_";
@@ -19,8 +21,8 @@ public static void main(String[] args) {
 		String email;
 		while (rs.next()) {
 			for(int j=0; j<5; j++) {
-				//size = a.size();
-				//employee_id = a.employee_id();
+				size = a.size();
+				employee_id = a.employee_id();
 				email = rs.getString("email");		
 				stmt.executeUpdate("INSERT INTO reports " + "VALUES (reports_id, size, a.Date(), 'informative report', employee_id, email)");
 				reports_id++;

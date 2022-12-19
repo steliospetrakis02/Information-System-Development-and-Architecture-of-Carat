@@ -1,3 +1,4 @@
+<%@ include file="../Home/authentication_guard.jsp" %>
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,9 +8,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../IMAGES/logo.jpg">
-
-    <title>Media Planner Screen</title>
+    <link rel="icon" href="../../IMAGES/Home/iR.png">
+    <title>Results</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
    
