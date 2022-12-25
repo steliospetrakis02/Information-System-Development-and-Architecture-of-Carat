@@ -1,20 +1,31 @@
+<%@ include file="../Home/authentication_guard.jsp" %>
+<%@ page import="test.Preferences" %>
+<%@ page import="test.Reports" %>
+<%@ page import="java.util.*" %>
+<link rel="icon" href="../../IMAGES/Home/iR.png">
+<title>View Indicators</title>
+
 <head>
   <body>
       <body style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
       background: linebuttonar-gradient(to right, #25b7c4, #845ddf);">
       
-<div class="navbar" style="position: fixed; top: 0%; right: 0%; left: 0%;">
-    <div class="row" style="padding:1.2%;">
-        <div class="col-sm-3">
-            <a href="../History/allindicators.jsp" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"
-            >Learn more about indicators</a>
-            <img src="../../IMAGES/Preferences/inteli_last.png" class="u-logo-image u-logo-image-1">
-           
-      </div> 
-      </div>
-    
-
-  </div>
+<header style="position:fixed; top:0%; left:0%;">
+<nav id='cssmenu' style="width:1200px;">
+<div class="logo"><img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1"></div>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li><a href='../Home/finalmainPlanner.jsp'>Main Page</a></li>
+<li><a href="../History/lr.jsp">View Report</a></li>
+<li class='active'><a href='../Preferences/PlannerPreferences.jsp'>Preferences</a></li>
+<li><a href='../Goals/planner-goals.jsp'>Goals</a></li>
+<li><a href='../Statistics/StatisticsPlanner.jsp'>Statistics</a></li>
+<li><a href='../History/insert.jsp'>Insert Data</a></li>
+<li><a href="../History/allindicators.jsp" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">All indicators</a></li>
+</ul>
+</nav>
+</header>
 <script class="u-script" type="text/javascript" src="../../JS/jquery.js" defer=""></script>
 <script class="u-script" type="text/javascript" src="../../JS/nicepage.js" defer=""></script>
 
@@ -28,10 +39,21 @@
  
   </header>
   
-  <% String year = (String) request.getParameter("year");
-     String period = (String) request.getParameter("period");
+  <% String year,period;
+  if(request.getParameter("year") == null) {
+     year = (String) session.getAttribute("year");
+     period = (String) session.getAttribute("period");
+  } else {
+     year = (String) request.getParameter("year");
+     period = (String) request.getParameter("period");
      session.setAttribute("year", year);
-     session.setAttribute("period", period);%>
+     session.setAttribute("period", period);
+  }%>
+  <% if(session.getAttribute("client") == null){ %>
+    <jsp:forward page="../Home/finalmainPlanner.jsp" >
+        <jsp:param name="color" value="red" />
+    </jsp:forward>
+  <% } %>
 </div> 
 </div>
 <br><br><br><br><br><br><br>
@@ -41,22 +63,32 @@
  
 </div>
 </form>
+<% Preferences pref = new Preferences();
+   List<String> TV = new ArrayList<String>();
+   List<String> Internet = new ArrayList<String>();
+   List<String> prefs;
+   prefs = pref.get_Client_Preferences((String) session.getAttribute("client_email"));
+   for(String p : prefs) {
+      if(p.equals("Clicks") || p.equals("Click Rate") || p.equals("Impressions") || p.equals("Viewability")) {
+        Internet.add(p);
+
+      } else {
+        TV.add(p);
+      }
+   } 
+%>
 
 <h1 style="border-style: groove solid groove solid; border-width: 0px; border-color: #065675;
 max-width: 100%; margin-left: auto; margin-right:auto; background-color: #065675; font-size: 50px;
 color:#FFFFFF"> TV </h1>
 <FORM action="../Home/finalmainPlanner.jsp">
-<label>
-  <input type="checkbox" name="" value=""/>
-  <span>GRPs</span>
-</label>
-<label>
-<br>
-</label>
+<% for(String p : TV){ %>
   <label>
-  <input type="checkbox" name="" value=""/>
-  <span>Reach 1+</span>
-</label>
+    <input type="checkbox" name="" value=""/>
+    <span><%= p%></span>
+  </label>
+  <br> 
+<% }%>
 <br>
 <br>
 <br>
@@ -64,18 +96,14 @@ color:#FFFFFF"> TV </h1>
  max-width: 100%; margin-left: auto; margin-right:auto; background-color: #065675; font-size: 50px;
  color:#FFFFFF"> Internet </h1>
 <br>
-<label>
-<input type="checkbox" name="" value=""/>
-<span>Impressions</span>
-</label>
-<label>
-<br>
+<% for(String p : Internet){ %>
+  <label>
+    <input type="checkbox" name="" value=""/>
+    <span><%= p%></span>
+  </label>
+  <br>
 
-<input type="checkbox" name="" value=""/>
-<span>Click Rate</span>
-
-</label>
-<label>
+<% }%>
     <br> <br>
     <br>
     <br>
@@ -280,7 +308,7 @@ body{
 
 
 </style>
- 
+ <%@ include file="../Home/navbar.jsp"%>
 
 </head>
 </body>

@@ -4,14 +4,15 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Login">
     <meta name="description" content="">
-    <title>register</title>
+    <title>Register</title>
     <link rel="stylesheet" href="../../CSS/Home/nicepage.css" media="screen">
 <link rel="stylesheet" href="../../CSS/Home/register.css" media="screen">
+<link rel="icon" href="../../IMAGES/Home/iR.png">
+
     <script class="u-script" type="text/javascript" src="../../JS/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../../JS/nicepage.js" defer=""></script>
    
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -86,21 +87,20 @@ borders: top right bottom left !important
                 <% if(request.getParameter("passlength")!= null) {%>
                   <h5 style="color: red;"><%= request.getParameter("passlength") %></h5>
                 <% } %>
+                <% if(request.getParameter("emaillength")!= null) {%>
+                  <h5 style="color: red;"><%= request.getParameter("emaillength") %></h5>
+                <% } %>
                 <div class="input-field">
-                  <input type="email" placeholder="Email" name="Email" autocomplete="nope" 
-                  style="color: <%= request.getParameter("colorEmail")%>">
+                  <input type="email" placeholder="Email" name="Email" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                  <input type="text" placeholder="Name" name="Name" autocomplete="nope"
-                  style="color: <%= request.getParameter("colorName")%>">
+                  <input type="text" placeholder="Name" name="Name" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                  <input type="password" placeholder="Password" name="Password" autocomplete="new-password"
-                  style="color: <%= request.getParameter("colorPass")%>">
+                  <input type="password" placeholder="Password" name="Password" autocomplete="new-password">
                 </div>
                 <div class="input-field">
-                  <input type="password" placeholder="Retype Password" name="RetypePassword" autocomplete="new-password"
-                  style="color: <%= request.getParameter("colorPass")%>">
+                  <input type="password" placeholder="Retype Password" name="RetypePassword" autocomplete="new-password">
                 </div>
                 <div class="input_field radio_option">
                   <input type="radio" name="radiogroup1" id="rd1" value="Client" checked="checked">
@@ -136,5 +136,10 @@ borders: top right bottom left !important
           </a>
         </div>
       </div></footer>
-  
+  <script>function submitMe(){
+  if ((event.which && event.which == 13) || 
+      (event.keyCode && event.keyCode == 13)){
+    document.form1.submit();
+  }
+}</script>
 </body></html>

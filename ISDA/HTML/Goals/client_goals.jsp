@@ -1,7 +1,13 @@
+<%@ include file="../Home/authentication_guard.jsp" %>
+<%@ include file="../Home/navbar.jsp"%>
+
 <!DOCTYPE html>
 <html>
+<title>Set Goals</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="icon" href="../../IMAGES/Home/iR.png">
+
 <style>
 * {
   box-sizing: border-box;
@@ -84,35 +90,50 @@ button:hover {
 }
 </style>
 <body>
- <div class="navbar">
-    <div class="row" style="padding:1.2%; background-color:#065675; position: fixed; top: 0%; right: 0%; left: 0%;">
-        <div class="col-sm-3">
-            <img src="../../IMAGES/Goals/inteli_last.png" class="u-logo-image u-logo-image-1">
-           
-      </div> 
-      </div>
-  </div>
-<% String year = (String) request.getParameter("year");
-     String period = (String) request.getParameter("period");
+ <header style="position:fixed; top:0%; left:0%;">
+<nav id='cssmenu'>
+<div class="logo"><img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1"></div>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li style="margin-left:2%;"><a href='../Home/finalmain.jsp'>Main Page</a></li>
+<li><a href="../History/lr.jsp">View Report</a></li>
+<li><a href='../Preferences/preferences.jsp'>Preferences</a></li>
+<li class='active'><a href='../Goals/client_goals.jsp'>Goals</a></li>
+<li><a href='../Statistics/Statistics.jsp'>Statistics</a></li>
+</ul>
+</nav>
+</header>
+<% String year;
+String period;
+ if(request.getParameter("year") == null){
+       year = (String) session.getAttribute("year");
+       period = (String) session.getAttribute("period");
+} else {
+      year = (String) request.getParameter("year");
+      period = (String) request.getParameter("period");
+} 
+     
      session.setAttribute("year", year);
      session.setAttribute("period", period);%>
 <form id="regForm" action="results.jsp">
   <h1><img src="../../IMAGES/Goals/goals.jpg">  </h1>
   <!-- One "tab" for each step in the form: -->
   <div class="tab">Target GRPs:
-    <p><input placeholder="Set your target GRPs" oninput="this.className = ''" name="GRPs"></p>
+    <p><br><input placeholder="Set your target GRPs" oninput="this.className = ''" name="GRPs"></p>
   </div>
   <div class="tab">Target SOV:
-    <p><input placeholder="Set your target SOV" oninput="this.className = ''" name="SOV"></p>
+    <p><br><input placeholder="Set your target SOV" oninput="this.className = ''" name="SOV"></p>
   </div>
   <div class="tab">Target Reach 1+:
-    <p><input placeholder="Set your target Reach 1+" oninput="this.className = ''" name="Reach 1+"></p>
+    <p><br><input placeholder="Set your target Reach 1+" oninput="this.className = ''" name="Reach 1+"></p>
   </div>
   <div class="tab">Target Reach 3+:
-    <p><input placeholder="Set your target Reach 3+" oninput="this.className = ''" name="Reach 3+"></p>
+    <p><br><input placeholder="Set your target Reach 3+" oninput="this.className = ''" name="Reach 3+"></p>
   </div>
   <div style="overflow:auto;">
     <div style="float:right;">
+    <br>
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
       <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
     </div>

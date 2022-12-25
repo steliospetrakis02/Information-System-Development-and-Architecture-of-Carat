@@ -1,17 +1,20 @@
+<%@ include file="authentication_guard.jsp" %>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Home</title>
+    <title>Main Page</title>
     <link rel="stylesheet" href="../../CSS/Home/nicepage.css" media="screen">
 <link rel="stylesheet" href="../../CSS/Home/finalmain.css" media="screen">
+<link rel="icon" href="../../IMAGES/Home/iR.png">
+
     <script class="u-script" type="text/javascript" src="../../JS/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../../JS/nicepage.js" defer=""></script>
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Oswald:200,300,400,500,600,700">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     
     <script type="application/ld+json">{
@@ -25,25 +28,22 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-sticky u-sticky-65f3 u-white u-header" id="sec-6ecb"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-  <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
-    <img src="../../IMAGES/Home/inteli_last.png" class="u-logo-image u-logo-image-1">
-  </a>
-      <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1">
-        <div class="u-custom-menu u-nav-container">
-          <ul class="u-nav u-spacing-15 u-unstyled u-nav-1">
-      <li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="Home.jsp" style="padding: 10px 20px;">LOGOUT</a>
-      </li>
-</li></ul>
-        </div>
-        <div class="u-custom-menu u-nav-container-collapse">
-             <div class="u-inner-container-layout u-sidenav-overflow">
-              <div class="u-menu-close"></div>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Logout</a>
-                  </li></ul>
-            </div>
-        </div>
-    </nav>
-</div>
+<nav id='cssmenu' style="width:1850px;">
+<div class="logo" style="margin-top:1%; width:13%; margin-left:1%;"><img src="../../IMAGES/History/inteli_last.png"></div>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li class='active'><a href='../Home/finalmain.jsp'>Main Page</a></li>
+<li><a href="../History/lr.jsp?year=<%= (String) session.getAttribute("year")%>&period=<%= (String) session.getAttribute("period")%>">View Report</a></li>
+<li><a href='../Preferences/preferences.jsp'>Preferences</a></li>
+<li><a href='../Goals/client_goals.jsp'>Goals</a></li>
+<li><a href='../Statistics/Statistics.jsp'>Statistics</a></li>
+<li style="margin-left:17%;"><a href="Home.jsp">Logout <i class="fa fa-sign-out" style="font-size:20px"></i></a></li>
+</ul>
+</nav>
+
+
+<%@ include file="../Home/navbar.jsp"%>
 </header>
 <% session.setAttribute("results", "no");
    session.setAttribute("stats", "no");%>
@@ -87,7 +87,7 @@
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-2">
                             <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
                               <img class="u-image u-image-circle u-image-2" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                              <a href="../History/his.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">See reports via history</a>
+                              <a href="../History/lr.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">View Report</a>
                             </div>
                           </div>
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-3">
@@ -117,7 +117,7 @@
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-8">
                             <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-11">
                               <img class="u-image u-image-circle u-image-8" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                              <a href="../History/his.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-8">See reports via history</a>
+                              <a href="../History/lr.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-8">View Report</a>
                             </div>
                           </div>
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-9">
@@ -147,7 +147,7 @@
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-14">
                             <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-18">
                               <img class="u-image u-image-circle u-image-14" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                              <a href="../History/his.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-14">See reports via history</a>
+                              <a href="../History/lr.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-14">View Report</a>
                             </div>
                           </div>
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-15">
@@ -196,7 +196,7 @@
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-20">
                             <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-26">
                               <img class="u-image u-image-circle u-image-20" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                              <a href="../History/his.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-20">See reports via history</a>
+                              <a href="../History/lr.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-20">View Report</a>
                             </div>
                           </div>
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-21">
@@ -226,7 +226,7 @@
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-26">
                             <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-33">
                               <img class="u-image u-image-circle u-image-26" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                              <a href="../History/his.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-26">See reports via history</a>
+                              <a href="../History/lr.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-26">View Report</a>
                             </div>
                           </div>
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-27">
@@ -256,7 +256,7 @@
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-32">
                             <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-40">
                               <img class="u-image u-image-circle u-image-32" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                              <a href="../History/his.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-32">See reports via history</a>
+                              <a href="../History/lr.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-32">View Report</a>
                             </div>
                           </div>
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-33">
@@ -305,7 +305,7 @@
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-38">
                             <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-48">
                               <img class="u-image u-image-circle u-image-38" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                              <a href="../History/his.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-38">See reports via history</a>
+                              <a href="../History/lr.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-38">View Report</a>
                             </div>
                           </div>
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-39">
@@ -335,7 +335,7 @@
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-44">
                             <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-55">
                               <img class="u-image u-image-circle u-image-44" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                              <a href="../History/his.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-44">See reports via history</a>
+                              <a href="../History/lr.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-44">View Report</a>
                             </div>
                           </div>
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-45">
@@ -365,7 +365,7 @@
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-50">
                             <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-62">
                               <img class="u-image u-image-circle u-image-50" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                              <a href="../History/his.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-50">See reports via history</a>
+                              <a href="../History/lr.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-50">View Report</a>
                             </div>
                           </div>
                           <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-51">
@@ -401,14 +401,14 @@
     
     
     <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-5152"><div class="u-clearfix u-sheet u-sheet-1">
-      <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
+      <div class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
         <img src="../../IMAGES/Home/logo3.png" class="u-logo-image u-logo-image-1">
-      </a>
+      </div>
       <div class="u-align-left u-social-icons u-spacing-21 u-social-icons-1">
-        <a class="u-social-url" title="facebook" target="_blank" href=""><span class="u-icon u-social-facebook u-social-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-c130"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-c130"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
+        <a class="u-social-url" title="facebook" target="_blank" href="https://www.facebook.com/"><span class="u-icon u-social-facebook u-social-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-c130"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-c130"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
           c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path></svg></span>
         </a>
-        <a class="u-social-url" target="_blank" data-type="YouTube" title="YouTube" href=""><span class="u-icon u-social-icon u-social-youtube u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9b15"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-9b15"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M74.9,33.3H37.3c-7.4,0-13.4,6-13.4,13.4v18.8c0,7.4,6,13.4,13.4,13.4h37.6c7.4,0,13.4-6,13.4-13.4V46.7 C88.3,39.3,82.3,33.3,74.9,33.3L74.9,33.3z M65.9,57l-17.6,8.4c-0.5,0.2-1-0.1-1-0.6V47.5c0-0.5,0.6-0.9,1-0.6l17.6,8.9 C66.4,56,66.4,56.8,65.9,57L65.9,57z"></path></svg></span>
+        <a class="u-social-url" target="_blank" data-type="YouTube" title="YouTube" href="https://www.youtube.com/"><span class="u-icon u-social-icon u-social-youtube u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9b15"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-9b15"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M74.9,33.3H37.3c-7.4,0-13.4,6-13.4,13.4v18.8c0,7.4,6,13.4,13.4,13.4h37.6c7.4,0,13.4-6,13.4-13.4V46.7 C88.3,39.3,82.3,33.3,74.9,33.3L74.9,33.3z M65.9,57l-17.6,8.4c-0.5,0.2-1-0.1-1-0.6V47.5c0-0.5,0.6-0.9,1-0.6l17.6,8.9 C66.4,56,66.4,56.8,65.9,57L65.9,57z"></path></svg></span>
         </a>
       </div>
     </div></footer>

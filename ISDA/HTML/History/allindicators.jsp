@@ -1,9 +1,13 @@
+<%@ include file="../Home/authentication_guard.jsp" %>
+<%@ include file="../Home/navbar.jsp"%>
 <html>
     <head>
         <meta charset="UTF-8" />
          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
          <link rel="stylesheet" type="text/css" href="../../CSS/History/lrc.css" />
+          <link rel="icon" href="../../IMAGES/Home/iR.png">
+
          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
      <link rel="stylesheet" href="style.css"> 
@@ -159,16 +163,38 @@ z-index: 1;
 }
 </style>
 <body>
-  <div class="navbar">
-    <div class="row" style="padding:1.5%; background-color:#065675; position: fixed; top: 0%; right: 0%; left: 0%;">
-        <div class="col-sm-3">
-            <img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1">
-           
-      </div> 
-      </div>
-    
-  
-  </div>
+  <% if(((String) session.getAttribute("role")).equals("client")){ %>
+  <header style="position:fixed; top:0%; left:0%;">
+<nav id='cssmenu'>
+<div class="logo"><img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1"></div>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li style="margin-left:6%;"><a href='../Home/finalmain.jsp'>Main Page</a></li>
+<li><a href="../History/lr.jsp">View Report</a></li>
+<li  class='active'><a href='../Preferences/preferences.jsp'>Preferences</a></li>
+<li><a href='../Goals/client_goals.jsp'>Goals</a></li>
+<li><a href='../Statistics/Statistics.jsp'>Statistics</a></li>
+</ul>
+</nav>
+</header>
+<% } else { %>
+    <header style="position:fixed; top:0%; left:0%;">>
+<nav id='cssmenu'>
+<div class="logo"><img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1"></div>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li style="margin-left:6%;"><a href='../Home/finalmainPlanner.jsp'>Main Page</a></li>
+<li><a href="../History/lr.jsp">View Report</a></li>
+<li  class='active'><a href='../Preferences/PlannerPreferences.jsp'>Preferences</a></li>
+<li><a href='../Goals/planner-goals.jsp'>Goals</a></li>
+<li><a href='../Statistics/StatisticsPlanner.jsp'>Statistics</a></li>
+<li><a href='../History/insert.jsp'>Insert</a></li>
+</ul>
+</nav>
+</header>
+<% }%>
     <br><br><br><br><br><br><br><br><br>
     <section>
         <div class="container-fluid">

@@ -1,5 +1,9 @@
+<%@ include file="../Home/authentication_guard.jsp" %>
 <!DOCTYPE html>
 <html>
+<link rel="icon" href="../../IMAGES/Home/iR.png">
+<title>Statistics</title>
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -50,12 +54,23 @@
 </style>
 </head>
 <body style="font-family:Verdana;">
-<% String year = (String) request.getParameter("year");
-     String period = (String) request.getParameter("period");
-     session.setAttribute("year", year);
-     session.setAttribute("period", period);
-     session.setAttribute("stats", "yes");
+<%    String year, period;
+      if(request.getParameter("year") == null) {
+          year = (String) session.getAttribute("year");
+          period = (String) session.getAttribute("period");
+      } else {
+          year = (String) request.getParameter("year");
+          period = (String) request.getParameter("period");
+          session.setAttribute("year", year);
+          session.setAttribute("period", period);
+      }
      %>
+
+     <% if(session.getAttribute("client") == null){ %>
+    <jsp:forward page="../Home/finalmainPlanner.jsp" >
+        <jsp:param name="color" value="red" />
+    </jsp:forward>
+  <% } %>
 <div style="background: #065675;
 padding:1px;text-align:left;"> <img src="../../IMAGES/Preferences/inteli_last.png" class="u-logo-image u-logo-image-1">
   <h1 style="color:#ffffff; font-size: 60px; 

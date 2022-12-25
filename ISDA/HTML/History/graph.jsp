@@ -2,19 +2,47 @@
 <%@ page import="test.Preferences" %>
 <%@ page import="test.Reports" %>
 <%@ page import="java.util.*" %>
+<%@ include file="../Home/navbar.jsp"%>
 
 <link rel="icon" href="../../IMAGES/Home/iR.png">
-<title>Bar chart</title>
-<div class="navbar">
-  <div class="row" style="padding:1.2%; background-color:#065675;  position: fixed; top: 0%; right: 0%; left: 0%;">
-      <div class="col-sm-3">
-          <img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1">
-         
-    </div> 
-    </div>
-  
 
-</div>
+<% if(((String) session.getAttribute("role")).equals("client")){ %>
+  <header style="position:fixed; top:0%; left:0%;">
+<nav id='cssmenu' style="margin-left:21%;">
+<div class="logo"><img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1"></div>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul style="margin-top:12px;">
+<li style="margin-left:4%;"><a href='../Home/finalmain.jsp'>Main Page</a></li>
+<li class='active'><a href="../History/lr.jsp">View Report</a></li>
+<li><a href='../Preferences/preferences.jsp'>Preferences</a></li>
+<li><a href='../Goals/client_goals.jsp'>Goals</a></li>
+<li><a href='../Statistics/Statistics.jsp'>Statistics</a></li>
+</ul>
+</nav>
+</header>
+<% } else {
+  if(session.getAttribute("client") == null){ %>
+    <jsp:forward page="../Home/finalmainPlanner.jsp" >
+        <jsp:param name="color" value="red" />
+    </jsp:forward>
+  <% } %>
+    <header style="position:fixed; top:0%; left:0%;">
+<nav id='cssmenu'>
+<div class="logo"><img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1"></div>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li style="margin-left:1%;"><a href='../Home/finalmainPlanner.jsp'>Main Page</a></li>
+<li class='active'><a href="../History/lr.jsp">View Report</a></li>
+<li><a href='../Preferences/PlannerPreferences.jsp'>Preferences</a></li>
+<li><a href='../Goals/planner-goals.jsp'>Goals</a></li>
+<li><a href='../Statistics/StatisticsPlanner.jsp'>Statistics</a></li>
+<li><a href='../History/insert.jsp'>Insert Data</a></li>
+</ul>
+</nav>
+</header>
+<% }%>
 <br>
 <br>
 <br><br><br>
@@ -26,31 +54,47 @@
               String report_id="0";
               int index = 0;
               int indicator_index = 0;
+              boolean flag_300 = false;
               
-              report_id = (String) session.getAttribute("report_id");
-//              data=rep.get_data((String)session.getAttribute("Aegean@hotmail.com"),"1");
-  //            data=rep.get_data((String)session.getAttribute("email"),report_id);
-                  data=(rep.get_data("AEGEAN@hotmail.com","1"));  
-
-
-             List<String> prefs = pref.get_Client_Preferences((String) session.getAttribute("email")); 
+             List<String> prefs;
+             if((String) session.getAttribute("client_email") == null) {
+                data=rep.get_data((String)session.getAttribute("email"));
+                prefs = pref.get_Client_Preferences((String) session.getAttribute("email")); 
+             
+             } else {
+                 data=rep.get_data((String)session.getAttribute("client_email"));
+                 prefs = pref.get_Client_Preferences((String) session.getAttribute("client_email")); 
+             }
              for(String prefe: prefs){
                 if(prefe.equals(request.getParameter("indicator"))){
                   indicator_index = index;
                 }
                 index++;
-             } %>
+             } 
+             indicator_index++;%>
 <h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
   <%= request.getParameter("indicator")%> Report 3D Vertical Bar Chart</h1>  <!-- %του 300-->
   <div class="chart-container">
     <div class="base"></div>
         <!-- Left Side Meter-->
     <ul class="meter">
+     <% if(request.getParameter("indicator").equals("GRPs") || request.getParameter("indicator").equals("Insertions") ||
+     request.getParameter("indicator").equals("Grps/Week") || request.getParameter("indicator").equals("Weeks") ||
+     request.getParameter("indicator").equals("Weeks(4X)") || request.getParameter("indicator").equals("Impressions") ||
+     request.getParameter("indicator").equals("Clicks")) {
+      flag_300 = true; %>
       <li><div>300</div></li>
       <li><div>240</div></li>
       <li><div>180</div></li>
       <li><div>120</div></li>
       <li><div>60</div></li>
+    <% } else { %>
+      <li><div>100</div></li>
+      <li><div>80</div></li>
+      <li><div>60</div></li>
+      <li><div>40</div></li>
+      <li><div>20</div></li>
+    <% } %>
     </ul>
     <!-- Background-Grid -->
     <table>
@@ -115,7 +159,7 @@
     <div class="bar six"></div>
     <div class="bar seven"></div>   
     <div class="bar eight"></div> 
-  </div>
+  </div><br>
   <h3 style="margin-left: 26%;">Weeks <span style="margin-left: 2.5%;">1-2</span>
     <span style="margin-left: 4.8%;">3-4</span>
     <span style="margin-left: 4.8%;">5-6</span>
@@ -281,13 +325,20 @@ h1 {
 /* ---------------------
   Vertical Bars
 ----------------------*/
+<% double[] week_avg = new double[8];
+   for(int i = 0; i < 16; i = i + 2){
+      week_avg[i/2] = (data[i][indicator_index] + data[i + 1][indicator_index]) / 2;
+      if(flag_300) {
+        week_avg[i/2] = ((week_avg[i/2]) / 300)*100;
+      }
+   }%>
 
 .bar {
   float: left;
   position: absolute;
   bottom: 0;
   z-index: 99;
-  height: 35%;
+  height: <%= week_avg[0]%>%;
   width: 40px;
   margin: 0 40px;
   background-color: rgba(10, 245, 194, 0.986);
@@ -320,37 +371,37 @@ h1 {
 
 .two {
   left: 12.5%;
-  height: 57%;
+  height: <%= week_avg[1]%>%;
 }
 
 .three {
   left: 25%;
-  height: 85%;
+  height: <%= week_avg[2]%>%;
 }
 
 .four {
   left: 37.5%;
-  height: 35%;
+  height: <%= week_avg[3]%>%;
 }
 
 .five {
   left: 50%;
-  height: 63%;
+  height: <%= week_avg[4]%>%;
 }
 
 .six {
   left: 62.5%;
-  height: 45%;
+  height: <%= week_avg[5]%>%;
 }
 
 .seven {
   left: 75%;
-  height: 15%;
+  height: <%= week_avg[6]%>%;
 }
 
 .eight {
   left: 87.5%;
-  height: 32%;
+  height: <%= week_avg[7]%>%;
 }
 
   </style>

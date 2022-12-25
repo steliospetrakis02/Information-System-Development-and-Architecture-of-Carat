@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Login">
     <meta name="description" content="">
-    <title>login</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../../CSS/Home/nicepage.css" media="screen">
 <link rel="stylesheet" href="../../CSS/Home/login.css" media="screen">
+<link rel="icon" href="../../IMAGES/Home/iR.png">
+
     <script class="u-script" type="text/javascript" src="../../JS/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../../JS/nicepage.js" defer=""></script>
     
@@ -22,7 +24,9 @@
 				"",
 				""
 		]
-}</script>
+}
+</script>
+
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="login">
     <meta property="og:type" content="website">
@@ -124,5 +128,10 @@ borders: top right bottom left !important
           </a>
         </div>
       </div></footer>
-  
+  <script>function submitMe(){
+  if ((event.which && event.which == 13) || 
+      (event.keyCode && event.keyCode == 13)){
+    document.form1.submit();
+  }
+}</script>
 </body></html>

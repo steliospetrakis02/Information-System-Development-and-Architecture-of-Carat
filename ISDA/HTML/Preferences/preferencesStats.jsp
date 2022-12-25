@@ -1,20 +1,27 @@
+<%@ include file="../Home/authentication_guard.jsp" %>
+<link rel="icon" href="../../IMAGES/Home/iR.png">
+<title>Select Indicators</title>
+
 <head>
   <body>
       <body style="background: -webkit-linear-gradient(left, #25b7c4, #845ddf);
       background: linebuttonar-gradient(to right, #25b7c4, #845ddf);">
       
-<div class="navbar" style="position: fixed; top: 0%; right: 0%; left: 0%;">
-    <div class="row" style="padding:1.2%;">
-        <div class="col-sm-3">
-            <a href="../History/allindicators.jsp" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"
-            >Learn more about indicators</a>
-            <img src="../../IMAGES/Preferences/inteli_last.png" class="u-logo-image u-logo-image-1">
-           
-      </div> 
-      </div>
-    
-
-  </div>
+<header style="position:fixed; top:0%; left:0%;">
+<nav id='cssmenu'>
+<div class="logo"><img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1"></div>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li><a href='../Home/finalmain.jsp'>Main Page</a></li>
+<li><a href="../History/lr.jsp">View Report</a></li>
+<li><a href='../Preferences/preferences.jsp'>Preferences</a></li>
+<li><a href='../Goals/client_goals.jsp'>Goals</a></li>
+<li class='active'><a href='../Statistics/Statistics.jsp'>Statistics</a></li>
+<li><a href="../History/allindicators.jsp" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">All indicators</a></li>
+</ul>
+</nav>
+</header>
 <script class="u-script" type="text/javascript" src="../../JS/jquery.js" defer=""></script>
 <script class="u-script" type="text/javascript" src="../../JS/nicepage.js" defer=""></script>
 
@@ -360,6 +367,6 @@ background-size:15px 15px;
 
 </style>
  
-
+<%@ include file="../Home/navbar.jsp"%>
 </head>
 </body>

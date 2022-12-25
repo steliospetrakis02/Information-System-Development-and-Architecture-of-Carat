@@ -1,3 +1,7 @@
+<%@ include file="../Home/authentication_guard.jsp" %>
+<%@ include file="../Home/navbar.jsp"%>
+<link rel="icon" href="../../IMAGES/Home/iR.png">
+<title>Set Goals</title>
 
 <style>
 
@@ -149,14 +153,21 @@ body{
 }
 </style>
 <div class="contain">
-	<div class="navbar">
-		<div class="row" style="padding:2%; background-color:#065675;">
-			<div class="col-sm-3">
-				<img src="../../IMAGES/Goals/inteli_last.png" class="u-logo-image u-logo-image-1">
-			   
-		  </div> 
-		  </div>
-	  </div>
+	<header style="position:fixed; top:0%;">
+<nav id='cssmenu' style="position:relative; bottom:30px;">
+<div class="logo"><img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1" style="margin-top:20%;"></div>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li style="margin-left:6%;"><a href='../Home/finalmain.jsp'>Main Page</a></li>
+<li><a href="../History/lr.jsp">View Report</a></li>
+<li><a href='../Preferences/preferences.jsp'>Preferences</a></li>
+<li class='active'><a href='../Goals/client_goals.jsp'>Goals</a></li>
+<li><a href='../Statistics/Statistics.jsp'>Statistics</a></li>
+</ul>
+</nav>
+</header>
+<br><br><br><br><br><br><br><br><br><br><br>
 	<div class="congrats">
 		<h1>Your goals are <p style="color:rgb(25, 228, 160); display: inline;">20% higher</p> than previous year's!</h1><span class="hide"></span></h1>
 		<div class="done">

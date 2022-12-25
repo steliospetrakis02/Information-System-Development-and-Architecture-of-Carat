@@ -1,4 +1,4 @@
-
+<%@ page import="test.*" %>
 <div class="contain">
 	<div class="navbar">
 		<div class="row" style="padding:2%; background-color:#065675;">
@@ -40,12 +40,16 @@
 		background-color: rgb(153, 0, 255);
 		border-radius: 12px;
 	} 
+	<% Preferences pref = new Preferences();
+	Date dt = new Date();
+
+	%>
 	</style>
 			</div>
 		<div class="text">
-		<p>You have successfully set your preferences for the next campaign. <br>Here are your details<br>Date: 12.12.12<br>
-			Time: 11am<br>
-			ID: 12324
+		<p>You have successfully set your preferences for the next campaign. <br>Here are your details<br>Date: <%=dt.getDate()%><br>
+			Time: <%=dt.getTime()%><br>
+			ID:<%=pref.getClientPreference_id((String)session.getAttribute("email"))%>
 		</p>
 			</p>
 			</div>

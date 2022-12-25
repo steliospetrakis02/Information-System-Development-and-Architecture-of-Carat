@@ -2,6 +2,7 @@
 <%@ page import="test.User" %>
 <%@ page import="java.util.List" %>
 <%@ page isErrorPage="true" %>
+<%@ include file="authentication_guard.jsp" %>
 
 
 <!DOCTYPE html>
@@ -10,14 +11,16 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Home</title>
+    <title>Main Page</title>
     <link rel="stylesheet" href="../../CSS/Home/nicepage.css" media="screen">
 <link rel="stylesheet" href="../../CSS/Home/finalmain.css" media="screen">
+<link rel="icon" href="../../IMAGES/Home/iR.png">
+
     <script class="u-script" type="text/javascript" src="../../JS/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../../JS/nicepage.js" defer=""></script>
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Oswald:200,300,400,500,600,700">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     
     <script type="application/ld+json">{
@@ -30,48 +33,99 @@
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-sticky u-sticky-65f3 u-white u-header" id="sec-6ecb"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-    <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
-      <img src="../../IMAGES/Home/logo3.png" class="u-logo-image u-logo-image-1">
+  <%@ include file="../Home/navbar.jsp"%>
+  <body class="u-body u-xl-mode" data-lang="en"><header style="display:flex; class="u-clearfix u-header u-sticky u-sticky-65f3 u-white u-header" id="sec-6ecb"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <a href="Home.jsp" class="u-image u-logo u-image-1">
     </a>
     <% session.setAttribute("stats", "no");%>
-        <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1">
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-15 u-unstyled u-nav-1">
-              <div class="dropdown">
-          <button class="dropbtn">Choose Client</button>
-          <div class="dropdown-content">
-            <% User_service myUser_Service = new User_service();
+        <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1" style="margin-top:1%; width:1850px;">
+        <nav id='cssmenu' style="width:1850px;">
+<div class="logo" style="width:6%; margin-left:1%;"><img src="../../IMAGES/History/inteli_last.png"></div>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<style>
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li.dropdown {
+  display: inline-block;
+  background-color: #065675;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 82px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+<% String color;
+   if(request.getParameter("color") == null) {
+      color = "white";
+   } else {
+      color = request.getParameter("color");
+   }%>
+<li class="dropdown" style="width:12%;">
+    <a href="javascript:void(0)" class="dropbtn" style="color:<%= color%>">Choose Client</a>
+    <div class="dropdown-content">
+        <% User_service myUser_Service = new User_service();
                List<String> users = myUser_Service.getUsers(); 
                for(String user: users) { 
-                 User thisUser = myUser_Service.findUser(user);%>
-                  <a href="choose_client.jsp?client=<%= thisUser.get_personal_name()%>"><%= thisUser.get_personal_name()%></a>
+                 User thisUser = myUser_Service.findUser(user);
+                 String[] email_spilt = thisUser.getEmail().split("@");
+                  if(email_spilt[1].equals("intel.com")) {
+                      continue;
+                  }%>
+                  <a href="../Home/choose_client.jsp?client=<%= thisUser.get_personal_name()%>"><%= thisUser.get_personal_name()%></a>
              <%  }
             %>
-          </div>
-        </div>
-        <li class="u-nav-item"><a class="u-active-custom-color-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-active-white u-text-grey-90 u-text-hover-grey-90" href="Home.jsp" style="padding: 10px 20px;">LOGOUT</a>
-        </li>
-</li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-               <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                      <div class="dropdown">
-                        <button class="dropbtn">Dropdown</button>
-                        <div class="dropdown-content">
-                          <a href="#">Link 1</a>
-                          <a href="#">Link 2</a>
-                          <a href="#">Link 3</a>
-                        </div>
-                      </div>
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp">Logout</a>
-                    </li></ul>
-              </div>
-          </div>
-      </nav>
-</div>
+    </div>
+</li>
+<% if(session.getAttribute("client") != null) {
+    User current_client = myUser_Service.findUser2((String) session.getAttribute("client"));
+    session.setAttribute("client_email", current_client.getEmail());
+}%>
+<%@ include file="../Home/navbar.jsp"%>
+<li class='active'><a href='../Home/finalmainPlanner.jsp'>Main Page</a></li>
+<li><a href="../History/lr.jsp?year=<%= (String) session.getAttribute("year")%>&period=<%= (String) session.getAttribute("period")%>">View Report</a></li>
+<li><a href='../Preferences/PlannerPreferences.jsp'>Preferences</a></li>
+<li><a href='../Goals/planner-goals.jsp'>Goals</a></li>
+<li><a href='../Statistics/StatisticsPlanner.jsp'>Statistics</a></li>
+<li><a href='../History/insert.jsp'>Insert Data</a></li>
+<li style="margin-left:2%;"><a href="../Home/Home.jsp">Logout <i class="fa fa-sign-out" style="font-size:20px;"></i></a></li>
+</ul>
+</nav>
+
 </header>
+
 <div class="u-clearfix u-sheet u-sheet-1">
 <br><br>
 <h3 class="u-custom-font u-font-roboto-condensed u-text u-text-body-alt-color u-text-default u-text-1" style="margin-left: auto; margin-right:auto;">Welcome, please choose client, year and time period to work on a particular report</h3>
@@ -118,7 +172,7 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-2">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
                 <img class="u-image u-image-circle u-image-2" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">See reports via history</a>
+                <a href="../History/his.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-3">
@@ -154,7 +208,7 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-8">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-11">
                 <img class="u-image u-image-circle u-image-8" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-8">See reports via history</a>
+                <a href="../History/his.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-8">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-9">
@@ -190,7 +244,7 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-14">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-18">
                 <img class="u-image u-image-circle u-image-14" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-14">See reports via history</a>
+                <a href="../History/his.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-14">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-15">
@@ -245,7 +299,7 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-20">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-26">
                 <img class="u-image u-image-circle u-image-20" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-20">See reports via history</a>
+                <a href="../History/his.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-20">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-21">
@@ -281,7 +335,7 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-26">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-33">
                 <img class="u-image u-image-circle u-image-26" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-26">See reports via history</a>
+                <a href="../History/his.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-26">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-27">
@@ -317,7 +371,7 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-32">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-40">
                 <img class="u-image u-image-circle u-image-32" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-32">See reports via history</a>
+                <a href="../History/his.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-32">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-33">
@@ -372,7 +426,7 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-38">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-48">
                 <img class="u-image u-image-circle u-image-38" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-38">See reports via history</a>
+                <a href="../History/his.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-38">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-39">
@@ -408,7 +462,7 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-44">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-55">
                 <img class="u-image u-image-circle u-image-44" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-44">See reports via history</a>
+                <a href="../History/his.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-44">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-45">
@@ -444,7 +498,7 @@
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-50">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-62">
                 <img class="u-image u-image-circle u-image-50" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-50">See reports via history</a>
+                <a href="../History/his.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-50">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-51">
@@ -480,7 +534,7 @@
 
 
 <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-5152"><div class="u-clearfix u-sheet u-sheet-1">
-<a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
+<a href="" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
 <img src="../../IMAGES/Home/logo3.png" class="u-logo-image u-logo-image-1">
 </a>
 <div class="u-align-left u-social-icons u-spacing-21 u-social-icons-1">

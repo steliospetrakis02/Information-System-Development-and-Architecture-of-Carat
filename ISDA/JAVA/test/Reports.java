@@ -3,7 +3,7 @@ import java.util.*;
 import java.sql.*;
 
 public class Reports {
-    private double[][] report_data = new double[15][5];
+    private double[][] report_data = new double[16][5];
     private  List<Double> report_dataa= new ArrayList<>();
 
     private static List<Integer> list_of_indicators= new ArrayList<>();
@@ -103,7 +103,7 @@ public class Reports {
         //System.out.println(rep.caclulate_Average("2",test));
         //rep.caclulate_Average("2",test);
         double[][] report_data2 = new double[15][5];
-        report_data2=(rep.get_data("sts2@gmail.com"));  
+        report_data2=(rep.get_data("AEGEAN@hotmail.com"));  
         System.out.println("week,ind1,ind2,ind3,ind4");
         for(int i = 0; i < report_data2.length; i++){
             for(int j = 0; j < report_data2[i].length; j++){

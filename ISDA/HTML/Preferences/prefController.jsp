@@ -1,3 +1,6 @@
+ <%@ page import="test.Preferences" %>
+<%@ page import="test.Reports" %>
+<%@ page import="java.util.*" %>
  <%     String[] results = request.getParameterValues("indicators");
         
     if(results == null) {
@@ -34,6 +37,8 @@
             }
 
         }    
+        Preferences pref = new Preferences();
+        pref.set_Client_Preferences((String) session.getAttribute("email"), indicators[0], indicators[1], indicators[2], indicators[3]);
 
         if(index != 4 && ((String) session.getAttribute("stats")).equals("no")) { %>
             <jsp:forward page="preferences.jsp" >

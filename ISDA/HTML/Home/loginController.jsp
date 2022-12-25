@@ -1,4 +1,5 @@
 <%@ page import="test.User_service" %>
+<%@ page import="test.User" %>
 
     <%  String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -8,9 +9,14 @@
         String next_page;
 
         if(done == true) { 
-             String[] email_spilt = email.split("@"); 
-             session.setAttribute("user", email_spilt[0]);
-             if(email_spilt[1].equals("intellireports.com")) { 
+             session.setAttribute("year", "2020");
+             session.setAttribute("period", "A");
+             session.setAttribute("email", email);
+             User myUser = myUser_Service.findUser(email);
+             session.setAttribute("user", myUser.get_personal_name());
+             
+             String[] email_spilt = email.split("@");
+             if(email_spilt[1].equals("intel.com")) { 
                 session.setAttribute("role", "employee"); %>
                 <jsp:forward page="finalmainPlanner.jsp"/>
              <% } else { 
@@ -21,7 +27,7 @@
 
         <%} else { %>
             <jsp:forward page="login.jsp" >
-                <jsp:param name="color" value="red" />
+                <jsp:param name="errorMessage" value="Wrong email or password! Try again." />
             </jsp:forward>
        <% } %>
 
