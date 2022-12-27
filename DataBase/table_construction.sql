@@ -79,10 +79,18 @@ CREATE TABLE reports
                 
 CREATE TABLE Indicators
 				(
-				ind1 DOUBLE,
-                ind2 Int(30),
-                ind3 Integer(30),
-                ind4 DOUBLE,
+				GRPs VARCHAR(20),
+                Reach_1 VARCHAR(20),
+                Reach_3 VARCHAR(20),
+                SOV VARCHAR(20),
+                Insertions VARCHAR(20),
+                GRPs_Week VARCHAR(20),
+                Weeks VARCHAR(20),
+                Weeks_4x VARCHAR(20),
+                Impressions VARCHAR(20),
+                clicks VARCHAR(20),
+                click_rate VARCHAR(20),
+                Viewability VARCHAR(20),
 				reports_id VARCHAR(30),
                 FOREIGN KEY(reports_id) REFERENCES reports(reports_id)
                 );
