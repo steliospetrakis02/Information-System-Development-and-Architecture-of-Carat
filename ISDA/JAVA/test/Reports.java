@@ -5,11 +5,11 @@ import java.sql.*;
 
 public class Reports {
     private double[][] report_data = new double[16][12];
-    private String[][] list_of_Weeks_4x = new String[16][12];
-
+   
 
     private static List<Integer> list_of_indicators= new ArrayList<>();
     private static List<String> list_of_ids= new ArrayList<>();
+    private static List<String> list_of_Weeks_4x= new ArrayList<>();
     PreparedStatement pre = null;
     private ResultSet rs = null, rs1 = null;
     private Connection con=null;
@@ -71,7 +71,7 @@ public class Reports {
             report_data[weeks_ind][11]=ind12;
            
 
-            list_of_Weeks_4x[weeks_ind][1]=ind8;
+            list_of_Weeks_4x.add(ind8);
 
             weeks_ind++;
   
@@ -80,7 +80,7 @@ public class Reports {
         return report_data;
     }
 
-    public String[][]getList_of_Weeks_4x() {
+    public List<String> getList_of_Weeks_4x() {
         return list_of_Weeks_4x;
     }
 
@@ -142,16 +142,14 @@ public class Reports {
         return list_of_ids;
     }
     public static void main(String[] args) throws Exception {
-        List<String> test = new ArrayList<>();
+        
        
         Reports rep = new Reports();
         
-        //System.out.println(rep.caclulate_Average("2",test));
-        //rep.caclulate_Average("2",test);
         System.out.println(rep.getClientList_of_report_ids("AEGEAN@hotmail.com")); 
         double[][] report_data2 = new double[16][12];
         
-        System.out.println(); 
+        
         report_data2=rep.get_data("AEGEAN@hotmail.com");
         System.out.println("week,ind1,ind2,ind3,ind4");
         for(int i = 0; i < report_data2.length; i++){
@@ -161,15 +159,9 @@ public class Reports {
             }  
             System.out.println(""); 
         }
-        String[][] report_data3 = new String[16][12];
-        report_data3=((rep.getList_of_Weeks_4x()));  
-        for(int i = 0; i < report_data3.length; i++){
-            for(int j = 0; j < report_data3[i].length; j++){
-                System.out.print(report_data3[i][j]);
-                System.out.print(" ");
-            }  
-            System.out.println(""); 
-        }
+
+        System.out.println(rep.getList_of_Weeks_4x()); 
+        
     }
 
    
