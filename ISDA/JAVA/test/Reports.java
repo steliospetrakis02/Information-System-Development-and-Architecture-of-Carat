@@ -15,30 +15,17 @@ public class Reports {
     private Connection con=null;
 
    
-    public double[][] get_data(String email) throws Exception{
-        String reports_id="";
+    public double[][] get_data(String email,String report_id) throws Exception{
+        
         Data_connection dc = new Data_connection();
         con = dc.get_connection();
 
-        String sql = "Select reports_id from reports where email=?";
-
-        pre = con.prepareStatement(sql);
-        pre.setString(1, email);
-        rs = pre.executeQuery();
-        
-        if(!rs.next()){
-            throw new Exception("Could not find any reports with this email");
-        }
-        else{
-            reports_id = rs.getString("reports_id");
-            
-        }
         
         String sql2="select GRPs, Reach_1, Reach_3, SOV, Insertions, GRPs_Week, Weeks, Weeks_4x, Impressions, clicks, click_rate, Viewability, reports_id from indicators where reports_id=?";
         pre = con.prepareStatement(sql2);
         
         
-        pre.setString(1, reports_id);
+        pre.setString(1, report_id);
         rs = pre.executeQuery();
         int weeks_ind=0;
         while (rs.next()){
@@ -150,7 +137,7 @@ public class Reports {
         double[][] report_data2 = new double[16][12];
         
         
-        report_data2=rep.get_data("AEGEAN@hotmail.com");
+        report_data2=rep.get_data("AEGEAN@hotmail.com","2");
         System.out.println("week,ind1,ind2,ind3,ind4");
         for(int i = 0; i < report_data2.length; i++){
             for(int j = 0; j < report_data2[i].length; j++){
