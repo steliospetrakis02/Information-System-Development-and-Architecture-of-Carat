@@ -14,13 +14,29 @@ public class Preferences {
 
     private ResultSet rs = null, rs1 = null;
    // private final static String staffQuery = "select * from Preferences";
-
-    private String reports[];
-    private String statistics[];
     private List<String> client_pref_res = new ArrayList<>();
+    private List<String> pref_ids = new ArrayList<>();
+
 
  
-
+    public String getClientPreference_id(String email) throws SQLException{
+        Data_connection dc = new Data_connection();
+        con = dc.get_connection();
+        String sql2 = "Select preferences_id from Preferences where preferences.email=?";
+        pre = con.prepareStatement(sql2);
+        pre.setString(1, email);
+        rs = pre.executeQuery();
+        String pref_id="";
+        while(rs.next()){ 
+            pref_id= rs.getString("preferences_id");
+           
+        }
+        
+ 
+        
+        return pref_id;
+    }
+    
     public List<String> get_Client_Preferences(String email) throws SQLException{
         Data_connection dc = new Data_connection();
         con = dc.get_connection();
@@ -54,26 +70,26 @@ public class Preferences {
     }
 
     public void set_Client_Preferences(String email , String ind1, String ind2 , String ind3, 
-                                        String ind4, String ind5,String stat_ind_1 , String stat_ind_2,
-                                        String stat_ind_3,String company_name ) throws SQLException {
+                                        String ind4) throws SQLException {
+                                    
         
+        
+
         Data_connection dc = new Data_connection();
         con = dc.get_connection();
-       // stmt1 = conn.createStatement();
-        String insert = "insert into Preferences(indicator1,indicator2,indicator3,indicator4,indicator5,stat_indicator1,stat_indicator2,stat_indicator3,Company_name,email)" 
-        +"values(?, ?, ?, ?, ?,?, ?, ?, ?, ?)";
+      
 
-        PreparedStatement preparedStmt = con.prepareStatement(insert);
+     
+        String update = "Update Preferences SET indicator1=?,indicator2=?,indicator3=?,indicator4=? WHERE email=?";
+       
+
+        PreparedStatement preparedStmt = con.prepareStatement(update);
         preparedStmt.setString (1, ind1);
         preparedStmt.setString (2, ind2);
         preparedStmt.setString (3, ind3);
         preparedStmt.setString (4, ind4);
-        preparedStmt.setString (5, ind5);
-        preparedStmt.setString (6, stat_ind_1);
-        preparedStmt.setString (7, stat_ind_2);
-        preparedStmt.setString (8, stat_ind_3);
-        preparedStmt.setString (9, company_name);
-        preparedStmt.setString (10, email);
+        preparedStmt.setString (5, email);
+       
 
         preparedStmt.execute();
 
@@ -86,8 +102,10 @@ public class Preferences {
         
 
         Preferences pref = new Preferences();
-        //pref.set_Client_Preferences("vodafone@gmail","12","1","1","1","1","1222","Vodafone","Vodafone@gmail.com", null);
-        System.out.println(pref.get_Client_Preferences("sts@gmail.com"));
+        //pref.set_Client_Preferences("AEGEAN@hotmail.com","Insertions","Weeks(4x)","SOV","Reach 1+");
+        //System.out.println(pref.get_Client_Preferences("VODAFONE@hotmail.com"));
+        //System.out.println(pref.getClientList_of_Pref_ids("AEGEAN@hotmail.com"));
+      // System.out.println(pref.getClientPreference_id());
     }
 
     }

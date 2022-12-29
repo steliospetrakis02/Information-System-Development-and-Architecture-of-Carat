@@ -40,7 +40,7 @@ public class User_service {
 
         List<String> users = new ArrayList<String>();
 
-        String sql = "SELECT * FROM user_;";
+        String sql = "select company_name from client_";
         Connection con = null;
         Data_connection db = new Data_connection();
 
@@ -53,7 +53,7 @@ public class User_service {
 
             while (rs.next()) {
                                 
-                users.add(rs.getString("email"));
+                users.add(rs.getString("company_name"));
   
             }
 
@@ -115,8 +115,46 @@ public class User_service {
 			//stmt.close();
 		}
     }
+    public User findUser2(String personal_name) throws Exception {
+		
+		Data_connection db = new Data_connection();
+		
+		String sql = "select * from user_ where user_.personal_name =?";
+		try {
+           
+			con = db.get_connection();
+            PreparedStatement stmt = con.prepareStatement(sql);
+           
+			stmt.setString(1, personal_name);
+			ResultSet rs = stmt.executeQuery();
 
-    //needs find user
+			
+			if (!rs.next()) {
+                //user does not exist
+				rs.close();
+                stmt.close();
+                db.close();
+				throw new Exception("User not found");
+                
+            }
+
+			else{
+                
+                User usr = new User(rs.getString("email"),rs.getString("passwrd"),rs.getString("personal_name"));
+                return usr;
+			}
+
+		} catch (Exception e) {
+            throw new Exception(e.getMessage());
+            
+		}
+		finally{
+			db.close();
+			//stmt.close();
+		}
+    }
+
+    
     public void addUser(String email , String password, String username ) throws Exception{
 
             Data_connection dc = new Data_connection();
@@ -169,27 +207,15 @@ public class User_service {
         
         
 
-    //debuging purpose
-/*public static void main(String[] args) throws Exception {
-    
-    User_service usr_serv = new User_service();
-   String client_email="stelios@gmail.com";
-   String password = "1234";
-   System.out.println(usr_serv.findUser("stelios@gmail.com"));
-   System.out.println(usr_serv.authenticate(client_email, password));
-   
-   String elname="stelios";
-   
-   //usr_serv.addUser(client_email, "1234",elname);
-   System.out.println(usr_serv.getUsers()); 
-}*/
+ 
 public static void main(String[] args) throws Exception {
     User_service myUser_Service = new User_service();
     List<String> users = myUser_Service.getUsers(); 
-    for(String user: users) { 
+ /*    for(String user: users) { 
     User thisUser = myUser_Service.findUser(user);
     System.out.println(user);
-        }
+        }*/
+    System.out.println(users);
 }
 
 }
