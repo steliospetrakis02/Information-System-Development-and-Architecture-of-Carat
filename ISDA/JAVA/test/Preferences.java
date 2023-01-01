@@ -103,7 +103,7 @@ public class Preferences {
 
         Preferences pref = new Preferences();
         //pref.set_Client_Preferences("AEGEAN@hotmail.com","Insertions","Weeks(4x)","SOV","Reach 1+");
-        //System.out.println(pref.get_Client_Preferences("VODAFONE@hotmail.com"));
+        System.out.println(pref.get_Client_Preferences("VODAFONE@hotmail.com"));
         //System.out.println(pref.getClientList_of_Pref_ids("AEGEAN@hotmail.com"));
       // System.out.println(pref.getClientPreference_id());
     }

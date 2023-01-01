@@ -1,6 +1,9 @@
 package test;
 import java.util.*;
-import java.util.stream.*; 
+import java.util.stream.*;
+
+import javax.print.DocFlavor.STRING;
+
 import java.sql.*;
 
 public class Reports {
@@ -66,6 +69,67 @@ public class Reports {
         
         return report_data;
     }
+   
+    public void set_data(String email,String GRPs, String Reach_1, String Reach_3, String SOV, 
+    String Insertions, String GRPs_Week, String Weeks, String Weeks_4x, String Impressions, String clicks,
+     String click_rate, String Viewability) throws SQLException{
+      Data_connection db = new Data_connection();
+        con = db.get_connection();
+
+        Date2 dt = new Date2();
+        
+
+        
+        String reports_id = get_Client__last_rep_id(email);
+        System.out.println(reports_id);
+        if(check_if_indicators_are_full_given_report_id(reports_id)==true) {
+            //report id stays as it is
+        
+        }
+        else{
+           
+        try {
+            int reports_id_= getLast_global_report_id() +1;
+           reports_id= Integer.toString(reports_id_);
+            System.out.println(reports_id);
+           String sql="insert into reports (reports_id, size, type_, employee_id,date_, email) values (?,?,?,?,?,?);";
+           pre = con.prepareStatement(sql);
+           pre.setString(1, reports_id);
+           pre.setDouble(2, 299.0);
+           pre.setString(3, "Informative message");
+           pre.setString(4, "1");
+           pre.setDate(5, dt.getDate_2());
+           pre.setString(6, email);
+            //create new reports_id
+           pre.executeUpdate();
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
+        }
+
+
+        String sql2="INSERT INTO indicators(GRPs, Reach_1, Reach_3, SOV, Insertions, GRPs_Week, Weeks, Weeks_4x, Impressions, clicks, click_rate, Viewability,reports_id) "
+         + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        pre = con.prepareStatement(sql2);
+        
+        pre.setString(1, GRPs);
+        pre.setString(2, Reach_1);
+        pre.setString(3, Reach_3);
+        pre.setString(4, SOV);
+        pre.setString(5, Insertions);
+        pre.setString(6, GRPs_Week);
+        pre.setString(7, Weeks);
+        pre.setString(8, Weeks_4x);
+        pre.setString(9, Impressions);
+        pre.setString(10, clicks);
+        pre.setString(11, click_rate);
+        pre.setString(12, Viewability);
+        pre.setString(13, reports_id);
+
+        pre.executeUpdate();
+
+    }
 
     public List<String> getList_of_Weeks_4x() {
         return list_of_Weeks_4x;
@@ -111,33 +175,103 @@ public class Reports {
 
         return Math.sqrt(standardDeviation/length);
     }
-    public List<String> getClientList_of_report_ids(String email) throws SQLException{
+    public Integer getLast_global_report_id() throws SQLException{
         Data_connection dc = new Data_connection();
         con = dc.get_connection();
-        String sql2 = "Select reports_id from Reports where Reports.email=?";
+        String sql2 = "Select reports_id from Reports ";
         pre = con.prepareStatement(sql2);
-        pre.setString(1, email);
         rs = pre.executeQuery();
         String pref_id="";
         while(rs.next()){ 
             pref_id= rs.getString("reports_id");
-            list_of_ids.add(pref_id);
+          
         }
-         
-
-        
-        return list_of_ids;
+ 
+        return Integer.parseInt(pref_id);
     }
+    public String get_Client__last_rep_id(String email) throws SQLException{
+        Data_connection dc = new Data_connection();
+        con = dc.get_connection();
+        String sql2 = "Select reports_id from Reports where reports.email=? ";
+        pre = con.prepareStatement(sql2);
+        pre.setString(1,email);
+        rs = pre.executeQuery();
+        String report_id="";
+        while(rs.next()){ 
+            report_id= rs.getString("reports_id");
+           // list_of_ids.add(pref_id);
+        }
+        dc.close();
+        return report_id;
+        
+    }
+
+    public boolean check_if_indicators_are_full_given_report_id(String report_id){
+        String sql = "SELECT * FROM indicators WHERE reports_id=?;";
+        Data_connection db = new Data_connection();
+        int counter=0;
+		
+
+		try {
+			// open connection and get Connection object
+			con = db.get_connection();
+
+			PreparedStatement stmt = con.prepareStatement(sql);
+
+			// set values to parameter
+			stmt.setString(1, report_id);
+
+			// execute the SQL statement (QUERY - SELECT) and get the results in a ResultSet)
+			ResultSet rs = stmt.executeQuery();
+            
+			while (rs.next()) {
+	 			counter++;
+			}
+
+ 		
+		System.out.println(counter);
+		//a new report can fit
+        if(counter<16 && counter!=0) {
+            return true;
+        }
+        else if(counter==0){
+         
+            return false;
+        }
+        //create new report_id
+        else{
+            return false;
+        }
+
+		} catch (Exception e) {
+
+			
+
+                } finally {
+
+			try {
+			  
+			} catch (Exception e) {
+
+			}
+
+		}
+        return false;
+        
+        
+    }
+    
     public static void main(String[] args) throws Exception {
         
        
         Reports rep = new Reports();
         
-        System.out.println(rep.getClientList_of_report_ids("AEGEAN@hotmail.com")); 
+        rep.set_data("amazon@hotmail.com", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee");
+       // System.out.println(rep.getList_of_all__report_ids()); 
         double[][] report_data2 = new double[16][12];
         
         
-        report_data2=rep.get_data("AEGEAN@hotmail.com","2");
+        report_data2=rep.get_data("amazon@hotmail.com","23");
         System.out.println("week,ind1,ind2,ind3,ind4");
         for(int i = 0; i < report_data2.length; i++){
             for(int j = 0; j < report_data2[i].length; j++){
@@ -147,7 +281,7 @@ public class Reports {
             System.out.println(""); 
         }
 
-        System.out.println(rep.getList_of_Weeks_4x()); 
+      //  System.out.println(rep.getList_of_Weeks_4x()); 
         
     }
 
