@@ -45,12 +45,12 @@ public class Goals {
     
 
     public void setClient_goals(String email , String target_goals1, String target_goals2 , String target_goals3, 
-    String target_goals4) throws SQLException{
+    String target_goals4,String goals_id) throws SQLException{
 
         Data_connection dc = new Data_connection();
         con = dc.get_connection();
       
-        String goals_id= getClient_of_goals_Last_id(email);
+       // String goals_id= getClient_of_goals_Last_id(email);
      
         String update = "Update Goals SET target_goals1=?,target_goals2=?,target_goals3=?,target_goals4=? WHERE goals_id=?";
        
@@ -117,9 +117,9 @@ public static void main(String[] args) throws SQLException {
     String client_email="AEGEAN@hotmail.com";
     System.out.println(goal.getClientList_of_goals_ids(client_email));
 
-   goal.setClient_goals(client_email, "80", "60", "95", "70");
+   goal.setClient_goals(client_email, "80", "60", "95", "70","2");
    //System.out.println(goal.getClientList_of_goals_ids(client_email)); 
-   System.out.println(goal.getClient_goals(client_email,"8"));
+   System.out.println(goal.getClient_goals(client_email,"2"));
 }
 
 }
