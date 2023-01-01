@@ -50,7 +50,7 @@ public class Goals {
         Data_connection dc = new Data_connection();
         con = dc.get_connection();
       
-        String goals_id= getClientList_of_goals_ids(email);
+        String goals_id= getClient_of_goals_Last_id(email);
      
         String update = "Update Goals SET target_goals1=?,target_goals2=?,target_goals3=?,target_goals4=? WHERE goals_id=?";
        
@@ -69,7 +69,25 @@ public class Goals {
     
     }
     
-    public String getClientList_of_goals_ids(String email) throws SQLException{
+    public String getClient_of_goals_Last_id(String email) throws SQLException{
+        Data_connection dc = new Data_connection();
+        con = dc.get_connection();
+        String sql2 = "Select goals_id from Goals where goals.email=?";
+        pre = con.prepareStatement(sql2);
+        pre.setString(1, email);
+        rs = pre.executeQuery();
+        String goal_id="";
+        while(rs.next()){ 
+            goal_id= rs.getString("goals_id");
+           
+        }
+         
+        String last = list_of_ids.get(list_of_ids.size() - 1);
+
+        
+        return last;
+    }
+    public List<String>getClientList_of_goals_ids(String email) throws SQLException {
         Data_connection dc = new Data_connection();
         con = dc.get_connection();
         String sql2 = "Select goals_id from Goals where goals.email=?";
@@ -82,11 +100,14 @@ public class Goals {
             list_of_ids.add(goal_id);
         }
          
-        String last = list_of_ids.get(list_of_ids.size() - 1);
-
+       
+        return list_of_ids;
         
-        return last;
+       
     }
+       
+
+       
         
 
 //debuging purpose
@@ -94,6 +115,8 @@ public static void main(String[] args) throws SQLException {
 
     Goals goal = new Goals();
     String client_email="AEGEAN@hotmail.com";
+    System.out.println(goal.getClientList_of_goals_ids(client_email));
+
    goal.setClient_goals(client_email, "80", "60", "95", "70");
    //System.out.println(goal.getClientList_of_goals_ids(client_email)); 
    System.out.println(goal.getClient_goals(client_email,"8"));

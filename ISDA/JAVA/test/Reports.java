@@ -1,8 +1,6 @@
 package test;
 import java.util.*;
-import java.util.stream.*;
 
-import javax.print.DocFlavor.STRING;
 
 import java.sql.*;
 
@@ -199,11 +197,29 @@ public class Reports {
         String report_id="";
         while(rs.next()){ 
             report_id= rs.getString("reports_id");
-           // list_of_ids.add(pref_id);
+            list_of_ids.add(report_id);
         }
         dc.close();
         return report_id;
         
+    }
+    public List<String>getClientList_of_reports_ids(String email) throws SQLException {
+        Data_connection dc = new Data_connection();
+        con = dc.get_connection();
+        String sql2 = "Select reports_id from Reports where reports.email=?";
+        pre = con.prepareStatement(sql2);
+        pre.setString(1, email);
+        rs = pre.executeQuery();
+        String report_id="";
+        while(rs.next()){ 
+            report_id= rs.getString("reports_id");
+            list_of_ids.add(report_id);
+        }
+         
+       
+        return list_of_ids;
+        
+       
     }
 
     public boolean check_if_indicators_are_full_given_report_id(String report_id){
@@ -266,6 +282,8 @@ public class Reports {
        
         Reports rep = new Reports();
         
+        System.out.println(rep.getClientList_of_reports_ids("amazon@hotmail.com"));
+
         rep.set_data("amazon@hotmail.com", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee");
        // System.out.println(rep.getList_of_all__report_ids()); 
         double[][] report_data2 = new double[16][12];
