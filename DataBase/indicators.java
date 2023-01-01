@@ -16,14 +16,18 @@ public class indicators {
 			double SOV;
 			int Insertions;
 			int GRPs_Week;
+			GRPs_Week = a.GRPs_Week();
 			int Weeks;
+			Weeks = a.Weeks();
 			String Weeks_4x;
+			Weeks_4x = a.Weeks_4x();
 			int Impressions;
 			int clicks;
 			double click_rate;
 			double Viewability;
 			double v;
 			String reports_id;
+			int pl = 0;
 			int i;
 			while(rs.next()) {
 				for(i=0; i<16; i++) {
@@ -32,9 +36,12 @@ public class indicators {
 					Reach_3 = a.Reach_3();
 					SOV = a.SOV();
 					Insertions = a.Insertions();
-					GRPs_Week = a.GRPs_Week();
-					Weeks = a.Weeks();
-					Weeks_4x = a.Weeks_4x();
+					if (pl%4 ==0){
+						GRPs_Week = a.GRPs_Week();
+						Weeks = a.Weeks();
+						Weeks_4x = a.Weeks_4x();
+					}
+					pl++;
 					Impressions = a.Impressions();
 					clicks = a.Clicks();
 					click_rate = a.Click_Rate();
