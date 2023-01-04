@@ -55,6 +55,7 @@
 </head>
 <body style="font-family:Verdana;">
 <%    String year, period;
+      session.setAttribute("stats", "yes");
       if(request.getParameter("year") == null) {
           year = (String) session.getAttribute("year");
           period = (String) session.getAttribute("period");

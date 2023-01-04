@@ -117,9 +117,9 @@ public static void main(String[] args) throws SQLException {
     String client_email="AEGEAN@hotmail.com";
     System.out.println(goal.getClientList_of_goals_ids(client_email));
 
-   goal.setClient_goals(client_email, "80", "60", "95", "70","2");
+  // goal.setClient_goals(client_email, "80", "60", "95", "70","2");
    //System.out.println(goal.getClientList_of_goals_ids(client_email)); 
-   System.out.println(goal.getClient_goals(client_email,"2"));
+  // System.out.println(goal.getClient_goals(client_email,"2"));
 }
 
 }

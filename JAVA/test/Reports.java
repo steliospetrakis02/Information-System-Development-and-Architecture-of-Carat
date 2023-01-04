@@ -284,12 +284,12 @@ public class Reports {
         
         System.out.println(rep.getClientList_of_reports_ids("amazon@hotmail.com"));
 
-        rep.set_data("amazon@hotmail.com", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee");
+       // rep.set_data("amazon@hotmail.com", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee", "ee");
        // System.out.println(rep.getList_of_all__report_ids()); 
         double[][] report_data2 = new double[16][12];
         
         
-        report_data2=rep.get_data("amazon@hotmail.com","23");
+        report_data2=rep.get_data("amazon@hotmail.com","21");
         System.out.println("week,ind1,ind2,ind3,ind4");
         for(int i = 0; i < report_data2.length; i++){
             for(int j = 0; j < report_data2[i].length; j++){

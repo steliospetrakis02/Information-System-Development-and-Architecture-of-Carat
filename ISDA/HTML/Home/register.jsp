@@ -72,7 +72,7 @@ borders: top right bottom left !important
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,700">
           <link rel="stylesheet" href="./style.css"><!-- partial:index.partial.jsp -->
           <div class="login-form">
-            <form action="registerController.jsp">
+            <form action="registerController.jsp" method="POST">
               <h1>Register</h1>
               <div class="content">
                 <% if(request.getParameter("message")!= null) {%>
@@ -112,9 +112,9 @@ borders: top right bottom left !important
               </div>
               <div class="action">
                 <form>
-                  <button formaction="login.jsp">Sign In</button>
+                  <button><a href="login.jsp" style="text-decoration: none; color: black;">Sign In</a></button>
                 </form>
-                <button>Register</button>
+                <button type="submit">Register</button>
               </div>
             </form>
           </div><!-- partial -->
@@ -136,10 +136,4 @@ borders: top right bottom left !important
           </a>
         </div>
       </div></footer>
-  <script>function submitMe(){
-  if ((event.which && event.which == 13) || 
-      (event.keyCode && event.keyCode == 13)){
-    document.form1.submit();
-  }
-}</script>
 </body></html>

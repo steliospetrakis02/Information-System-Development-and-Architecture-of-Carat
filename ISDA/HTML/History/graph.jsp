@@ -51,27 +51,51 @@
 <% Preferences pref = new Preferences();
               Reports rep = new Reports();
               double[][] data =new double[16][5];
-              String report_id="0";
+              String report_id= (String) session.getAttribute("report_id");
               int index = 0;
-              int indicator_index = 0;
               boolean flag_300 = false;
+              boolean flag_Weeks = false;     
+              boolean use_4X = false;  
+              List<String> Weeks4X;      
               
              List<String> prefs;
              if((String) session.getAttribute("client_email") == null) {
-                data=rep.get_data((String)session.getAttribute("email"));
-                prefs = pref.get_Client_Preferences((String) session.getAttribute("email")); 
+                data=rep.get_data((String)session.getAttribute("email"), report_id);
+                Weeks4X = rep.getList_of_Weeks_4x();
              
              } else {
-                 data=rep.get_data((String)session.getAttribute("client_email"));
-                 prefs = pref.get_Client_Preferences((String) session.getAttribute("client_email")); 
+                 data=rep.get_data((String)session.getAttribute("client_email"), report_id);
+                 Weeks4X = rep.getList_of_Weeks_4x();
              }
-             for(String prefe: prefs){
-                if(prefe.equals(request.getParameter("indicator"))){
-                  indicator_index = index;
+             String p = request.getParameter("indicator");
+             int data_index = 0;
+             if(p.equals("GRPs")) {
+                    data_index = 1;
+                } else if(p.equals("Reach1 ")) {
+                    data_index = 2;
+                } else if(p.equals("Reach3 ")) {
+                    data_index = 3;
+                } else if(p.equals("SOV")) {
+                    data_index = 4;
+                } else if(p.equals("Insertions")) {
+                    data_index = 5;
+                } else if(p.equals("Grps/Week")) {
+                    data_index = 6;
+                } else if(p.equals("Weeks")) {
+                    data_index = 7;
+                    flag_Weeks = true;
+                } else if(p.equals("Weeks(4X)")) {
+                    use_4X = true;
+                } else if(p.equals("Impressions")) {
+                    data_index = 8;
+                } else if(p.equals("Clicks")) {
+                    data_index = 9;
+                } else if(p.equals("Click Rate")) {
+                    data_index = 10;
+                } else if(p.equals("Viewability")) {
+                    data_index = 11;
                 }
-                index++;
-             } 
-             indicator_index++;%>
+                %>
 <h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
   <%= request.getParameter("indicator")%> Report 3D Vertical Bar Chart</h1>  <!-- %του 300-->
   <div class="chart-container">
@@ -79,9 +103,7 @@
         <!-- Left Side Meter-->
     <ul class="meter">
      <% if(request.getParameter("indicator").equals("GRPs") || request.getParameter("indicator").equals("Insertions") ||
-     request.getParameter("indicator").equals("Grps/Week") || request.getParameter("indicator").equals("Weeks") ||
-     request.getParameter("indicator").equals("Weeks(4X)") || request.getParameter("indicator").equals("Impressions") ||
-     request.getParameter("indicator").equals("Clicks")) {
+      request.getParameter("indicator").equals("Impressions") || request.getParameter("indicator").equals("Clicks")) {
       flag_300 = true; %>
       <li><div>300</div></li>
       <li><div>240</div></li>
@@ -326,10 +348,31 @@ h1 {
   Vertical Bars
 ----------------------*/
 <% double[] week_avg = new double[8];
+    double week_1;
+    double week_2;
    for(int i = 0; i < 16; i = i + 2){
-      week_avg[i/2] = (data[i][indicator_index] + data[i + 1][indicator_index]) / 2;
-      if(flag_300) {
-        week_avg[i/2] = ((week_avg[i/2]) / 300)*100;
+      week_1 = 0.0;
+      week_2 = 0.0;
+      if(use_4X){
+        for(int j=0; j<4; j++){
+          if(Weeks4X.get(i).charAt(j) == ('X')){
+            week_1 += 25.0;
+          }
+        }
+        for(int j=0; j<4; j++){
+          if(Weeks4X.get(i+1).charAt(j) == ('X')){
+            week_2 += 25.0;
+          }
+        }
+        week_avg[i/2] = (week_1 + week_2) / 2;
+      } else {
+        week_avg[i/2] = (data[i][data_index] + data[i + 1][data_index]) / 2;
+        if(flag_300) {
+          week_avg[i/2] = ((week_avg[i/2]) / 300)*100;
+        }
+        if(flag_Weeks) {
+          week_avg[i/2] *= 25;
+        }
       }
    }%>
 

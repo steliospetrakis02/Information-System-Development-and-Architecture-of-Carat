@@ -1,7 +1,23 @@
 <%@ include file="../Home/authentication_guard.jsp" %>
 <%@ include file="../Home/navbar.jsp"%>
+<%@ page import="test.Goals" %>
+<%@ page import="java.util.*" %>
+<%@ page errorPage="error.jsp"%>
 <link rel="icon" href="../../IMAGES/Home/iR.png">
 <title>Set Goals</title>
+
+<%  Goals g = new Goals();
+    String goal_id = "";
+    String email = (String) session.getAttribute("email"); 
+    List<String> goals_id = g.getClientList_of_goals_ids(email);
+    goal_id = goals_id.get(2);
+    String indicator1 = request.getParameter("indicator1");
+    String indicator2 = request.getParameter("indicator2");
+    String indicator3 = request.getParameter("indicator3");
+    String indicator4 = request.getParameter("indicator4");
+    g.setClient_goals(email,indicator1,indicator2,indicator3,indicator4, goal_id);
+%>
+
 
 <div class="contain">
 		<header style="position:fixed; top:0%;">
@@ -54,7 +70,7 @@
 	</style>
 			</div>
 		<div class="text">
-		<p>You have successfully set your goals for the next campaign. <br>Here are your details<br>Date: 12.12.12<br>
+		<p>You have successfully<%=indicator1%> set your goals for the next campaign. <br>Here are your details<br>Date: 12.12.12<br>
 			Time: 11am<br>
 			ID: 12324
 		</p>

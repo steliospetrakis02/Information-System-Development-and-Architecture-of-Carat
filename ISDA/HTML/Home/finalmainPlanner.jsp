@@ -1,9 +1,8 @@
 <%@ page import="test.User_service" %>
 <%@ page import="test.User" %>
 <%@ page import="java.util.List" %>
-<%@ page isErrorPage="true" %>
 <%@ include file="authentication_guard.jsp" %>
-
+<%@ page buffer="none" %>
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
@@ -22,13 +21,6 @@
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Oswald:200,300,400,500,600,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"logo": "../../IMAGES/Home/logo3.png"
-}</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
@@ -87,6 +79,7 @@ li.dropdown {
   display: block;
 }
 </style>
+
 <% String color;
    if(request.getParameter("color") == null) {
       color = "white";
@@ -99,12 +92,8 @@ li.dropdown {
         <% User_service myUser_Service = new User_service();
                List<String> users = myUser_Service.getUsers(); 
                for(String user: users) { 
-                 User thisUser = myUser_Service.findUser(user);
-                 String[] email_spilt = thisUser.getEmail().split("@");
-                  if(email_spilt[1].equals("intel.com")) {
-                      continue;
-                  }%>
-                  <a href="../Home/choose_client.jsp?client=<%= thisUser.get_personal_name()%>"><%= thisUser.get_personal_name()%></a>
+                  %>
+                  <a href="../Home/choose_client.jsp?client=<%= user%>"><%= user%></a>
              <%  }
             %>
     </div>
@@ -120,10 +109,24 @@ li.dropdown {
 <li><a href='../Goals/planner-goals.jsp'>Goals</a></li>
 <li><a href='../Statistics/StatisticsPlanner.jsp'>Statistics</a></li>
 <li><a href='../History/insert.jsp'>Insert Data</a></li>
-<li style="margin-left:2%;"><a href="../Home/Home.jsp">Logout <i class="fa fa-sign-out" style="font-size:20px;"></i></a></li>
+<li class="element"><a href="../Home/Home.jsp">Logout <i class="fa fa-sign-out" style="font-size:20px;"></i></a></li>
 </ul>
 </nav>
+<style>
+  /* Style for screens smaller than 1700px */
+  @media screen and (max-width: 1700px) {
+    .element {
+      margin-left:2%;
+    }
+  }
 
+  /* Style for screens larger than 1700px */
+  @media screen and (min-width: 1700px) {
+    .element {
+      margin-left:12%;
+    }
+  }
+</style>
 </header>
 
 <div class="u-clearfix u-sheet u-sheet-1">
@@ -172,7 +175,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-2">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
                 <img class="u-image u-image-circle u-image-2" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">View Report</a>
+                <a href="../History/lr.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-3">
@@ -208,7 +211,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-8">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-11">
                 <img class="u-image u-image-circle u-image-8" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-8">View Report</a>
+                <a href="../History/lr.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-8">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-9">
@@ -244,7 +247,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-14">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-18">
                 <img class="u-image u-image-circle u-image-14" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-14">View Report</a>
+                <a href="../History/lr.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-14">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-15">
@@ -299,7 +302,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-20">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-26">
                 <img class="u-image u-image-circle u-image-20" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-20">View Report</a>
+                <a href="../History/lr.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-20">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-21">
@@ -335,7 +338,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-26">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-33">
                 <img class="u-image u-image-circle u-image-26" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-26">View Report</a>
+                <a href="../History/lr.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-26">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-27">
@@ -371,7 +374,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-32">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-40">
                 <img class="u-image u-image-circle u-image-32" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-32">View Report</a>
+                <a href="../History/lr.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-32">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-33">
@@ -426,7 +429,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-38">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-48">
                 <img class="u-image u-image-circle u-image-38" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-38">View Report</a>
+                <a href="../History/lr.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-38">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-39">
@@ -462,7 +465,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-44">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-55">
                 <img class="u-image u-image-circle u-image-44" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-44">View Report</a>
+                <a href="../History/lr.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-44">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-45">
@@ -498,7 +501,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-50">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-62">
                 <img class="u-image u-image-circle u-image-50" src="../../IMAGES/Home/reports.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../History/his.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-50">View Report</a>
+                <a href="../History/lr.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-50">View Report</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-51">
@@ -545,6 +548,11 @@ c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path></svg></span>
 </a>
 </div>
 </div></footer>
-
+<script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "../../IMAGES/Home/logo3.png"
+}</script>
 
 </body></html>

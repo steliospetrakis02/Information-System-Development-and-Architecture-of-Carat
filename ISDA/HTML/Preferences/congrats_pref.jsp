@@ -1,5 +1,21 @@
 <%@ page import="test.*" %>
+<%@ include file="../Home/navbar.jsp"%>
+<link rel="icon" href="../../IMAGES/Home/iR.png">
 <div class="contain">
+	<header style="position:fixed; top:0%;">
+<nav id='cssmenu' style="position:relative; bottom:30px;">
+<div class="logo" style="margin-top:1%;"><img src="../../IMAGES/History/inteli_last.png" class="u-logo-image u-logo-image-1" style="margin-top:20%;"></div>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li style="margin-left:6%;"><a href='../Home/finalmain.jsp'>Main Page</a></li>
+<li><a href="../History/lr.jsp">View Report</a></li>
+<li class='active'><a href='../Preferences/preferences.jsp'>Preferences</a></li>
+<li><a href='../Goals/client_goals.jsp'>Goals</a></li>
+<li><a href='../Statistics/Statistics.jsp'>Statistics</a></li>
+</ul>
+</nav>
+</header>
 	<div class="navbar">
 		<div class="row" style="padding:2%; background-color:#065675;">
 			<div class="col-sm-3">
@@ -36,26 +52,26 @@
 		cursor: pointer;
 	  }
 	  
-	  .button {
+	  .button1 {
 		background-color: rgb(153, 0, 255);
 		border-radius: 12px;
 	} 
 	<% Preferences pref = new Preferences();
-	Date dt = new Date();
+	//Date dt = new Date();
 
 	%>
 	</style>
 			</div>
 		<div class="text">
-		<p>You have successfully set your preferences for the next campaign. <br>Here are your details<br>Date: <%=dt.getDate()%><br>
-			Time: <%=dt.getTime()%><br>
+		<p>You have successfully set your preferences for the next campaign. <br>Here are your details<br>Date: <%="1/1/2023"/*dt.getDate()*/%><br>
+			Time: <%="5:11"/*dt.getTime()*/%><br>
 			ID:<%=pref.getClientPreference_id((String)session.getAttribute("email"))%>
 		</p>
 			</p>
 			</div>
 		<p class="regards">Regards, Intelligent Reporting </p>
 		<form action="../Home/finalmain.jsp">
-			<button class="button button"> Exit</button>
+			<button class="button button1"> Exit</button>
         
 		</form>
 	</div>

@@ -51,7 +51,7 @@
     <br>
     <br><br>
 <h1>Which of the following indicators <br>would you like to examine and compare with client's goals?
-<p style="color: <%= color%> ">(choose exactly 3 of them)</p></h1> 
+<p style="color: <%= color%> ">(choose exactly 3 out of 4 from set preferences)</p></h1> 
 <br> 
 <form>
  

@@ -1,5 +1,7 @@
 <%@ include file="../Home/authentication_guard.jsp" %>
 <%@ include file="../Home/navbar.jsp"%>
+<%@ page import="test.Preferences" %>
+<%@ page import="java.util.*" %>
 
 <!DOCTYPE html>
 <html>
@@ -114,24 +116,26 @@ String period;
       period = (String) request.getParameter("period");
 } 
      
-     session.setAttribute("year", year);
-     session.setAttribute("period", period);%>
-<form id="regForm" action="results.jsp">
+session.setAttribute("year", year);
+session.setAttribute("period", period);
+Preferences p = new Preferences();
+List<String> prefs;
+if((String) session.getAttribute("client_email") == null) {
+	prefs = p.get_Client_Preferences((String) session.getAttribute("email")); 
+} else {
+        prefs = p.get_Client_Preferences((String) session.getAttribute("client_email")); 
+}%>			
+<form id="regForm" method="POST" action="congrats.jsp">
   <h1><img src="../../IMAGES/Goals/goals.jpg">  </h1>
   <!-- One "tab" for each step in the form: -->
-  <div class="tab">Target GRPs:
-    <p><br><input placeholder="Set your target GRPs" oninput="this.className = ''" name="GRPs"></p>
+
+<%int i = 1;
+for(String pp: prefs){%>
+  <div class="tab">Target <%=pp%>:
+    <p><br><input placeholder="Set your target <%=pp%>:" oninput="this.className = ''" name="indicator<%=i++%>"></p>
   </div>
-  <div class="tab">Target SOV:
-    <p><br><input placeholder="Set your target SOV" oninput="this.className = ''" name="SOV"></p>
-  </div>
-  <div class="tab">Target Reach 1+:
-    <p><br><input placeholder="Set your target Reach 1+" oninput="this.className = ''" name="Reach 1+"></p>
-  </div>
-  <div class="tab">Target Reach 3+:
-    <p><br><input placeholder="Set your target Reach 3+" oninput="this.className = ''" name="Reach 3+"></p>
-  </div>
-  <div style="overflow:auto;">
+<%}%>
+    <div style="overflow:auto;">
     <div style="float:right;">
     <br>
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>

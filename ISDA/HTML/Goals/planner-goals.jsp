@@ -1,5 +1,8 @@
 <%@ include file="../Home/authentication_guard.jsp" %>
 <%@ include file="../Home/navbar.jsp"%>
+<%@ page import="test.Preferences" %>
+<%@ page import="java.util.*" %>
+<%@ page import="test.Goals" %>
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +27,6 @@ body {
   padding: 30px;
   width: 40%;
   margin-top:9%;
-  
 }
 
 h1 {
@@ -120,16 +122,72 @@ String period;
     <jsp:forward page="../Home/finalmainPlanner.jsp" >
         <jsp:param name="color" value="red" />
     </jsp:forward>
-  <% } %>
+<%} 
+
+
+   Preferences p = new Preferences();
+   Goals g = new Goals();
+   String goal_id = "";
+   String email = (String) session.getAttribute("client_email");
+   List<String> goals_id = g.getClientList_of_goals_ids(email);
+   if(period.equals("A") && year.equals("2022")){
+                goal_id = goals_id.get(0);
+                session.setAttribute("goal_id", goal_id);
+              }
+              else if(period.equals("B") && year.equals("2022")){
+                goal_id = goals_id.get(1);
+                session.setAttribute("goal_id", goal_id);
+
+              }
+              else if(period.equals("C") && year.equals("2022")){
+                goal_id = goals_id.get(2);
+                session.setAttribute("goal_id", goal_id);
+
+              } else if(period.equals("A") && year.equals("2021")){
+                goal_id = goals_id.get(3);
+                session.setAttribute("goal_id", goal_id);
+
+              }
+              else if(period.equals("B") && year.equals("2021")){
+                goal_id = goals_id.get(4);
+                session.setAttribute("goal_id", goal_id);
+
+              } else if(period.equals("C") && year.equals("2021")){
+                goal_id = goals_id.get(5);
+                session.setAttribute("goal_id", goal_id);
+
+              }
+              else if(period.equals("A") && year.equals("2020")){
+                goal_id = goals_id.get(6);
+                session.setAttribute("goal_id", goal_id);
+
+              } else if(period.equals("B") && year.equals("2020")){
+                goal_id = goals_id.get(7);
+                session.setAttribute("goal_id", goal_id);
+
+              }
+              else if(period.equals("C") && year.equals("2020")){
+                goal_id = goals_id.get(8);
+                session.setAttribute("goal_id", goal_id);
+
+              }
+   List<String> prefs;
+   if((String) session.getAttribute("client_email") == null) {
+	      prefs = p.get_Client_Preferences((String) session.getAttribute("email")); 
+   } else {
+        prefs = p.get_Client_Preferences((String) session.getAttribute("client_email")); 
+   }%>
 <form id="regForm" action="../Home/finalmainPlanner.jsp">
   <h1><img src="../../IMAGES/Goals/goals.jpg">  </h1>
   <!-- One "tab" for each step in the form: -->
   <br><br><br><br><br><br>
-  <div class="tab" style="font-size: 25px;">Aegean has set target GRPs at:<br>79,5</div>
-  <div class="tab" style="font-size: 25px;">Aegean has set target SOV at:<br>38%</div>
-  <div class="tab" style="font-size: 25px;">Aegean has set target Reach 1+ at:<br>81%</div>
-  <div class="tab" style="font-size: 25px;">Aegean has set target Reach 3+ at:<br>19%</div>
-  <div style="overflow:auto;">
+    
+<%int i = 0;
+List<String> goal_list = g.getClient_goals(email, goal_id);
+for(String pp: prefs){%> 
+  <div class="tab" style="font-size: 25px;"><%= (String) session.getAttribute("client")%> has set target <%=pp%> at:<br><%=goal_list.get(i++)%></div>
+<%}%>
+<div style="overflow:auto;">
     <div style="float:right;">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
       <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>

@@ -6,8 +6,8 @@
     <meta name="description" content="">
     <title>Login</title>
     <link rel="stylesheet" href="../../CSS/Home/nicepage.css" media="screen">
-<link rel="stylesheet" href="../../CSS/Home/login.css" media="screen">
-<link rel="icon" href="../../IMAGES/Home/iR.png">
+    <link rel="stylesheet" href="../../CSS/Home/login.css" media="screen">
+    <link rel="icon" href="../../IMAGES/Home/iR.png">
 
     <script class="u-script" type="text/javascript" src="../../JS/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../../JS/nicepage.js" defer=""></script>
@@ -32,7 +32,7 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-sticky u-sticky-65f3 u-white u-header" id="sec-6ecb"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="429">
+        <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="1305" data-image-height="529">
           <img src="../../IMAGES/Home/logo3.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1">
@@ -86,7 +86,7 @@ borders: top right bottom left !important
 		</div>
             <% } %>
           <div class="login-form">
-            <form method="POST" action="loginController.jsp">
+            <form name="myForm" action="loginController.jsp" method="POST">
               <h1>Login</h1>
               <div class="content">
               <% if(request.getParameter("errorMessage")!= null) {%>
@@ -102,9 +102,9 @@ borders: top right bottom left !important
               </div>
               <div class="action">
                 <form>
-                  <button formaction="register.jsp">REGISTER</button>
+                  <button><a href="register.jsp" style="text-decoration: none; color: black">REGISTER</a></button>
                 </form>
-                <button>Sign in</button>
+                <button type="submit">Sign In</button>
               </div>
             </form>
           </div><!-- partial -->
@@ -128,10 +128,5 @@ borders: top right bottom left !important
           </a>
         </div>
       </div></footer>
-  <script>function submitMe(){
-  if ((event.which && event.which == 13) || 
-      (event.keyCode && event.keyCode == 13)){
-    document.form1.submit();
-  }
-}</script>
+
 </body></html>

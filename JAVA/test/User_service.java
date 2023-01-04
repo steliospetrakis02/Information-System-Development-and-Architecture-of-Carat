@@ -204,6 +204,67 @@ public class User_service {
                 //stmt.close();
             }
         }
+
+        public void addClient(String email , String password, String username ) throws Exception{
+
+            Data_connection dc = new Data_connection();
+            String sql = "select * from client_ where client_.email = ? ";
+            try {
+               
+                con = dc.get_connection();
+                PreparedStatement stmt = con.prepareStatement(sql);
+               
+                stmt.setString(1, email);
+               
+                
+                ResultSet rs = stmt.executeQuery();
+    
+                if (rs.next()) {
+                    //user exist
+                    dc.close();
+                    stmt.close();
+                    throw new Exception("Sorry, username or email already registered");
+                    
+                }
+                //user does not exist
+                else{
+
+
+                    String sql2 = "INSERT INTO User_ " 
+                    + " (email, passwrd, personal_name) VALUES (?, ? ,?);";
+                    PreparedStatement stmt2 = con.prepareStatement(sql2);
+    
+                    stmt2.setString(1, email);
+                    stmt2.setString(2, password);
+                    stmt2.setString(3, username);
+    
+                    stmt2.executeUpdate();
+                    
+                    
+                    String sql3 = "INSERT INTO client_ " 
+                    + " (campaign,Company_name,email) VALUES (?, ? ,?);";
+                    PreparedStatement stmt3 = con.prepareStatement(sql3);
+    
+                    stmt3.setString(1, null);
+                    stmt3.setString(2, username.toUpperCase());
+                    stmt3.setString(3, email);
+    
+                    stmt3.executeUpdate();
+                    
+    
+    
+                }
+            
+            }
+            catch (Exception e) {
+                throw new Exception(e.getMessage());
+    
+            }
+            finally{
+                dc.close();
+                //stmt.close();
+            }
+        }
         
         
 
@@ -211,6 +272,8 @@ public class User_service {
 public static void main(String[] args) throws Exception {
     User_service myUser_Service = new User_service();
     List<String> users = myUser_Service.getUsers(); 
+
+    myUser_Service.addClient("test@", "test", "test");
  /*    for(String user: users) { 
     User thisUser = myUser_Service.findUser(user);
     System.out.println(user);

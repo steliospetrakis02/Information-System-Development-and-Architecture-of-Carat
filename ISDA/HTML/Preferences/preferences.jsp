@@ -38,13 +38,14 @@
    
     </header>
     <% String color = "black";
+    session.setAttribute("stats", "no");
     if(request.getParameter("color") != null) {
         color = "red";
     }%>
   </div> 
   </div>
   <br><br><br><br><br><br><br><br>
-  <h1>Which of the following indicators <br>would you like to see in your report?
+  <h1><p>Which of the following indicators<br>would you like to see in your report?</p><hr style="width: 40%; height: 5px; background:#065675;">
   <p style="color: <%= color%> ">(choose exactly 4 of them)</p></h1> 
   <br> 
   <form>

@@ -295,29 +295,64 @@ body{
                 session.setAttribute("report_id", report_id);
 
               }
-              session.setAttribute("report_id", report_id);
               
              List<String> prefs;
+             List<String> Weeks4X;
              if((String) session.getAttribute("client_email") == null) {
-                data=rep.get_data((String)session.getAttribute("email"));
+                data=rep.get_data((String)session.getAttribute("email"), report_id);
                 prefs = pref.get_Client_Preferences((String) session.getAttribute("email")); 
+                Weeks4X = rep.getList_of_Weeks_4x();
              
              } else {
-                 data=rep.get_data((String)session.getAttribute("client_email"));
+                 data=rep.get_data((String)session.getAttribute("client_email"), report_id);
                  prefs = pref.get_Client_Preferences((String) session.getAttribute("client_email")); 
+                 Weeks4X = rep.getList_of_Weeks_4x();
              }
           
              int index = 0;
+             int[] data_index = new int[4];
+             boolean[] use_4X = new boolean[4];
              Boolean[] cast = new Boolean[4];
+             boolean[] G_per_W = new boolean[4];
              for(String p: prefs){ %>
                  <th><%= p%></th>
-          <%    if(p.equals("Clicks") || p.equals("GRPs")  || p.equals("Insertions")  || p.equals("Impressions")|| p.equals("Weeks")){
+          <%    if(p.equals("GRPs")){
+                    data_index[index] = 1;
+                } else if(p.equals("Reach1+")) {
+                    data_index[index] = 2;
+                } else if(p.equals("Reach3+")) {
+                    data_index[index] = 3;
+                } else if(p.equals("SOV")) {
+                    data_index[index] = 4;
+                } else if(p.equals("Insertions")) {
+                    data_index[index] = 5;
+                } else if(p.equals("Grps/Week")) {
+                    data_index[index] = 6;
+                } else if(p.equals("Weeks")) {
+                    data_index[index] = 7;
+                } else if(p.equals("Weeks(4X)")) {
+                    use_4X[index] = true;
+                } else if(p.equals("Impressions")) {
+                    data_index[index] = 8;
+                } else if(p.equals("Clicks")) {
+                    data_index[index] = 9;
+                } else if(p.equals("Click Rate")) {
+                    data_index[index] = 10;
+                } else if(p.equals("Viewability")) {
+                    data_index[index] = 11;
+                }
+                if(p.equals("Grps/Week")){
+                   G_per_W[index] = true;
+                }
+                if(p.equals("Clicks") || p.equals("GRPs")  || p.equals("Insertions")  ||
+                 p.equals("Impressions")|| p.equals("Weeks") || p.equals("Grps/Week")){
                     cast[index] = true;
                     index++;
                 } else {
                     cast[index] = false;
                     index++;
                 }
+                
              }  %>
    
         </tr>
@@ -327,117 +362,19 @@ body{
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0">
       <tbody>
-        <tr>
-          <td>1</td>
-                <td><% if(cast[0]){%> <%=(int) data[0][1]%><%}else{%> <%= data[0][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[0][2]%><%}else{%> <%= data[0][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[0][3]%><%}else{%> <%= data[0][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[0][4]%><%}else{%> <%= data[0][4]%>%<%}%></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td><% if(cast[0]){%> <%=(int) data[1][1]%><%}else{%> <%= data[1][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[1][2]%><%}else{%> <%= data[1][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[1][3]%><%}else{%> <%= data[1][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[1][4]%><%}else{%> <%= data[1][4]%>%<%}%></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td><% if(cast[0]){%> <%=(int) data[2][1]%><%}else{%> <%= data[2][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[2][2]%><%}else{%> <%= data[2][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[2][3]%><%}else{%> <%= data[2][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[2][4]%><%}else{%> <%= data[2][4]%>%<%}%></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td><% if(cast[0]){%> <%=(int) data[3][1]%><%}else{%> <%= data[3][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[3][2]%><%}else{%> <%= data[3][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[3][3]%><%}else{%> <%= data[3][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[3][4]%><%}else{%> <%= data[3][4]%>%<%}%></td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td><% if(cast[0]){%> <%=(int) data[4][1]%><%}else{%> <%= data[4][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[4][2]%><%}else{%> <%= data[4][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[4][3]%><%}else{%> <%= data[4][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[4][4]%><%}else{%> <%= data[4][4]%>%<%}%></td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td><% if(cast[0]){%> <%=(int) data[5][1]%><%}else{%> <%= data[5][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[5][2]%><%}else{%> <%= data[5][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[5][3]%><%}else{%> <%= data[5][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[5][4]%><%}else{%> <%= data[5][4]%>%<%}%></td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td><% if(cast[0]){%> <%=(int) data[6][1]%><%}else{%> <%= data[6][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[6][2]%><%}else{%> <%= data[6][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[6][3]%><%}else{%> <%= data[6][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[6][4]%><%}else{%> <%= data[6][4]%>%<%}%></td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td><% if(cast[0]){%> <%=(int) data[7][1]%><%}else{%> <%= data[7][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[7][2]%><%}else{%> <%= data[7][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[7][3]%><%}else{%> <%= data[7][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[7][4]%><%}else{%> <%= data[7][4]%>%<%}%></td>
-              <tr>
-                <td>9</td>
-                <td><% if(cast[0]){%> <%=(int) data[8][1]%><%}else{%> <%= data[8][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[8][2]%><%}else{%> <%= data[8][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[8][3]%><%}else{%> <%= data[8][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[8][4]%><%}else{%> <%= data[8][4]%>%<%}%></td>
-                </tr>
-              <tr>
-              <td>10</td>
-                <td><% if(cast[0]){%> <%=(int) data[9][1]%><%}else{%> <%= data[9][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[9][2]%><%}else{%> <%= data[9][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[9][3]%><%}else{%> <%= data[9][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[9][4]%><%}else{%> <%= data[9][4]%>%<%}%></td>
-              </tr>
-              <tr>
-                <td>11</td>
-                <td><% if(cast[0]){%> <%=(int) data[10][1]%><%}else{%> <%= data[10][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[10][2]%><%}else{%> <%= data[10][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[10][3]%><%}else{%> <%= data[10][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[10][4]%><%}else{%> <%= data[10][4]%>%<%}%></td>
-              </tr>
-              <tr>
-                <td>12</td>
-                <td><% if(cast[0]){%> <%=(int) data[11][1]%><%}else{%> <%= data[11][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[11][2]%><%}else{%> <%= data[11][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[11][3]%><%}else{%> <%= data[11][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[11][4]%><%}else{%> <%= data[11][4]%>%<%}%></td>
-              </tr>
-              <tr>
-                <td>13</td>
-                <td><% if(cast[0]){%> <%=(int) data[12][1]%><%}else{%> <%= data[12][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[12][2]%><%}else{%> <%= data[12][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[12][3]%><%}else{%> <%= data[12][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[12][4]%><%}else{%> <%= data[12][4]%>%<%}%></td>
-                </tr>
-              <tr>
-                  <td>14</td>
-                <td><% if(cast[0]){%> <%=(int) data[13][1]%><%}else{%> <%= data[13][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[13][2]%><%}else{%> <%= data[13][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[13][3]%><%}else{%> <%= data[13][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[13][4]%><%}else{%> <%= data[13][4]%>%<%}%></td>
-                </tr>
-                <tr>
-                  <td>15</td>
-                <td><% if(cast[0]){%> <%=(int) data[14][1]%><%}else{%> <%= data[14][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[14][2]%><%}else{%> <%= data[14][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[14][3]%><%}else{%> <%= data[14][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[14][4]%><%}else{%> <%= data[14][4]%>%<%}%></td>
-                </tr>
-                <tr>
-                 <td>16</td>
-                <td><% if(cast[0]){%> <%=(int) data[15][1]%><%}else{%> <%= data[15][1]%>%<%}%></td>
-                <td><% if(cast[1]){%> <%=(int) data[15][2]%><%}else{%> <%= data[15][2]%>%<%}%></td>
-                <td><% if(cast[2]){%> <%=(int) data[15][3]%><%}else{%> <%= data[15][3]%>%<%}%></td>
-                <td><% if(cast[3]){%> <%=(int) data[15][4]%><%}else{%> <%= data[15][4]%>%<%}%></td>
-                </tr>
+        <%int i = 0;
+        for(double[] row: data) {
+             %>
+          <tr>
+            <td><%= i+1%></td>
+                <td><% if(use_4X[0]){%> <%= Weeks4X.get(i)%> <%}else{ if(cast[0]){%> <%=(int) data[i][data_index[0]]%><%}else{%> <%= data[i][data_index[0]]%><%if(!G_per_W[0]){%>%<%}%><%}%><%}%></td>
+                <td><% if(use_4X[1]){%> <%= Weeks4X.get(i)%> <%}else{ if(cast[1]){%> <%=(int) data[i][data_index[1]]%><%}else{%> <%= data[i][data_index[1]]%><%if(!G_per_W[1]){%>%<%}%><%}%><%}%></td>
+                <td><% if(use_4X[2]){%> <%= Weeks4X.get(i)%> <%}else{ if(cast[2]){%> <%=(int) data[i][data_index[2]]%><%}else{%> <%= data[i][data_index[2]]%><%if(!G_per_W[2]){%>%<%}%><%}%><%}%></td>
+                <td><% if(use_4X[3]){%> <%= Weeks4X.get(i)%> <%}else{ if(cast[3]){%> <%=(int) data[i][data_index[3]]%><%}else{%> <%= data[i][data_index[3]]%><%if(!G_per_W[3]){%>%<%}%><%}%><%}%></td>
+          </tr>
+      <% i++;
+        }%>
+        
       </tbody>
     </table>
   </div>

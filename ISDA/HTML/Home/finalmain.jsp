@@ -38,12 +38,28 @@
 <li><a href='../Preferences/preferences.jsp'>Preferences</a></li>
 <li><a href='../Goals/client_goals.jsp'>Goals</a></li>
 <li><a href='../Statistics/Statistics.jsp'>Statistics</a></li>
-<li style="margin-left:17%;"><a href="Home.jsp">Logout <i class="fa fa-sign-out" style="font-size:20px"></i></a></li>
+<li class="element"><a href="Home.jsp">Logout <i class="fa fa-sign-out" style="font-size:20px"></i></a></li>
 </ul>
 </nav>
 
 
 <%@ include file="../Home/navbar.jsp"%>
+
+<style>
+  /* Style for screens smaller than 1700px */
+  @media screen and (max-width: 1700px) {
+    .element {
+      margin-left:15%;
+    }
+  }
+
+  /* Style for screens larger than 1700px */
+  @media screen and (min-width: 1700px) {
+    .element {
+      margin-left:24%;
+    }
+  }
+</style>
 </header>
 <% session.setAttribute("results", "no");
    session.setAttribute("stats", "no");%>
