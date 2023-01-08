@@ -57,14 +57,14 @@
 		border-radius: 12px;
 	} 
 	<% Preferences pref = new Preferences();
-	//Date dt = new Date();
+	Date2 dt = new Date2();
 
 	%>
 	</style>
 			</div>
 		<div class="text">
-		<p>You have successfully set your preferences for the next campaign. <br>Here are your details<br>Date: <%="1/1/2023"/*dt.getDate()*/%><br>
-			Time: <%="5:11"/*dt.getTime()*/%><br>
+		<p>You have successfully set your preferences for the next campaign. <br>Here are your details<br>Date: <%=dt.getDate()%><br>
+			Time: <%=dt.getTime()%><br>
 			ID:<%=pref.getClientPreference_id((String)session.getAttribute("email"))%>
 		</p>
 			</p>

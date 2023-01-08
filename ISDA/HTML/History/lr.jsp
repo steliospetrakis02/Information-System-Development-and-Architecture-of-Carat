@@ -223,11 +223,14 @@ body{
 
 <br><br><br><br><br><br><br><br><br>
   <% String user;
+     String email;
   if((String) session.getAttribute("client") == null) {
        user = (String) session.getAttribute("user");
+       email = (String) session.getAttribute("client_email");
   
   } else {
        user = (String) session.getAttribute("client");
+       email = (String) session.getAttribute("email");
   }
   String year= "";
   String period="";
@@ -254,44 +257,49 @@ body{
               Reports rep = new Reports();
               double[][] data =new double[16][5];
               String report_id="0";
+              email = (String) session.getAttribute("email");
+
+              List<String> ids = rep.getClientList_of_reports_ids(email);
+
               if(period.equals("A") && year.equals("2022")){
-                report_id="1";
+                report_id = ids.get(0);
+                %> <h1><%=ids %> <h1>  <%
                 session.setAttribute("report_id", report_id);
               }
               else if(period.equals("B") && year.equals("2022")){
-                report_id="2";
+                report_id = ids.get(1);
                 session.setAttribute("report_id", report_id);
 
               }
               else if(period.equals("C") && year.equals("2022")){
-                report_id="3";
+                report_id = ids.get(2);
                 session.setAttribute("report_id", report_id);
 
               } else if(period.equals("A") && year.equals("2021")){
-                report_id="4";
+                report_id = ids.get(3);
                 session.setAttribute("report_id", report_id);
 
               }
               else if(period.equals("B") && year.equals("2021")){
-                report_id="5";
+                report_id = ids.get(4);
                 session.setAttribute("report_id", report_id);
 
               } else if(period.equals("C") && year.equals("2021")){
-                report_id="6";
+                report_id = ids.get(5);
                 session.setAttribute("report_id", report_id);
 
               }
               else if(period.equals("A") && year.equals("2020")){
-                report_id="7";
+                report_id = ids.get(6);
                 session.setAttribute("report_id", report_id);
 
               } else if(period.equals("B") && year.equals("2020")){
-                report_id="8";
+                report_id = ids.get(7);
                 session.setAttribute("report_id", report_id);
 
               }
               else if(period.equals("C") && year.equals("2020")){
-                report_id="9";
+                report_id = ids.get(8);
                 session.setAttribute("report_id", report_id);
 
               }
@@ -366,6 +374,7 @@ body{
         for(double[] row: data) {
              %>
           <tr>
+
             <td><%= i+1%></td>
                 <td><% if(use_4X[0]){%> <%= Weeks4X.get(i)%> <%}else{ if(cast[0]){%> <%=(int) data[i][data_index[0]]%><%}else{%> <%= data[i][data_index[0]]%><%if(!G_per_W[0]){%>%<%}%><%}%><%}%></td>
                 <td><% if(use_4X[1]){%> <%= Weeks4X.get(i)%> <%}else{ if(cast[1]){%> <%=(int) data[i][data_index[1]]%><%}else{%> <%= data[i][data_index[1]]%><%if(!G_per_W[1]){%>%<%}%><%}%><%}%></td>

@@ -130,6 +130,7 @@ String period;
    String goal_id = "";
    String email = (String) session.getAttribute("client_email");
    List<String> goals_id = g.getClientList_of_goals_ids(email);
+   try{
    if(period.equals("A") && year.equals("2022")){
                 goal_id = goals_id.get(0);
                 session.setAttribute("goal_id", goal_id);
@@ -171,6 +172,10 @@ String period;
                 session.setAttribute("goal_id", goal_id);
 
               }
+   }
+   catch(Exception e){
+      
+   }
    List<String> prefs;
    if((String) session.getAttribute("client_email") == null) {
 	      prefs = p.get_Client_Preferences((String) session.getAttribute("email")); 

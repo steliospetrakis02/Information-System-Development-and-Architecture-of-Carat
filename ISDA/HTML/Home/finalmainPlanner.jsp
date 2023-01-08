@@ -181,19 +181,19 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-3">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-5">
                 <img class="u-image u-image-circle u-image-3" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/PlannerPreferences.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">View preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-4">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-6">
                 <img class="u-image u-image-circle u-image-4" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/StatisticsPlanner.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-4">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-4">View statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-5">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-7">
                 <img class="u-image u-image-circle u-image-5" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/planner-goals.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-5">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2020&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-5">View goals</a>
               </div>
             </div>
           </div>
@@ -217,19 +217,19 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-9">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-12">
                 <img class="u-image u-image-circle u-image-9" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/PlannerPreferences.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-9">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-9">View preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-10">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-13">
                 <img class="u-image u-image-circle u-image-10" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/StatisticsPlanner.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-10">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-10">View statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-11">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-14">
                 <img class="u-image u-image-circle u-image-11" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/planner-goals.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-11">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2020&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-11">View Goals</a>
               </div>
             </div>
           </div>
@@ -253,19 +253,19 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-15">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-19">
                 <img class="u-image u-image-circle u-image-15" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/PlannerPreferences.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-15">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-15">View preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-16">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-20">
                 <img class="u-image u-image-circle u-image-16" src="../../IMAGES/Home/statistics.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Statistics/StatisticsPlanner.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-16">See statistics</a>
+                <a href="../Statistics/StatisticsPlanner.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-16">View statistics</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-17">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-21">
                 <img class="u-image u-image-circle u-image-17" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/planner-goals.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-17">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2020&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-17">View goals</a>
               </div>
             </div>
           </div>
@@ -308,7 +308,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-21">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-27">
                 <img class="u-image u-image-circle u-image-21" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/PlannerPreferences.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-21">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-21">View preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-22">
@@ -320,7 +320,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-23">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-29">
                 <img class="u-image u-image-circle u-image-23" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/planner-goals.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-23">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2021&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-23">View goals</a>
               </div>
             </div>
           </div>
@@ -344,7 +344,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-27">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-34">
                 <img class="u-image u-image-circle u-image-27" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/PlannerPreferences.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-27">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-27">View preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-28">
@@ -356,7 +356,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-29">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-36">
                 <img class="u-image u-image-circle u-image-29" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/planner-goals.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-29">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2021&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-29">View goals</a>
               </div>
             </div>
           </div>
@@ -380,7 +380,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-33">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-41">
                 <img class="u-image u-image-circle u-image-33" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/PlannerPreferences.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-33">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-33">View preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-34">
@@ -392,7 +392,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-35">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-43">
                 <img class="u-image u-image-circle u-image-35" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/planner-goals.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-35">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2021&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-35">View goals</a>
               </div>
             </div>
           </div>
@@ -435,7 +435,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-39">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-49">
                 <img class="u-image u-image-circle u-image-39" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/PlannerPreferences.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-39">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-39">View preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-40">
@@ -447,7 +447,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-41">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-51">
                 <img class="u-image u-image-circle u-image-41" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/planner-goals.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-41">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2022&period=A" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-41">View goals</a>
               </div>
             </div>
           </div>
@@ -471,7 +471,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-45">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-56">
                 <img class="u-image u-image-circle u-image-45" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/PlannerPreferences.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-45">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-45">View preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-46">
@@ -483,7 +483,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-47">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-58">
                 <img class="u-image u-image-circle u-image-47" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/planner-goals.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-47">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2022&period=B" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-47">View goals</a>
               </div>
             </div>
           </div>
@@ -507,7 +507,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-51">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-63">
                 <img class="u-image u-image-circle u-image-51" src="../../IMAGES/Home/preferences.jpg" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Preferences/PlannerPreferences.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-51">Set preferences</a>
+                <a href="../Preferences/PlannerPreferences.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-51">View preferences</a>
               </div>
             </div>
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-52">
@@ -519,7 +519,7 @@ li.dropdown {
             <div class="u-border-2 u-border-white u-container-style u-gradient u-list-item u-repeater-item u-shape-rectangle u-list-item-53">
               <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-65">
                 <img class="u-image u-image-circle u-image-53" src="../../IMAGES/Home/goals.png" alt="" data-image-width="400" data-image-height="265">
-                <a href="../Goals/planner-goals.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-53">Set goals</a>
+                <a href="../Goals/planner-goals.jsp?year=2022&period=C" class="u-btn u-button-style u-custom-font u-custom-item u-font-oswald u-hover-feature u-hover-palette-1-dark-1 u-palette-1-base u-btn-53">View goals</a>
               </div>
             </div>
           </div>
