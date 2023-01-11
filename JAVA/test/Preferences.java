@@ -68,10 +68,15 @@ public class Preferences {
 
         return client_pref_res;
     }
+    public void setup(String email){
+        //int report_id =getLast_global_report_id(email);
+    }
     public Integer getLast_global_report_id() throws SQLException{
         Data_connection dc = new Data_connection();
+        List<Integer> test= new ArrayList<>();
+
         con = dc.get_connection();
-        String sql2 = "Select preferences_id from Preferences ";
+        String sql2 = "Select preferences_id from Preferences order by preferences_id asc;";
         pre = con.prepareStatement(sql2);
         rs = pre.executeQuery();
         String preferences_id="";
@@ -178,7 +183,8 @@ public class Preferences {
         //System.out.println(pref.get_Client_Preferences("VODAFONE@hotmail.com"));
         //System.out.println(pref.getClientList_of_Pref_ids("AEGEAN@hotmail.com"));
       // System.out.println(pref.getClientPreference_id());
-      pref.set_Client_Preferences("amazon@hotmail.com", "eee", null, null, null);
+      pref.set_Client_Preferences("test9@gmail.com",null,null,null,null);
+
     }
 
     }

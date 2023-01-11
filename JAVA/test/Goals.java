@@ -50,8 +50,35 @@ public class Goals {
         Data_connection dc = new Data_connection();
         con = dc.get_connection();
       
-       // String goals_id= getClient_of_goals_Last_id(email);
-     
+        
+        String check="select * from goals where email=?;";
+        PreparedStatement preparedStmt0 = con.prepareStatement(check);
+        preparedStmt0.setString (1, email);
+        rs = preparedStmt0.executeQuery();
+        if(!rs.next()){ 
+            for(int i = 0; i <9;i++){
+                String insert="Insert into goals(email,target_goals1,target_goals2,target_goals3,target_goals4,goals_id)values(?,?,?,?,?,?);";
+                PreparedStatement preparedStmt = con.prepareStatement(insert);
+                preparedStmt.setString (1, email);
+                preparedStmt.setString (2, "0");
+                preparedStmt.setString (3, "0");
+                preparedStmt.setString (4, "0");
+                preparedStmt.setString (5, "0");
+                int int_goal__id=Integer.parseInt(goals_id+i);
+                preparedStmt.setString (6, Integer.toString(int_goal__id));
+                preparedStmt.execute();
+            }
+            String insert="Insert into goals(email,target_goals1,target_goals2,target_goals3,target_goals4,goals_id)values(?,?,?,?,?,?);";
+            PreparedStatement preparedStmt = con.prepareStatement(insert);
+            preparedStmt.setString (1, email);
+            preparedStmt.setString (2, target_goals1);
+            preparedStmt.setString (3, target_goals2);
+            preparedStmt.setString (4, target_goals3);
+            preparedStmt.setString (5, target_goals4);
+            preparedStmt.setString (6, goals_id);
+            preparedStmt.execute();
+        }
+
         String update = "Update Goals SET target_goals1=?,target_goals2=?,target_goals3=?,target_goals4=? WHERE goals_id=?";
        
 
@@ -68,24 +95,41 @@ public class Goals {
 
     
     }
+    public void setup(String email) throws SQLException{
+        int goals_id=getClient_of_goals_global_Last_id()+1;
+        for(int i = 0; i <8;i++){
+            String insert="Insert into goals(email,target_goals1,target_goals2,target_goals3,target_goals4,goals_id)values(?,?,?,?,?,?);";
+            PreparedStatement preparedStmt = con.prepareStatement(insert);
+            preparedStmt.setString (1, email);
+            preparedStmt.setString (2, "0");
+            preparedStmt.setString (3, "0");
+            preparedStmt.setString (4, "0");
+            preparedStmt.setString (5, "0");
+            preparedStmt.setString (6, Integer.toString(goals_id+i));
+            preparedStmt.execute();
+        }
+       
+    }
     
-    public String getClient_of_goals_Last_id(String email) throws SQLException{
+    public Integer getClient_of_goals_global_Last_id() throws SQLException{
         Data_connection dc = new Data_connection();
+        List<Integer> list_of_ids_= new ArrayList<>();
+
         con = dc.get_connection();
-        String sql2 = "Select goals_id from Goals where goals.email=?";
+        String sql2 = "Select goals_id from Goals ";
         pre = con.prepareStatement(sql2);
-        pre.setString(1, email);
         rs = pre.executeQuery();
         String goal_id="";
         while(rs.next()){ 
             goal_id= rs.getString("goals_id");
+            int i=Integer.parseInt(goal_id);  
+
+            list_of_ids_.add(i);
            
         }
          
-        String last = list_of_ids.get(list_of_ids.size() - 1);
 
-        
-        return last;
+        return Collections.max(list_of_ids_);
     }
     public List<String>getClientList_of_goals_ids(String email) throws SQLException {
         Data_connection dc = new Data_connection();
@@ -114,10 +158,10 @@ public class Goals {
 public static void main(String[] args) throws SQLException {
 
     Goals goal = new Goals();
-    String client_email="AEGEAN@hotmail.com";
-    System.out.println(goal.getClientList_of_goals_ids(client_email));
-
-  // goal.setClient_goals(client_email, "80", "60", "95", "70","2");
+    String client_email="test6@gmail.com";
+    //System.out.println(goal.getClientList_of_goals_ids(client_email));
+    goal.setup(client_email);
+    //goal.setClient_goals(client_email, "8330", "60", "95", "70","28");
    //System.out.println(goal.getClientList_of_goals_ids(client_email)); 
   // System.out.println(goal.getClient_goals(client_email,"2"));
 }
