@@ -54,7 +54,10 @@
 
               }
               else if(period.equals("C") && year.equals("2022")){
-                report_id = ids.get(2);
+                report_id = ids.get(9);
+                
+
+
                 session.setAttribute("report_id", report_id);
 
               } else if(period.equals("A") && year.equals("2021")){
@@ -81,7 +84,7 @@
 
               }
               else if(period.equals("C") && year.equals("2020")){
-                report_id = ids.get(8);
+                report_id = ids.get(2);
                 session.setAttribute("report_id", report_id);
 
               }
@@ -147,8 +150,7 @@
                 }
                 
              }  
-
-             
+        
 %>
 <section>
 <head>
@@ -162,6 +164,17 @@
 </head>
 <br><br><br><br><br>
   <h1> <%= (String) session.getAttribute("client")%>  <%= (String) session.getAttribute("year")%> Campaign - <%= (String) session.getAttribute("period")%></h1>
+  <%
+  if(((String)session.getAttribute("year")).equals("2022")&& ((String) session.getAttribute("period")).equals("C")) {
+            ;
+           %><h1><%= report_id %><h1><%
+     }
+     else{
+        %>    
+                <jsp:forward page="error_insert.jsp" />     
+        <%
+     }
+        %>
   <br>
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0">

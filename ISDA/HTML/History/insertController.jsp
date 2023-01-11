@@ -1,6 +1,6 @@
 <%@ page import="test.*" %>
 <%@ page import="java.util.List" %>
-<%@ page errorPage="error_insert.jsp"%>
+<%@ page errorPage="error.jsp"%>
 
 <%  Reports rep = new Reports();
     String email = (String) session.getAttribute("client_email");
@@ -68,6 +68,17 @@
         }
 
     }
-    rep.set_data(email , GRPs, Reach_1, Reach_3, SOV, Insertions, GRPs_Week, Weeks, Weeks_4x, Impressions, clicks,
-    click_rate,  Viewability); %>
-    <jsp:forward page="insert.jsp" />
+
+     if(((String)session.getAttribute("year")).equals("2022")&& ((String) session.getAttribute("period")).equals("C")) {
+            rep.set_data(email , GRPs, Reach_1, Reach_3, SOV, Insertions, GRPs_Week, Weeks, Weeks_4x, Impressions, clicks,click_rate,  Viewability); 
+            %>    
+                <jsp:forward page="insert.jsp" />     
+         <%
+     }
+     else{
+        %>    
+                <jsp:forward page="error_insert.jsp" />     
+        <%
+     }
+        %>
+    

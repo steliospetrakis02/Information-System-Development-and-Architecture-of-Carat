@@ -54,7 +54,7 @@
 		<br>	
 			</div>
 		<p class="regards">Team IntelliReports </p>
-			<form action="../Goals/client_goals.jsp">
+			<form action="../History/insert.jsp">
 				<button class="button1 button1"> Exit</button>
         	</form>
 	
