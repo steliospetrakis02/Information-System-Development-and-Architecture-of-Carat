@@ -2,7 +2,6 @@
 <%@ include file="../Home/navbar.jsp"%>
 <%@ page import="test.Preferences" %>
 <%@ page import="java.util.*" %>
-
 <!DOCTYPE html>
 <html>
 <title>Set Goals</title>
@@ -106,6 +105,8 @@ button:hover {
 </ul>
 </nav>
 </header>
+<%@ include file="info_goals.jsp" %>
+
 <% String year;
 String period;
  if(request.getParameter("year") == null){

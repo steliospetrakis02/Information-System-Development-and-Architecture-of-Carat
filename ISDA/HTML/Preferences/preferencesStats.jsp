@@ -1,4 +1,6 @@
 <%@ include file="../Home/authentication_guard.jsp" %>
+<%@ page import="test.*"%>
+<%@ page import="java.util.*"%>
 <link rel="icon" href="../../IMAGES/Home/iR.png">
 <title>Select Indicators</title>
 
@@ -36,7 +38,21 @@
   <header>
  
   </header>
-  <% String color = "black";
+  <% Preferences pref = new Preferences();
+   List<String> TV = new ArrayList<String>();
+   List<String> Internet = new ArrayList<String>();
+   List<String> prefs;
+   prefs = pref.get_Client_Preferences((String) session.getAttribute("email"));
+   for(String p : prefs) {
+      if(p.equals("Clicks") || p.equals("Click Rate") || p.equals("Impressions") || p.equals("Viewability")) {
+        Internet.add(p);
+
+      } else {
+        TV.add(p);
+      }
+   } 
+%>
+  <% String color = "white";
     if(request.getParameter("color") != null) {
         color = "red";
     }%>
@@ -48,102 +64,47 @@
     <br>
     <br>
     <br><br>
-<h1>Which of the following indicators <br>would you like to examine and compare with your goals?
-<p style="color: <%= color%> ">(choose exactly 3 out of 4 from set preferences)</p></h1> 
-<br> 
-<form>
- 
+<h1 style="font-size:30px; color:white;">Which of the following indicators <br>would you like to examine and compare with your goals?
+<p style="color: <%= color%> ">Choose exactly 3 out of 4 from set preferences</p></h1> 
+<br>  
 </div>
-</form>
 
-<h1 style="border-style: groove solid groove solid; border-width: 0px; border-color: #065675;
-max-width: 100%; margin-left: auto; margin-right:auto; background-color: #065675; font-size: 50px;
-color:#FFFFFF"> TV </h1>
-<FORM action="prefController.jsp">
-  <label>
-    <input type="checkbox" name="indicators" value="GRPs"/>
-    <span>GRPs</span>
-</label>
-<label>
-<br>
-</label>
-    <label>
-    <input type="checkbox" name="indicators" value="Reach1+"/>
-    <span>Reach 1+</span>
-</label>
-<br>
 
-    <label>
-    <input type="checkbox" name="indicators" value="Reach3+"/>
-    <span>Reach 3+</span>
-
-</label>
-<label>
-  <br>
-
-  <input type="checkbox" name="indicators" value="SOV"/>
-  <span>SOV</span>
-</label>
-<label>
-  <br>
-
-  <input type="checkbox" name="indicators" value="Insertions"/>
-  <span>Insertions</span>
-</label>
-<label>
-  <br>
-
-  <input type="checkbox" name="indicators" value="Grps/Week"/>
-  <span>Grps/Week</span>
-</label>
-<label>
-  <br>
-
-  <input type="checkbox" name="indicators" value="Weeks"/>
-  <span>Weeks</span>
-</label>
-<label>
-  <br>
-
-  <input type="checkbox" name="indicators" value="Weeks(4X)"/>
-  <span>Weeks(4X)</span>
-</label>
-
-  <br>
-  <br>
+<%if(TV.size() != 0) { %>
   <h1 style="border-style: groove solid groove solid; border-width: 0px; border-color: #065675;
-   max-width: 100%; margin-left: auto; margin-right:auto; background-color: #065675; font-size: 50px;
-   color:#FFFFFF"> Internet </h1>
-<br>
-<label>
-<input type="checkbox" name="indicators" value="Impressions"/>
-  <span>Impressions</span>
-</label>
-<label>
-  <br>
-
-  <input type="checkbox" name="indicators" value="Clicks"/>
-  <span>Clicks</span>
-</label>
-<label>
-  <br>
-
-  <input type="checkbox" name="indicators" value="Click Rate"/>
-  <span>Click Rate</span>
-
-  </label>
+  max-width: 100%; margin-left: auto; margin-right:auto; background-color: #065675; font-size: 50px;
+  color:#FFFFFF"> TV </h1>
+  <FORM action="prefController.jsp">
+<%for(String p : TV){ %>
   <label>
-      <br>
-  
-      <input type="checkbox" name="indicators" value="Viewability"/>
-      <span>Viewability</span>
+    <input type="checkbox" name="indicators" value="<%= p%>"/>
+    <span><%= p%></span>
+  </label>
+  <br> 
+<% }
+} %>
 
-    </label>
+<br>
+<% if(Internet.size() != 0) { %>
+<br>
+<br>
+<h1 style="border-style: groove solid groove solid; border-width: 0px; border-color: #065675;
+ max-width: 100%; margin-left: auto; margin-right:auto; background-color: #065675; font-size: 50px;
+ color:#FFFFFF"> Internet </h1>
+  <%  for(String p : Internet){ %>
+        <label>
+          <input type="checkbox" name="indicators" value="<%= p%>"/>
+          <span><%= p%></span>
+        </label>
+        <br>
+
+    <%  }
+      } %>
   <br>
   <br>
   <div class="container">
       <div class="center">
-        <button class="button2"style="color:#ffffff">Submit</button>
+        <button type="submit" class="button2"style="color:#ffffff">Submit</button>
     <br>
     <br>
     <br>
@@ -152,6 +113,7 @@ color:#FFFFFF"> TV </h1>
     <br>
     <br>
     <br>
+    </FORM>
     <div class="center">
   
       </div>
@@ -162,7 +124,7 @@ color:#FFFFFF"> TV </h1>
   <div class="navbar" style="position: fixed; bottom: 0%; left: 0%; right:0%;">
         <div class="row" style="padding:2%;">
             <div class="col-sm-3">
-                <a href="Home.jsp" class="u-image u-logo u-image-1" data-image-width="135" data-image-height="49">
+                <a href="" class="u-image u-logo u-image-1" data-image-width="135" data-image-height="49">
                    
                   </a>
                 

@@ -1,4 +1,4 @@
-<%@ page import="test.User_service" %>
+<%@ page import="test.*" %>
 
 <%              boolean done = true; 
                 boolean donePass = true;
@@ -42,8 +42,23 @@
                 }
                 
                 if(done == true) {
-                    User_service myUser_Service = new User_service();
-                    myUser_Service.addUser(email, password, name); %>
+                    if(role.equals("Client")) {
+                        User_service myUser_Service = new User_service();
+
+                        myUser_Service.addClient(email, password, name);
+                        Reports rep = new Reports();
+                        Goals goal = new Goals();
+                        Preferences pref = new Preferences();
+                        rep.new_customer_setup(email);
+                        goal.setup(email);
+                        pref.set_Client_Preferences(email,"GRPs","Reach1+","Reach3+","SOV");
+
+                    
+                    } else {
+                        User_service myUser_Service = new User_service();
+                        myUser_Service.addUser(email, password, name);
+                    }
+                    %>
                     <jsp:forward page="register.jsp" >
                             <jsp:param name="message" value="Registration successful!" />
                         </jsp:forward>

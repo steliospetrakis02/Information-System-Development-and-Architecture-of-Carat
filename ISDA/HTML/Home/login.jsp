@@ -25,7 +25,10 @@
 				""
 		]
 }
+
 </script>
+<% session.invalidate();
+  %>
 
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="login">

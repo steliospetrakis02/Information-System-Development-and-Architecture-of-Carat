@@ -3,6 +3,8 @@
 <%@ page import="test.Reports" %>
 <%@ page import="test.Goals" %>
 <%@ page import="java.util.*" %>
+<%@ page import="java.text.DecimalFormat"%>
+<%@ page errorPage="stat_error.jsp"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -61,8 +63,10 @@
     <![endif]-->
   </head>
 
-<% String year= "";
+<%String year= "";
   String period="";
+  String email= (String) session.getAttribute("client_email");
+
   if(request.getParameter("year") == null){
        year =  (String) session.getAttribute("year");
        period = (String) session.getAttribute("period");
@@ -79,47 +83,51 @@
     result[2] = (String) request.getAttribute("indicator3");
     
     Preferences pref = new Preferences();
-    Reports rep = new Reports();
+              Reports rep = new Reports();
               double[][] data =new double[16][5];
               String report_id="0";
+
+              List<String> ids = rep.getClientList_of_reports_ids(email);
+
               if(period.equals("A") && year.equals("2022")){
-                report_id="1";
+                report_id = ids.get(0);
                 
               }
               else if(period.equals("B") && year.equals("2022")){
-                report_id="2";
+                report_id = ids.get(1);
                 
 
               }
               else if(period.equals("C") && year.equals("2022")){
-                report_id="3";
+                report_id = ids.get(2);
                 
 
               } else if(period.equals("A") && year.equals("2021")){
-                report_id="4";
+                report_id = ids.get(3);
                 
 
               }
               else if(period.equals("B") && year.equals("2021")){
-                report_id="5";
+                report_id = ids.get(4);
                 
 
               } else if(period.equals("C") && year.equals("2021")){
-                report_id="6";
+                report_id = ids.get(5);
                 
 
               }
               else if(period.equals("A") && year.equals("2020")){
-                report_id="7";
+                report_id = ids.get(6);
                 
 
               } else if(period.equals("B") && year.equals("2020")){
-                report_id="8";
+                report_id = ids.get(7);
                 
 
               }
               else if(period.equals("C") && year.equals("2020")){
-                report_id="9";
+                report_id = ids.get(8);
+
               }
                 
              List<String> prefs;
@@ -192,7 +200,6 @@
 
             Goals g = new Goals();
             String goal_id = "";
-            String email = (String) session.getAttribute("client_email");
             List<String> goals_id = g.getClientList_of_goals_ids(email);
             if(period.equals("A") && year.equals("2022")){
                 goal_id = goals_id.get(0);
@@ -349,32 +356,37 @@
             </div>
             <% double deviation_1 = Math.abs(average[0] - goal_1);
                double deviation_2 = Math.abs(average[1] - goal_2);
-               double deviation_3 = Math.abs(average[2] - goal_3);%>
+               double deviation_3 = Math.abs(average[2] - goal_3);
+               
+               DecimalFormat df = new DecimalFormat("0.000000000000");
+               String Deviation_1 = df.format(deviation_1);
+               String Deviation_2 = df.format(deviation_2);
+               String Deviation_3 = df.format(deviation_3);%>
             <div class="col-sm-1"></div>
             <div class="col-sm-2" style="border-style:inset; border-color:#065675;
             border-width: 14px; width:15%;">
               <% if(average[0] >= goal_1) { %>
-                  <h2><span style="color:rgb(31, 219, 31); font-size: 38px;">&#8599;</span>  Increase: <%= deviation_1%> </h2>
+                  <h2><span style="color:rgb(31, 219, 31); font-size: 38px;">&#8599;</span>  Increase: <%= Deviation_1%> </h2>
               <%} else { %>
-                  <h2><span style="color:rgb(241, 55, 55); font-size: 38px;">&#8600;</span>  Decrease: <%=deviation_1%>  </h2>
+                  <h2><span style="color:rgb(241, 55, 55); font-size: 38px;">&#8600;</span>  Decrease: <%= Deviation_1%>  </h2>
               <%  } %>
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-2" style="border-style:inset; border-color:#065675;
             border-width: 14px;" style="width:15%;">
                 <% if(average[1] >= goal_2) { %>
-                  <h2><span style="color:rgb(31, 219, 31); font-size: 38px;">&#8599;</span>  Increase: <%= deviation_2%> </h2>
+                  <h2><span style="color:rgb(31, 219, 31); font-size: 38px;">&#8599;</span>  Increase: <%= Deviation_2%> </h2>
               <%} else { %>
-                  <h2><span style="color:rgb(241, 55, 55); font-size: 38px;">&#8600;</span>  Decrease: <%=deviation_2%>  </h2>
+                  <h2><span style="color:rgb(241, 55, 55); font-size: 38px;">&#8600;</span>  Decrease: <%= Deviation_2%>  </h2>
               <%  } %>
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-2" style="border-style:inset; border-color:#065675;
             border-width: 14px;" style="width:15%;">
                  <% if(average[2] >= goal_3) { %>
-                  <h2><span style="color:rgb(31, 219, 31); font-size: 38px;">&#8599;</span>  Increase: <%= deviation_3%> </h2>
+                  <h2><span style="color:rgb(31, 219, 31); font-size: 38px;">&#8599;</span>  Increase: <%= Deviation_3%> </h2>
               <%} else { %>
-                  <h2><span style="color:rgb(241, 55, 55); font-size: 38px;">&#8600;</span>  Decrease: <%=deviation_3%>  </h2>
+                  <h2><span style="color:rgb(241, 55, 55); font-size: 38px;">&#8600;</span>  Decrease: <%= Deviation_3%>  </h2>
               <%  } %>
             </div></div>
             <br><br><br><br>

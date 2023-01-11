@@ -95,6 +95,17 @@
                 } else if(p.equals("Viewability")) {
                     data_index = 11;
                 }
+
+                int data_count = 0;
+                for(double[] Data: data) {
+                  if(Data[0] != 0.0) {
+                    data_count++;
+                  
+                  } else {
+                    break;
+                  }
+                }
+                data_count = data_count / 2;
                 %>
 <h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
   <%= request.getParameter("indicator")%> Report 3D Vertical Bar Chart</h1>  <!-- %του 300-->
@@ -182,14 +193,26 @@
     <div class="bar seven"></div>   
     <div class="bar eight"></div> 
   </div><br>
-  <h3 style="margin-left: 26%;">Weeks <span style="margin-left: 2.5%;">1-2</span>
-    <span style="margin-left: 4.8%;">3-4</span>
-    <span style="margin-left: 4.8%;">5-6</span>
-    <span style="margin-left: 4.8%;">7-8</span>
-    <span style="margin-left: 4.8%;">9-10</span>
-    <span style="margin-left: 3.3%;">11-12</span>
-    <span style="margin-left: 3.3%;">13-14</span>
-    <span style="margin-left: 3.3%;">15-16</span>
+  <%  String[] color = new String[8];
+      for(int i = 0; i < 8; i++) {
+          if(i < data_count) {
+            color[i] = "white";
+          
+          } else {
+            color[i] = "red";
+
+          }
+          
+      }
+  %>
+  <h3 style="margin-left: 26%;">Weeks <span style="margin-left: 2.5%; color: <%= color[0]%>">1-2</span>
+    <span style="margin-left: 4.8%; color: <%= color[1]%>">3-4</span>
+    <span style="margin-left: 4.8%; color: <%= color[2]%>">5-6</span>
+    <span style="margin-left: 4.8%; color: <%= color[3]%>">7-8</span>
+    <span style="margin-left: 4.8%; color: <%= color[4]%>">9-10</span>
+    <span style="margin-left: 3.3%; color: <%= color[5]%>">11-12</span>
+    <span style="margin-left: 3.3%; color: <%= color[6]%>">13-14</span>
+    <span style="margin-left: 3.3%; color: <%= color[7]%>">15-16</span>
 
 </h3>
 <br><br><br><br>

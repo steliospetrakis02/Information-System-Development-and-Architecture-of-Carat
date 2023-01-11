@@ -11,12 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../../CSS/History/lrc.css" />
-
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-<link rel="stylesheet" href="style.css"> 
-
-
+    <link rel="stylesheet" href="style.css"> 
 
     <title>View Report</title>
 </head>
@@ -63,6 +58,7 @@
   <a href="his.jsp">History</a>
 	<div class="animation start-home"></div>
 </div>
+
 <style>
 .page {
 	margin: 27px auto 0;
@@ -124,13 +120,6 @@
 span {
     color: #2BD6B4;
 }
-  h1{
-  font-size: 30px;
-  color: #fff;
-  font-weight: 300;
-  text-align: center;
-  margin-bottom: 15px;
-}
 table{
   width:100%;
   table-layout: fixed;
@@ -176,10 +165,11 @@ body{
     width: 10px;
 } 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0.3); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2); 
 } 
 ::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    background: white;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,15); 
 }
 
 .button-41 {
@@ -220,16 +210,17 @@ body{
   }
 }
 </style>
-
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br>
+<br>
   <% String user;
      String email;
-  if((String) session.getAttribute("client") == null) {
-       user = (String) session.getAttribute("user");
+  if(((String) session.getAttribute("role")).equals("employee") ) {
+       user = (String) session.getAttribute("client");
        email = (String) session.getAttribute("client_email");
   
   } else {
-       user = (String) session.getAttribute("client");
+       user = (String) session.getAttribute("user");
        email = (String) session.getAttribute("email");
   }
   String year= "";
@@ -246,8 +237,13 @@ body{
   
   %>
 </div>
-  <h1><%= user%> <%= year%> Campaign-<%= period%></h1>
-  <br>
+  <h1 style="font-size: 30px;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;"><%= user%> <%= year%> Campaign-<%= period%></h1> 
+<div style=" position: absolute; top: 20%; left: 1%;"> <%@ include file="info_report.jsp" %> </div>
+<br>
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0">
       <thead>
@@ -257,13 +253,11 @@ body{
               Reports rep = new Reports();
               double[][] data =new double[16][5];
               String report_id="0";
-              email = (String) session.getAttribute("email");
 
               List<String> ids = rep.getClientList_of_reports_ids(email);
 
               if(period.equals("A") && year.equals("2022")){
                 report_id = ids.get(0);
-                %> <h1><%=ids %> <h1>  <%
                 session.setAttribute("report_id", report_id);
               }
               else if(period.equals("B") && year.equals("2022")){

@@ -54,15 +54,10 @@
 		<br>	
 			</div>
 		<p class="regards">Team IntelliReports </p>
-		<% if(((String) session.getAttribute("role")).equals("client")) { %>
 			<form action="../Goals/client_goals.jsp">
 				<button class="button1 button1"> Exit</button>
         	</form>
-		<% } else { %>
-			<form action="../History/insert.jsp">
-				<button class="button1 button1"> Exit</button>
-        	</form>
-		<% }%>
+	
 
 	</div>
 </div>

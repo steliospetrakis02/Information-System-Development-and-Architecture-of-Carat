@@ -57,7 +57,7 @@
 </div> 
 </div>
 <br><br><br><br><br><br><br>
-<h1><%= (String) session.getAttribute("client")%> has chosen for <%= year%>-<%= period%>:</h1> 
+<h1 style="font-size:30px; color:white"><%= (String) session.getAttribute("client")%> has chosen for <%= year%>-<%= period%>:</h1> 
 <br> 
 <form>
  
@@ -77,33 +77,38 @@
       }
    } 
 %>
-
-<h1 style="border-style: groove solid groove solid; border-width: 0px; border-color: #065675;
-max-width: 100%; margin-left: auto; margin-right:auto; background-color: #065675; font-size: 50px;
-color:#FFFFFF"> TV </h1>
-<FORM action="../Home/finalmainPlanner.jsp">
-<% for(String p : TV){ %>
+<%if(TV.size() != 0) { %>
+  <h1 style="border-style: groove solid groove solid; border-width: 0px; border-color: #065675;
+  max-width: 100%; margin-left: auto; margin-right:auto; background-color: #065675; font-size: 50px;
+  color:#FFFFFF"> TV </h1>
+  <FORM action="../Home/finalmainPlanner.jsp">
+<%for(String p : TV){ %>
   <label>
     <input type="checkbox" name="" value=""/>
     <span><%= p%></span>
   </label>
   <br> 
-<% }%>
+<% }
+} %>
+
 <br>
+<% if(Internet.size() != 0) { %>
+  br>
 <br>
 <br>
 <h1 style="border-style: groove solid groove solid; border-width: 0px; border-color: #065675;
  max-width: 100%; margin-left: auto; margin-right:auto; background-color: #065675; font-size: 50px;
  color:#FFFFFF"> Internet </h1>
-<br>
-<% for(String p : Internet){ %>
-  <label>
-    <input type="checkbox" name="" value=""/>
-    <span><%= p%></span>
-  </label>
-  <br>
+  <%  for(String p : Internet){ %>
+        <label>
+          <input type="checkbox" name="" value=""/>
+          <span><%= p%></span>
+        </label>
+        <br>
 
-<% }%>
+    <%  }
+      } %>
+
     <br> <br>
     <br>
     <br>

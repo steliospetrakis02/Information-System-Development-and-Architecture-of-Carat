@@ -19,6 +19,11 @@
 </ul>
 </nav>
 </header>
+<% if(session.getAttribute("client") == null){ %>
+    <jsp:forward page="../Home/finalmainPlanner.jsp" >
+        <jsp:param name="color" value="red" />
+    </jsp:forward>
+  <% } %>
   <% String year,period;
   if(request.getParameter("year") == null) {
      year = (String) session.getAttribute("year");
@@ -35,51 +40,54 @@
               Reports rep = new Reports();
               double[][] data =new double[16][5];
               String report_id="0";
-              if(period.equals("A") && year.equals("2022")){
-                report_id="1";
+              String email = (String) session.getAttribute("client_email");
+
+              List<String> ids = rep.getClientList_of_reports_ids(email);
+
+               if(period.equals("A") && year.equals("2022")){
+                report_id = ids.get(0);
                 session.setAttribute("report_id", report_id);
               }
               else if(period.equals("B") && year.equals("2022")){
-                report_id="2";
+                report_id = ids.get(1);
                 session.setAttribute("report_id", report_id);
 
               }
               else if(period.equals("C") && year.equals("2022")){
-                report_id="3";
+                report_id = ids.get(2);
                 session.setAttribute("report_id", report_id);
 
               } else if(period.equals("A") && year.equals("2021")){
-                report_id="4";
+                report_id = ids.get(3);
                 session.setAttribute("report_id", report_id);
 
               }
               else if(period.equals("B") && year.equals("2021")){
-                report_id="5";
+                report_id = ids.get(4);
                 session.setAttribute("report_id", report_id);
 
               } else if(period.equals("C") && year.equals("2021")){
-                report_id="6";
+                report_id = ids.get(5);
                 session.setAttribute("report_id", report_id);
 
               }
               else if(period.equals("A") && year.equals("2020")){
-                report_id="7";
+                report_id = ids.get(6);
                 session.setAttribute("report_id", report_id);
 
               } else if(period.equals("B") && year.equals("2020")){
-                report_id="8";
+                report_id = ids.get(7);
                 session.setAttribute("report_id", report_id);
 
               }
               else if(period.equals("C") && year.equals("2020")){
-                report_id="9";
+                report_id = ids.get(8);
                 session.setAttribute("report_id", report_id);
 
               }
               
-             String email = (String) session.getAttribute("client_email");
-             report_id = rep.getClientList_of_reports_ids(email).get(0);
-             session.setAttribute("report_id", report_id);
+             //report_id = rep.getClientList_of_reports_ids(email).get(0);
+             //session.setAttribute("report_id", report_id);
 
              List<String> prefs;
              List<String> Weeks4X;
@@ -141,11 +149,7 @@
              }  
 
              
-if(session.getAttribute("client") == null){ %>
-    <jsp:forward page="../Home/finalmainPlanner.jsp" >
-        <jsp:param name="color" value="red" />
-    </jsp:forward>
-  <% } %>
+%>
 <section>
 <head>
    <meta charset="UTF-8" />
@@ -156,8 +160,9 @@ if(session.getAttribute("client") == null){ %>
 
     <title>Insert Data</title>
 </head>
-<br><br><br><br><br><br><br>
+<br><br><br><br><br>
   <h1> <%= (String) session.getAttribute("client")%>  <%= (String) session.getAttribute("year")%> Campaign - <%= (String) session.getAttribute("period")%></h1>
+  <br>
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0">
       <thead>
@@ -182,13 +187,47 @@ if(session.getAttribute("client") == null){ %>
         </table>
         </div>
      <% } else { %>
+           <tr>
+              <FORM action="insertController.jsp" method="POST">
+                  <td>
+                    <button class="button-41" role="button" style="text-align:center;">Add Data</button>
+                </td>
+                  <td>
+                    <input type="text" id="" name="add_1" style="width: 25%; background-color: rgba(255,255,255,0.3);"><%if(!cast[0]){%><span>%</span><%}%>
+                  </td>
+                  <td>
+                    <input type="text" id="" name="add_2" style="width: 25%; background-color: rgba(255,255,255,0.3);"><%if(!cast[1]){%><span>%</span><%}%>
+                  </td>
+                  <td>
+                    <input type="text" id="" name="add_3" style="width: 25%; background-color: rgba(255,255,255,0.3);"><%if(!cast[2]){%><span>%</span><%}%>
+                  </td>
+                  <td>
+                    <input type="text" id="" name="add_4" style="width: 25%; background-color: rgba(255,255,255,0.3);"><%if(!cast[3]){%><span>%</span><%}%>
+                  </td> 
+                </FORM>
+                </tr>
           <div class="tbl-content">
             <table cellpadding="0" cellspacing="0">
             <tbody>
              <%int i = 0;
+               boolean highlight_row = false;
+               boolean end_highlight = false;
+               String color = "";
                 for(double[] row: data) {
+                    if(highlight_row) {
+                        end_highlight = true;
+                        highlight_row = false;
+                        color = "";
+                    }
+
+                    if((!highlight_row) && (!end_highlight)) {
+                      if(data[i][data_index[0]] == 0.0) {
+                          highlight_row = true;
+                          color = "green";
+                      }
+                    }
                  %>
-            <tr>
+            <tr style="background-color: <%= color%>">
               <td><%= i+1%></td>
                 <td><% if(use_4X[0]){%> <%= Weeks4X.get(i)%> <%}else{ if(cast[0]){%> <%=(int) data[i][data_index[0]]%><%}else{%> <%= data[i][data_index[0]]%><%if(!G_per_W[0]){%>%<%}%><%}%><%}%></td>
                 <td><% if(use_4X[1]){%> <%= Weeks4X.get(i)%> <%}else{ if(cast[1]){%> <%=(int) data[i][data_index[1]]%><%}else{%> <%= data[i][data_index[1]]%><%if(!G_per_W[1]){%>%<%}%><%}%><%}%></td>
@@ -198,23 +237,6 @@ if(session.getAttribute("client") == null){ %>
             <% i++;
               }%>
         
-                <tr>
-                  <td>
-                    <button class="button-41" role="button" style="text-align:center;">Add Data</button>
-                </td>
-                  <td><form action="/action_page.php">
-                    <input type="text" id="GRP" name="GRP" style="width: 25%; background-color: rgba(255,255,255,0.3);">
-                  </form></td>
-                  <td><form action="/action_page.php">
-                    <input type="text" id="GRP" name="GRP" style="width: 25%; background-color: rgba(255,255,255,0.3);"><span>%</span>
-                  </form></td>
-                  <td><form action="/action_page.php">
-                    <input type="text" id="GRP" name="GRP" style="width: 25%; background-color: rgba(255,255,255,0.3);"><span>%</span>
-                  </form></td>
-                  <td><form action="/action_page.php">
-                    <input type="text" id="GRP" name="GRP" style="width: 25%; background-color: rgba(255,255,255,0.3);"><span>%</span> 
-                  </form></td> 
-                </tr>
             </tbody>
           </table>
         </div>

@@ -24,6 +24,8 @@
 				"https://www.youtube.com/channel/UC5x5vbE7JO-ig6DmK2YDdLw/featured"
 		]
 }</script>
+<% session.invalidate();
+  %>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Our Team">
     <meta property="og:type" content="website">

@@ -1,4 +1,5 @@
 <%@ include file="authentication_guard.jsp" %>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +45,6 @@
 
 
 <%@ include file="../Home/navbar.jsp"%>
-
 <style>
   /* Style for screens smaller than 1700px */
   @media screen and (max-width: 1700px) {
@@ -64,7 +64,8 @@
 <% session.setAttribute("results", "no");
    session.setAttribute("stats", "no");%>
       <div class="u-clearfix u-sheet u-sheet-1">
-        <br>
+        <br><%@include file="info_main.jsp"%>
+
         <h3 class="u-custom-font u-font-roboto-condensed u-text u-text-body-alt-color u-text-default u-text-1" style="margin-left: auto; margin-right: auto;">Welcome, please choose year and time period to work on a particular report</h3>
       </div>
     <section class="u-align-center u-clearfix u-section-2" id="sec-97b2">

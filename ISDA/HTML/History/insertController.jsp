@@ -68,13 +68,6 @@
         }
 
     }
-    try{
-    %> <h1> LOL <h1> <%
-
-    rep.set_data(email , GRPs, Reach_1, Reach_3, SOV, Insertions, GRPs_Week, Weeks, Weeks_4x, Impressions, clicks,click_rate,  Viewability); 
-
-    }
-    catch (Exception e){
-        %> <h1> <%= e %> <h1> <%
-    }%>
+    rep.set_data(email , GRPs, Reach_1, Reach_3, SOV, Insertions, GRPs_Week, Weeks, Weeks_4x, Impressions, clicks,
+    click_rate,  Viewability); %>
     <jsp:forward page="insert.jsp" />

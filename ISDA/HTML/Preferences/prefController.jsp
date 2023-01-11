@@ -63,62 +63,16 @@
                 
              <% } else {
                      if(((String) session.getAttribute("role")).equals("client")) {
-                         List<String> prefs = pref.get_Client_Preferences((String) session.getAttribute("email"));
-                         boolean done_1 = false;
-                         boolean done_2 = false;
-                         boolean done_3 = false;
-                         for(String p: prefs) {
-                            if(p.equals(indicators[0])) {
-                                done_1 = true;
-                            }
-                            if(p.equals(indicators[1])) {
-                                done_2 = true;
-                            }
-                            if(p.equals(indicators[2])) {
-                                done_3 = true;
-                            }
-                         }
-                         if(done_1 && done_2 && done_3) {
                             request.setAttribute("indicator1", indicators[0]);
                             request.setAttribute("indicator2", indicators[1]);
                             request.setAttribute("indicator3", indicators[2]);%>
                             <jsp:forward page="../Statistics/StatResult.jsp" />
-                        <% } else { %>
-                            <jsp:forward page="preferencesStats.jsp" > 
-                                <jsp:param name="color" value="red" />
-                            </jsp:forward>
-                       <% } %>
-                         
-                  
              
                     <% } else {
-                        List<String> prefs = pref.get_Client_Preferences((String) session.getAttribute("client_email"));
-                         boolean done_1 = false;
-                         boolean done_2 = false;
-                         boolean done_3 = false;
-                         for(String p: prefs) {
-                            if(p.equals(indicators[0])) {
-                                done_1 = true;
-                            }
-                            if(p.equals(indicators[1])) {
-                                done_2 = true;
-                            }
-                            if(p.equals(indicators[2])) {
-                                done_3 = true;
-                            }
-                         }
-                         if(done_1 && done_2 && done_3) {
                             request.setAttribute("indicator1", indicators[0]);
                             request.setAttribute("indicator2", indicators[1]);
                             request.setAttribute("indicator3", indicators[2]);%>
                             <jsp:forward page="../Statistics/StatResultPlanner.jsp" />
-                        <% } else { %>
-                            <jsp:forward page="PlannerpreferencesStats.jsp" >
-                                <jsp:param name="color" value="red" />
-                            </jsp:forward>
-                       <% } %>
-                         
-                    
                     <% } 
 
                 }

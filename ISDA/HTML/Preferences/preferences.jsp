@@ -37,16 +37,16 @@
     <header>
    
     </header>
-    <% String color = "black";
+    <% String color = "white";
     session.setAttribute("stats", "no");
     if(request.getParameter("color") != null) {
         color = "red";
     }%>
   </div> 
   </div>
-  <br><br><br><br><br><br><br><br>
-  <h1><p>Which of the following indicators<br>would you like to see in your report?</p><hr style="width: 40%; height: 5px; background:#065675;">
-  <p style="color: <%= color%> ">(choose exactly 4 of them)</p></h1> 
+  <br><br><br><br><br><br><br><br><%@ include file="info_prefs_client.jsp" %>
+  <h1 style="font-size: 30px; color:white;"><p>Which of the following indicators<br>would you like to see in your report?</p>
+  <p style="color: <%= color%> ">Choose exactly 4 of them</p></h1> 
   <br> 
   <form>
    

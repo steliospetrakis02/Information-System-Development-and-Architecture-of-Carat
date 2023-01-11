@@ -8,11 +8,12 @@
 <div id="head-mobile"></div>
 <div class="button"></div>
 <ul>
-<li style="margin-left:2%;"><a href='../Home/finalmain.jsp'>Main Page</a></li>
+<li style="margin-left:2%;"><a href='../Home/finalmainPlanner.jsp'>Main Page</a></li>
 <li><a href="../History/lr.jsp">View Report</a></li>
-<li><a href='../Preferences/preferences.jsp'>Preferences</a></li>
-<li class='active'><a href='../Goals/client_goals.jsp'>Goals</a></li>
-<li><a href='../Statistics/Statistics.jsp'>Statistics</a></li>
+<li><a href='../Preferences/PlannerPreferences.jsp'>Preferences</a></li>
+<li class='active'><a href='../Goals/planner-goals.jsp'>Goals</a></li>
+<li><a href='../Statistics/StatisticsPlanner.jsp'>Statistics</a></li>
+<li><a href='../History/insert.jsp'>Insert</a></li>
 </ul>
 </nav>
 </header>
@@ -50,19 +51,13 @@
 	</style>
 			</div>
 		<div class="text">
-		<p>Make sure you insert a compatible data type for all indicators. </p>
+		<p>No goals have been set for this particular time period! </p>
 		<br>	
 			</div>
 		<p class="regards">Team IntelliReports </p>
-		<% if(((String) session.getAttribute("role")).equals("client")) { %>
-			<form action="../Goals/client_goals.jsp">
-				<button class="button1 button1"> Exit</button>
-        	</form>
-		<% } else { %>
-			<form action="../History/insert.jsp">
-				<button class="button1 button1"> Exit</button>
-        	</form>
-		<% }%>
-
+		<form action="../Home/finalmainPlanner.jsp">
+			<button class="button1 button1"> Exit</button>
+        
+		</form>
 	</div>
 </div>
