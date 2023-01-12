@@ -3,7 +3,7 @@
 
     <%  String email = request.getParameter("email");
         User_service mUser_Service = new User_service();
-        boolean done = mUser_Service.authenticate2(email);
+        boolean done = mUser_Service.forgot_password(email);
         String next_page;
         if(done == false) { %>
             <jsp:forward page="forgot_pass.jsp" >
