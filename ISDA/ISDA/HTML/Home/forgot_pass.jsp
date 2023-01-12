@@ -79,11 +79,11 @@ borders: top right bottom left !important
               <h1><b>Recover Password</b></h1>
               <div class="content">
                 <div class="input-field">
-                  <input type="email" name="email" placeholder="Write your email for recovery link." autocomplete="nope">
+                  <input type="email" name="email" placeholder="Write your email for password check" autocomplete="nope">
                 </div>
               </div>
               <div class="action">
-                <button type = "submit"><a href = "#" style="text-decoration: none; color: black">Send to my email</a></button>
+                <button type = "submit"><a href = "#" style="text-decoration: none; color: black">Check for my password</a></button>
               </div>
             </form>
           </div>
