@@ -199,46 +199,57 @@
             }
 
             Goals g = new Goals();
-            String goal_id = "";
-            List<String> goals_id = g.getClientList_of_goals_ids(email);
+            String  goal_id = "0";
+            Integer goal_id2 = 0;
+            email = (String) session.getAttribute("client_email");
+            List<Integer> goal_id3 = g.getClientList_of_goals_ids(email);
             if(period.equals("A") && year.equals("2022")){
-                goal_id = goals_id.get(0);
+                goal_id2 = goal_id3.get(0);
+                 goal_id= Integer.toString(goal_id2);
                 session.setAttribute("goal_id", goal_id);
               }
               else if(period.equals("B") && year.equals("2022")){
-                goal_id = goals_id.get(1);
+                goal_id2 = goal_id3.get(1);
+                 goal_id= Integer.toString(goal_id2);
                 session.setAttribute("goal_id", goal_id);
 
               }
               else if(period.equals("C") && year.equals("2022")){
-                goal_id = goals_id.get(2);
+                goal_id2 = goal_id3.get(8);
+                 goal_id= Integer.toString(goal_id2);
                 session.setAttribute("goal_id", goal_id);
 
               } else if(period.equals("A") && year.equals("2021")){
-                goal_id = goals_id.get(3);
+                goal_id2 = goal_id3.get(3);
+                 goal_id= Integer.toString(goal_id2);
                 session.setAttribute("goal_id", goal_id);
 
               }
               else if(period.equals("B") && year.equals("2021")){
-                goal_id = goals_id.get(4);
+                goal_id2 = goal_id3.get(4);
+                 goal_id= Integer.toString(goal_id2);
                 session.setAttribute("goal_id", goal_id);
 
               } else if(period.equals("C") && year.equals("2021")){
-                goal_id = goals_id.get(5);
+                goal_id2 = goal_id3.get(5);
+                 goal_id= Integer.toString(goal_id2);
                 session.setAttribute("goal_id", goal_id);
 
               }
               else if(period.equals("A") && year.equals("2020")){
-                goal_id = goals_id.get(6);
+                goal_id2 = goal_id3.get(6);
+                 goal_id= Integer.toString(goal_id2);
                 session.setAttribute("goal_id", goal_id);
 
               } else if(period.equals("B") && year.equals("2020")){
-                goal_id = goals_id.get(7);
+                goal_id2 = goal_id3.get(7);
+                 goal_id= Integer.toString(goal_id2);
                 session.setAttribute("goal_id", goal_id);
 
               }
               else if(period.equals("C") && year.equals("2020")){
-                goal_id = goals_id.get(8);
+                goal_id2 = goal_id3.get(2);
+                 goal_id= Integer.toString(goal_id2);
                 session.setAttribute("goal_id", goal_id);
 
               }
